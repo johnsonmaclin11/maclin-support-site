@@ -1,229 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VertexOps Global provides professional business operations support, customer service management, reporting services, website support, and digital business assistance for growing companies." />
+  <meta name="keywords" content="business operations support, customer service outsourcing, virtual assistant services, website support, HTML CSS support, reporting services, remote operations company" />
+  <meta name="author" content="VertexOps Global" />
+  <title>VertexOps Global | Operations, Customer Service & IT Support</title>
+  <style>
+    :root {
+      --primary: #0f2f6b;
+      --secondary: #17479e;
+      --accent: #1d7df2;
+      --light: #f4f7fb;
+      --white: #ffffff;
+      --text: #1d2433;
+      --muted: #5f6b7a;
+      --border: rgba(15, 47, 107, 0.10);
+      --shadow: 0 18px 40px rgba(15, 47, 107, 0.10);
+    }
 
-<title>VertexOps Global | Business Operations & IT Support</title>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-<style>
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15,47,107,0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      font-size: 1.08rem;
+    }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2ca6ff, #17479e);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(44,166,255,0.25);
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    nav a {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+    nav a:hover { color: #8cd0ff; }
 
-body{
-font-family:Arial, sans-serif;
-margin:0;
-background:#f4f7fb;
-color:#222;
-}
+    .hero {
+      background:
+        linear-gradient(rgba(10, 28, 62, 0.75), rgba(10, 28, 62, 0.82)),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 90px 0 80px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      letter-spacing: 0.3px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+    .hero p {
+      font-size: 1.07rem;
+      max-width: 700px;
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.92);
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    }
+    .hero-card h3 { margin-top: 0; font-size: 1.2rem; }
+    .hero-card ul { padding-left: 18px; margin-bottom: 0; }
 
-header{
-background:#0f2f6b;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
+    section { padding: 80px 0; }
+    h2 {
+      font-size: 2.15rem;
+      line-height: 1.15;
+      color: var(--primary);
+      margin: 0 0 14px;
+    }
+    .section-intro {
+      max-width: 780px;
+      color: var(--muted);
+      margin: 0 0 28px;
+      font-size: 1.02rem;
+    }
 
-header h1{
-font-size:2.5rem;
-margin-bottom:10px;
-}
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.9rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
 
-nav{
-background:#173f87;
-text-align:center;
-padding:12px;
-}
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .image-panel {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+    .image-panel img { height: 100%; object-fit: cover; }
 
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-size:0.95rem;
-}
+    .services-section {
+      background: linear-gradient(180deg, #eef4ff, #f8fbff);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, #2ca6ff, #17479e);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 44px rgba(15, 47, 107, 0.14);
+      border-color: rgba(23,71,158,0.18);
+    }
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #e8f1ff;
+      color: var(--secondary);
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 1.15rem;
+    }
+    .card p { margin: 0 0 14px; color: var(--muted); }
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--muted);
+    }
 
-section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
-}
+    .highlight-banner {
+      background:
+        linear-gradient(rgba(15, 47, 107, 0.83), rgba(15, 47, 107, 0.88)),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+    .highlight-box {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(8px);
+    }
+    .highlight-box h3 { margin-top: 0; font-size: 1.08rem; }
+    .highlight-box p { color: rgba(255,255,255,0.90); }
 
-h2{
-color:#173f87;
-margin-bottom:15px;
-}
+    .industries-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .panel {
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+    .panel ul { margin: 0; padding-left: 18px; color: var(--muted); }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-}
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+    .contact-box, .form-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .contact-box p { margin: 10px 0; }
+    .contact-links a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 8px;
+      color: var(--secondary);
+      font-weight: 700;
+    }
 
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
+    form {
+      display: grid;
+      gap: 14px;
+    }
+    .two-col-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #d6dfec;
+      border-radius: 12px;
+      padding: 14px 14px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: #fbfdff;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(29,125,242,0.10);
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .small-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .success-message {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #eaf7ee;
+      color: #166534;
+      font-weight: 700;
+    }
 
-.highlight{
-background:#eaf1ff;
-padding:40px 20px;
-}
+    footer {
+      background: #0b224f;
+      color: rgba(255,255,255,0.92);
+      padding: 26px 0;
+      text-align: center;
+    }
 
-footer{
-background:#0f2f6b;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.btn{
-display:inline-block;
-background:white;
-color:#0f2f6b;
-padding:12px 20px;
-margin-top:20px;
-text-decoration:none;
-font-weight:bold;
-border-radius:6px;
-}
-
-</style>
+    @media (max-width: 1000px) {
+      .hero-grid, .split, .contact-grid, .industries-wrap { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .stats, .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.2rem; }
+      .grid, .stats, .highlight-grid, .two-col-form { grid-template-columns: 1fr; }
+      nav { gap: 12px; }
+      nav a { font-size: 0.9rem; }
+      .topbar { position: static; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="logo">VO</div>
+        <span>VertexOps Global</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
 
-<header>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Professional Operations, Customer Service & Digital Support</span>
+        <h1>Helping ambitious companies run smarter, respond faster, and scale with confidence.</h1>
+        <p>
+          VertexOps Global is a professional remote support company delivering high-value business operations support,
+          customer service coordination, reporting assistance, administrative execution, website maintenance, and digital workflow support.
+          We partner with growing organizations that need dependable execution, responsive communication, and flexible operational support
+          without the cost and complexity of immediate full-time hiring.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#contact">Request a Consultation</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Why VertexOps Global</h3>
+        <ul>
+          <li>Professional company presentation instead of a freelance profile</li>
+          <li>Multi-service support across operations, customer service, reporting, and web tasks</li>
+          <li>Flexible remote delivery for project-based and ongoing business needs</li>
+          <li>Built to support startups, eCommerce brands, logistics teams, consultants, and service businesses</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-<h1>VertexOps Global</h1>
+  <section id="about">
+    <div class="container split">
+      <div>
+        <h2>About VertexOps Global</h2>
+        <p class="section-intro">
+          VertexOps Global is positioned as a modern business support and operations solutions company built for organizations that want more than basic virtual assistance.
+          Our focus is to deliver structured, professional, and execution-driven remote support across customer service, operational workflows, reporting, administrative coordination,
+          and basic website support. We help businesses strengthen internal efficiency, improve customer responsiveness, and maintain consistency in day-to-day execution.
+        </p>
+        <p class="section-intro">
+          In a fast-moving market, companies often lose time and revenue when important tasks are delayed, customer communication is inconsistent, internal reporting is disorganized,
+          or digital updates are neglected. VertexOps Global addresses those gaps by offering reliable support that integrates into business operations and contributes to smoother workflow management.
+          Our service model is especially valuable for companies that need professional assistance without the immediate overhead of expanding permanent staff.
+        </p>
+        <p class="section-intro">
+          We aim to be recognized not only as a support provider, but as a dependable extension of the businesses we serve. From order coordination and operational tracking to reporting support,
+          website updates, and client communication workflows, VertexOps Global delivers practical value where organizations need it most: speed, accuracy, responsiveness, and operational stability.
+        </p>
+      </div>
+      <div class="image-panel">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Professional business operations team collaborating" />
+      </div>
+    </div>
+    <div class="container stats">
+      <div class="stat"><strong>24/7</strong><span>Digital business presence</span></div>
+      <div class="stat"><strong>Multi-Service</strong><span>Operations + support + web</span></div>
+      <div class="stat"><strong>Remote-First</strong><span>Flexible engagement model</span></div>
+      <div class="stat"><strong>Scalable</strong><span>Built for growth support</span></div>
+    </div>
+  </section>
 
-<p>
-Professional Business Operations, IT Support & Digital Services
-for growing companies worldwide.
-</p>
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2>Core Services</h2>
+      <p class="section-intro">
+        Our core services are designed to give businesses professional, practical support across operational, customer-facing, and digital functions. Each service area is structured to improve execution,
+        strengthen responsiveness, and help companies maintain momentum as they grow.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">⚙</div>
+          <h3>Business Operations Support</h3>
+          <p>Structured support for the day-to-day tasks that keep organizations moving efficiently.</p>
+          <ul>
+            <li>Order coordination and workflow follow-up</li>
+            <li>Operational tracking and administrative execution</li>
+            <li>Documentation support and process organization</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">✉</div>
+          <h3>Customer Service Management</h3>
+          <p>Professional communication support that helps businesses stay responsive and client-focused.</p>
+          <ul>
+            <li>Email and inquiry response support</li>
+            <li>Issue coordination and service follow-through</li>
+            <li>Order status communication and customer updates</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Reporting & Data Services</h3>
+          <p>Clearer visibility through organized business reporting and practical spreadsheet support.</p>
+          <ul>
+            <li>KPI dashboards and Excel reporting</li>
+            <li>Data clean-up and spreadsheet organization</li>
+            <li>Business performance support reporting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>IT & Website Support</h3>
+          <p>Light technical and digital support that helps companies maintain a polished online presence.</p>
+          <ul>
+            <li>Basic HTML/CSS content updates</li>
+            <li>Landing page edits and layout improvements</li>
+            <li>Website maintenance and digital content support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">📁</div>
+          <h3>Administrative Assistance</h3>
+          <p>Dependable virtual support for recurring tasks that consume time and slow business execution.</p>
+          <ul>
+            <li>Inbox and document support</li>
+            <li>Scheduling and coordination assistance</li>
+            <li>Task follow-up and virtual office support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Digital Business Support</h3>
+          <p>Support for strengthening brand presence and maintaining digital business touchpoints.</p>
+          <ul>
+            <li>LinkedIn company page updates</li>
+            <li>Service page content support</li>
+            <li>Online business presence assistance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a class="btn" href="#contact">Request Consultation</a>
+  <section id="highlights" class="highlight-banner">
+    <div class="container">
+      <h2 style="color:#fff;">Service Highlights</h2>
+      <p class="section-intro" style="color:rgba(255,255,255,0.9);">
+        VertexOps Global is built to help businesses improve operational consistency, maintain strong customer communication, and keep essential digital and support functions moving with confidence.
+      </p>
+      <div class="highlight-grid">
+        <div class="highlight-box">
+          <h3>Professional Brand Presence</h3>
+          <p>Positioned as a serious support company with a scalable service model and polished digital presentation.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Flexible Support Delivery</h3>
+          <p>Available for ongoing business support, project work, overflow tasks, and growth-stage operational help.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Cross-Functional Value</h3>
+          <p>Combines operations support, customer communication, reporting, web maintenance, and digital assistance.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Attractive Client Experience</h3>
+          <p>Designed to help companies feel organized, supported, and professionally represented at every touchpoint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</header>
+  <section id="industries">
+    <div class="container industries-wrap">
+      <div class="panel">
+        <h2>Industries We Support</h2>
+        <p class="section-intro">
+          Our service model is especially well suited for businesses that need reliable back-office, support, and digital execution.
+        </p>
+        <ul>
+          <li>Logistics and transportation companies</li>
+          <li>eCommerce brands and online retailers</li>
+          <li>Professional services firms</li>
+          <li>Consulting businesses</li>
+          <li>Startups building lean teams</li>
+          <li>Distribution and operations-led organizations</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Professional Contact Paths</h2>
+        <p class="section-intro">
+          Use multiple business channels so potential clients can reach you where they are most comfortable.
+        </p>
+        <ul>
+          <li>Company website contact form</li>
+          <li>LinkedIn company page and messaging</li>
+          <li>Business email outreach</li>
+          <li>Upwork/Fiverr professional service profiles</li>
+          <li>Cold outreach to targeted businesses</li>
+          <li>Future Google Business Profile and domain email</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#industries">Industries</a>
-<a href="#contact">Contact</a>
-</nav>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact VertexOps Global</h2>
+      <p class="section-intro">
+        Let us know what kind of support your business needs. You can use the direct contact details or submit a request below for operations, customer service, reporting, administrative, or website support.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Company Details</h3>
+          <p><strong>Company:</strong> VertexOps Global</p>
+          <p><strong>Email:</strong> vertexopsglobal@gmail.com</p>
+          <p><strong>LinkedIn:</strong> linkedin.com/company/vertexops-global</p>
+          <p><strong>Suggested domain email later:</strong> contact@vertexopsglobal.com</p>
+          <p><strong>Suggested inquiry email later:</strong> support@vertexopsglobal.com</p>
+          <div class="contact-links">
+            <a href="mailto:vertexopsglobal@gmail.com">Email Us</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+          </div>
+          <p class="small-note">Replace the LinkedIn link with your actual company page once created.</p>
+        </div>
 
-<section id="about">
+        <div class="form-box">
+          <h3>Client Request Form</h3>
+          <form id="leadForm" action="https://formsubmit.co/vertexopsglobal@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Client Inquiry - VertexOps Global" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <div class="two-col-form">
+              <input type="text" name="name" placeholder="Full Name" required />
+              <input type="text" name="company" placeholder="Company Name" required />
+            </div>
+            <div class="two-col-form">
+              <input type="email" name="email" placeholder="Business Email" required />
+              <input type="text" name="phone" placeholder="Phone Number" />
+            </div>
+            <div class="two-col-form">
+              <select name="service" required>
+                <option value="">Select Service Needed</option>
+                <option>Business Operations Support</option>
+                <option>Customer Service Management</option>
+                <option>Reporting & Data Services</option>
+                <option>IT & Website Support</option>
+                <option>Administrative Assistance</option>
+                <option>Digital Business Support</option>
+              </select>
+              <select name="timeline">
+                <option value="">Preferred Start Timeline</option>
+                <option>Immediately</option>
+                <option>Within 1 Week</option>
+                <option>Within 2-4 Weeks</option>
+                <option>Exploring Options</option>
+              </select>
+            </div>
+            <textarea name="message" placeholder="Tell us about your needs, project scope, or support requirements."></textarea>
+            <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Send Inquiry</button>
+          </form>
+          <div id="successMessage" class="success-message">Thank you. Your request is ready to be submitted.</div>
+          <p class="small-note">This form uses a free form service. When you publish the site, submit one test inquiry and confirm the email address.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>About VertexOps Global</h2>
+  <footer>
+    <div class="container">
+      <p>© 2026 VertexOps Global. Built for professional business support, digital operations, and scalable remote service delivery.</p>
+    </div>
+  </footer>
 
-<p>
+  <script>
+    const form = document.getElementById('leadForm');
+    const successMessage = document.getElementById('successMessage');
 
-VertexOps Global provides professional remote business support services
-for companies seeking efficient operations, reliable customer service,
-technical assistance, and digital support.
-
-Our goal is to help businesses streamline operations,
-improve responsiveness, and maintain efficient workflows without
-the overhead of expanding internal teams.
-
-</p>
-
-</section>
-
-<section id="services">
-
-<h2>Core Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Business Operations Support</h3>
-<p>
-Workflow coordination, order processing, administrative assistance,
-inventory tracking, and operational support.
-</p>
-</div>
-
-<div class="card">
-<h3>Customer Service Management</h3>
-<p>
-Email support, customer communication, service follow-up,
-and issue coordination.
-</p>
-</div>
-
-<div class="card">
-<h3>Reporting & Data Services</h3>
-<p>
-Excel reporting, KPI dashboards, data analysis, and business reporting.
-</p>
-</div>
-
-<div class="card">
-<h3>IT & Website Support</h3>
-<p>
-HTML/CSS updates, landing pages, website maintenance,
-and digital support services.
-</p>
-</div>
-
-<div class="card">
-<h3>Virtual Administrative Support</h3>
-<p>
-Inbox management, documentation, scheduling, and workflow support.
-</p>
-</div>
-
-<div class="card">
-<h3>Digital Business Support</h3>
-<p>
-LinkedIn management, online presence support,
-and digital operations assistance.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="highlight" id="industries">
-
-<h2>Industries We Support</h2>
-
-<p>
-
-Logistics • eCommerce • Professional Services • Consulting Firms  
-Startups • Operations-driven Businesses • Distribution Companies
-
-</p>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p><b>Company:</b> VertexOps Global</p>
-
-<p><b>Email:</b> vertexopsglobal@gmail.com</p>
-
-<p><b>LinkedIn:</b> linkedin.com/company/vertexops-global</p>
-
-<p>
-
-For inquiries regarding operations support,
-IT services, or digital business support,
-please reach out using the email above.
-
-</p>
-
-</section>
-
-<footer>
-
-<p>© 2026 VertexOps Global. All Rights Reserved.</p>
-
-</footer>
-
+    form.addEventListener('submit', function () {
+      successMessage.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
