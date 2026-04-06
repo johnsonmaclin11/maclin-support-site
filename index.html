@@ -3,30 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VertexOps | Business Support & Outsourcing</title>
+  <title>VertexOps | Modern Business Support</title>
   <meta
     name="description"
-    content="VertexOps provides virtual assistant, administrative, recruitment, and customer support services for growing businesses."
+    content="VertexOps provides administrative support, virtual assistance, recruitment support, and customer operations services for growing businesses."
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --line: #e5e7eb;
-      --brand: #4f46e5;
-      --brand-dark: #3730a3;
-      --light: #f8fafc;
+      --bg: #f5f7ff;
       --white: #ffffff;
-      --success: #0f766e;
+      --dark: #101828;
+      --text: #475467;
+      --line: #e4e7ec;
+      --primary: #6d5efc;
+      --primary-dark: #5746f6;
+      --secondary: #eef2ff;
+      --accent: #d9d6ff;
+      --success: #12b76a;
+      --shadow: 0 20px 50px rgba(16, 24, 40, 0.08);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --max: 1180px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -34,10 +40,10 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--light);
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #f8f9ff 0%, #eef2ff 100%);
+      color: var(--dark);
+      line-height: 1.65;
     }
 
     a {
@@ -45,107 +51,154 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
-      width: min(1120px, 92%);
+      width: min(var(--max), 92%);
       margin: 0 auto;
     }
 
     .btn {
-      display: inline-block;
-      background: var(--brand);
-      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: 0.2s ease;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      background: var(--brand-dark);
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(109, 94, 252, 0.25);
     }
 
-    .btn-outline {
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--dark);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 52px;
+    }
+
+    .section-title span {
       display: inline-block;
-      border: 2px solid var(--brand);
-      color: var(--brand);
-      padding: 12px 20px;
-      border-radius: 10px;
+      font-size: 14px;
       font-weight: 700;
-      transition: 0.2s ease;
+      color: var(--primary);
+      background: #eef2ff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
     }
 
-    .btn-outline:hover {
-      background: var(--brand);
-      color: var(--white);
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: var(--text);
+      font-size: 17px;
     }
 
     header {
-      background: var(--bg);
-      color: var(--white);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.75);
+      border-bottom: 1px solid rgba(228, 231, 236, 0.75);
     }
 
     .nav {
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 26px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: -0.8px;
     }
 
     .logo span {
-      color: #a5b4fc;
+      color: var(--primary);
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
       align-items: center;
+      gap: 26px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: var(--white);
-      font-size: 0.95rem;
-      opacity: 0.92;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 15px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
-      color: var(--white);
-      padding: 90px 0 70px;
+      padding: 80px 0 40px;
     }
 
-    .hero-grid {
+    .hero-wrap {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
       align-items: center;
     }
 
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 22px;
+    }
+
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -2px;
       margin-bottom: 18px;
     }
 
     .hero p {
-      font-size: 1.08rem;
-      color: #e2e8f0;
-      max-width: 650px;
+      color: var(--text);
+      font-size: 18px;
+      max-width: 620px;
       margin-bottom: 28px;
     }
 
@@ -153,183 +206,296 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 34px;
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 28px;
-      backdrop-filter: blur(10px);
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .hero-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+    .hero-meta .meta-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      min-width: 170px;
     }
 
-    .hero-card ul {
-      list-style: none;
+    .hero-meta .meta-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
     }
 
-    .hero-card li {
-      margin-bottom: 12px;
-      color: #e2e8f0;
+    .hero-meta .meta-card span {
+      color: var(--text);
+      font-size: 14px;
     }
 
-    section {
-      padding: 80px 0;
+    .visual-card {
+      position: relative;
+      background: linear-gradient(145deg, #ffffff 0%, #eef2ff 100%);
+      border: 1px solid rgba(228, 231, 236, 0.9);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      overflow: hidden;
+      min-height: 560px;
     }
 
-    .section-title {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px;
+    .visual-glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(109,94,252,0.18) 0%, rgba(109,94,252,0) 70%);
+      top: -40px;
+      right: -40px;
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    .section-title h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-    }
-
-    .stats {
-      background: var(--white);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .stats-grid {
+    .dashboard {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
+      gap: 18px;
     }
 
-    .stat-box {
-      padding: 24px 10px;
+    .mini-panel {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 16px 35px rgba(16,24,40,0.05);
     }
 
-    .stat-box h3 {
-      font-size: 2rem;
-      color: var(--brand);
-      margin-bottom: 6px;
+    .mini-panel h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
     }
 
-    .stat-box p {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .mini-panel p {
+      color: var(--text);
+      font-size: 14px;
     }
 
-    .services-grid,
-    .why-grid,
-    .contact-grid {
+    .bars {
+      margin-top: 16px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .bar-row span {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background: #eaecf0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), #9b8cff);
+    }
+
+    .floating-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .small-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .small-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .small-card p {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
     .card {
-      background: var(--white);
+      background: rgba(255,255,255,0.92);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: var(--radius);
       padding: 28px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #6d5efc, #9b8cff);
+      color: white;
+      font-size: 24px;
+      margin-bottom: 18px;
     }
 
     .card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
     .card p {
-      color: var(--muted);
+      color: var(--text);
       margin-bottom: 14px;
     }
 
     .card ul {
       padding-left: 18px;
-      color: var(--muted);
+      color: var(--text);
     }
 
-    .about {
-      background: #eef2ff;
+    .card ul li {
+      margin-bottom: 8px;
     }
 
-    .about-grid {
+    .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 28px;
       align-items: center;
     }
 
-    .about-box {
-      background: var(--white);
-      padding: 28px;
-      border-radius: 18px;
+    .panel {
+      background: rgba(255,255,255,0.92);
       border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
     }
 
-    .about-box h3 {
-      margin-bottom: 10px;
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
     }
 
-    .about-box p {
-      color: var(--muted);
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
     }
 
-    .cta {
-      background: linear-gradient(135deg, #312e81, #4f46e5);
-      color: var(--white);
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(18,183,106,0.12);
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #6d5efc 0%, #4b3cf6 100%);
+      color: white;
       text-align: center;
-      border-radius: 24px;
-      padding: 50px 28px;
+      border-radius: 32px;
+      padding: 56px 28px;
+      box-shadow: 0 30px 60px rgba(109, 94, 252, 0.28);
     }
 
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .cta-box h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
 
-    .cta p {
-      color: #e0e7ff;
+    .cta-box p {
       max-width: 700px;
       margin: 0 auto 24px;
+      color: rgba(255,255,255,0.9);
+      font-size: 17px;
     }
 
-    .contact .card p,
-    .contact .card a {
-      color: var(--muted);
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .contact-card p {
+      color: var(--text);
+      margin-top: 10px;
+      font-size: 14px;
     }
 
     footer {
-      background: var(--bg);
-      color: #cbd5e1;
-      padding: 28px 0;
+      padding: 28px 0 42px;
       text-align: center;
+      color: var(--text);
+      font-size: 14px;
     }
 
-    footer a {
-      color: #c7d2fe;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid,
-      .services-grid,
-      .why-grid,
-      .contact-grid,
-      .stats-grid {
+    @media (max-width: 1100px) {
+      .hero-wrap,
+      .split,
+      .grid-3,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
+    }
 
+    @media (max-width: 760px) {
       .nav {
         flex-direction: column;
-        gap: 14px;
+        justify-content: center;
+        padding: 16px 0;
       }
 
       .nav-links {
@@ -337,131 +503,133 @@
       }
 
       .hero {
-        padding-top: 70px;
+        padding-top: 60px;
+      }
+
+      .floating-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-card {
+        min-height: auto;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="container nav">
       <div class="logo">Vertex<span>Ops</span></div>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container hero-wrap">
       <div>
-        <h1>Smart Business Support for Growing Companies</h1>
+        <div class="hero-badge">Modern remote support for growing businesses</div>
+        <h1>Business support that looks sharp and works fast.</h1>
         <p>
-          VertexOps helps startups and businesses streamline operations with
-          reliable remote support. We provide administrative assistance,
-          recruitment support, customer service, and virtual operations support
-          so you can focus on growth.
+          VertexOps helps startups, entrepreneurs, and growing companies stay organized with
+          professional virtual assistance, recruitment support, administrative services,
+          and customer operations support.
         </p>
+
         <div class="hero-actions">
-          <a class="btn" href="#contact">Request a Consultation</a>
-          <a class="btn-outline" href="#services">View Services</a>
+          <a class="btn btn-primary" href="#contact">Get Started</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
         </div>
-        <p><strong>Email:</strong> contact@vertexops.net</p>
-      </div>
 
-      <div class="hero-card">
-        <h3>What We Do</h3>
-        <ul>
-          <li>✔ Virtual Assistant Services</li>
-          <li>✔ Administrative Support</li>
-          <li>✔ Recruitment Assistance</li>
-          <li>✔ Customer Support</li>
-          <li>✔ Data Entry & Operations Support</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat-box">
-        <h3>Remote</h3>
-        <p>Flexible support for modern businesses</p>
-      </div>
-      <div class="stat-box">
-        <h3>Fast</h3>
-        <p>Streamlined onboarding and quick response</p>
-      </div>
-      <div class="stat-box">
-        <h3>Reliable</h3>
-        <p>Professional support focused on consistency</p>
-      </div>
-      <div class="stat-box">
-        <h3>Scalable</h3>
-        <p>Services designed to grow with your company</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container about-grid">
-      <div>
-        <div class="section-title" style="text-align:left; margin:0 0 20px 0;">
-          <h2>About VertexOps</h2>
-          <p>
-            We support business owners, startups, and growing teams with daily
-            operational tasks that keep companies organized and moving forward.
-          </p>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <strong>Remote-First</strong>
+            <span>Flexible support for modern teams</span>
+          </div>
+          <div class="meta-card">
+            <strong>Operations Focused</strong>
+            <span>Clear systems and dependable execution</span>
+          </div>
+          <div class="meta-card">
+            <strong>Client Ready</strong>
+            <span>Built for startups and small businesses</span>
+          </div>
         </div>
-        <p style="color:#475569; margin-bottom:16px;">
-          VertexOps is a business support and outsourcing company focused on
-          helping organizations save time, improve efficiency, and reduce
-          operational pressure. Our services are ideal for businesses that need
-          dependable remote assistance without the cost of building large
-          in-house teams.
-        </p>
-        <p style="color:#475569;">
-          We believe in professionalism, clear communication, and long-term
-          client relationships built on trust and results.
-        </p>
       </div>
 
-      <div class="about-box">
-        <h3>Our Mission</h3>
-        <p>
-          To help businesses streamline operations through reliable remote
-          support services that improve productivity, efficiency, and growth.
-        </p>
-        <br />
-        <h3>Our Vision</h3>
-        <p>
-          To become a trusted support partner for growing companies that need
-          flexible, modern, and dependable business operations assistance.
-        </p>
+      <div class="visual-card">
+        <div class="visual-glow"></div>
+        <div class="dashboard">
+          <div class="mini-panel">
+            <h3>Operations Dashboard</h3>
+            <p>Streamlined support services designed to keep your workflow organized and efficient.</p>
+            <div class="bars">
+              <div class="bar-row">
+                <span>Administrative Support</span>
+                <div class="bar"><div class="bar-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="bar-row">
+                <span>Recruitment Assistance</span>
+                <div class="bar"><div class="bar-fill" style="width: 78%;"></div></div>
+              </div>
+              <div class="bar-row">
+                <span>Customer Support</span>
+                <div class="bar"><div class="bar-fill" style="width: 86%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-cards">
+            <div class="small-card">
+              <strong>Virtual Assistance</strong>
+              <p>Inbox support, scheduling, coordination, research, and task management.</p>
+            </div>
+            <div class="small-card">
+              <strong>Recruitment Support</strong>
+              <p>Candidate sourcing, resume screening, and interview coordination.</p>
+            </div>
+            <div class="small-card">
+              <strong>Customer Operations</strong>
+              <p>Client communication, support workflows, and service follow-up.</p>
+            </div>
+            <div class="small-card">
+              <strong>Business Efficiency</strong>
+              <p>Support systems that help small teams move faster with less stress.</p>
+            </div>
+          </div>
+
+          <div class="mini-panel">
+            <h3>Built to Feel Premium</h3>
+            <p>
+              This design gives your GitHub site a more polished, startup-style look
+              instead of a basic plain page.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <section class="section" id="services">
     <div class="container">
       <div class="section-title">
-        <h2>Our Services</h2>
+        <span>Services</span>
+        <h2>Professional support services for daily business operations</h2>
         <p>
-          Practical support services designed to help businesses stay organized,
-          responsive, and efficient.
+          Focused solutions that help you save time, stay organized, and scale more efficiently.
         </p>
       </div>
 
-      <div class="services-grid">
+      <div class="grid-3">
         <div class="card">
+          <div class="icon">✦</div>
           <h3>Administrative Support</h3>
-          <p>
-            Professional assistance for day-to-day business tasks and internal
-            organization.
-          </p>
+          <p>Reliable day-to-day assistance that helps keep your business organized.</p>
           <ul>
             <li>Email management</li>
             <li>Calendar scheduling</li>
@@ -471,142 +639,140 @@
         </div>
 
         <div class="card">
+          <div class="icon">◉</div>
           <h3>Virtual Assistant Services</h3>
-          <p>
-            Reliable remote support for entrepreneurs, executives, and growing
-            teams.
-          </p>
+          <p>Flexible remote support for entrepreneurs, founders, and growing teams.</p>
           <ul>
-            <li>Task coordination</li>
+            <li>Task management</li>
             <li>Online research</li>
-            <li>CRM updates</li>
             <li>Meeting support</li>
+            <li>CRM updates</li>
           </ul>
         </div>
 
         <div class="card">
+          <div class="icon">◎</div>
           <h3>Recruitment Support</h3>
-          <p>
-            Assistance with sourcing, screening, and organizing hiring workflows.
-          </p>
+          <p>Structured support for hiring workflows and candidate coordination.</p>
           <ul>
             <li>Candidate sourcing</li>
             <li>Resume screening</li>
             <li>Interview coordination</li>
-            <li>Applicant tracking support</li>
+            <li>Applicant tracking</li>
           </ul>
         </div>
 
         <div class="card">
+          <div class="icon">✳</div>
           <h3>Customer Support</h3>
-          <p>
-            Help your business stay responsive and maintain strong client
-            communication.
-          </p>
+          <p>Responsive communication support that improves the customer experience.</p>
           <ul>
             <li>Email support</li>
-            <li>Customer inquiries</li>
             <li>Ticket handling</li>
             <li>Client follow-up</li>
+            <li>Service responses</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">◇</div>
+          <h3>Operations Assistance</h3>
+          <p>Support systems that reduce workload and increase consistency across tasks.</p>
+          <ul>
+            <li>Workflow support</li>
+            <li>Process organization</li>
+            <li>Internal coordination</li>
+            <li>Task tracking</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">▣</div>
+          <h3>Business Support</h3>
+          <p>General support services tailored to startups, small businesses, and remote teams.</p>
+          <ul>
+            <li>Back-office support</li>
+            <li>Business coordination</li>
+            <li>Remote assistance</li>
+            <li>Administrative follow-up</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="why-us">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why Choose VertexOps</h2>
-        <p>
-          We help businesses reduce workload, improve consistency, and stay
-          focused on growth.
+  <section class="section" id="about">
+    <div class="container split">
+      <div class="panel">
+        <div class="section-title" style="text-align:left; margin:0 0 16px 0;">
+          <span>About VertexOps</span>
+          <h2 style="margin-bottom:12px;">A cleaner, smarter support partner for modern businesses</h2>
+          <p style="margin:0;">
+            VertexOps is built to help growing companies handle the operational work that slows them down.
+          </p>
+        </div>
+        <p style="color:#475467;">
+          We provide professional remote support services for businesses that need dependable help without building
+          a large in-house team. Our focus is on clarity, communication, and efficient execution.
         </p>
       </div>
 
-      <div class="why-grid">
-        <div class="card">
-          <h3>Focused Operations Support</h3>
-          <p>
-            We concentrate on core support services that businesses actually
-            need, rather than offering too many unrelated services.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Professional Communication</h3>
-          <p>
-            Clear communication, dependable follow-through, and a client-first
-            approach in every interaction.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Flexible for Small Teams</h3>
-          <p>
-            Ideal for startups, entrepreneurs, and growing businesses that need
-            flexible support without hiring large in-house teams.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Growth-Oriented Mindset</h3>
-          <p>
-            Our support is designed to help your company operate smoothly so you
-            can focus on strategy, sales, and scaling.
-          </p>
+      <div class="panel">
+        <h3 style="font-size:28px; margin-bottom:12px;">Why businesses choose us</h3>
+        <div class="check-list">
+          <div class="check-item"><div class="check">✓</div><div>Professional presentation and modern support positioning</div></div>
+          <div class="check-item"><div class="check">✓</div><div>Flexible service structure for startups and small businesses</div></div>
+          <div class="check-item"><div class="check">✓</div><div>Clear communication and organized workflows</div></div>
+          <div class="check-item"><div class="check">✓</div><div>Reliable remote support for daily operations</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="section" id="why">
     <div class="container">
-      <div class="cta">
-        <h2>Let VertexOps Support Your Growth</h2>
+      <div class="cta-box">
+        <h2>Support your growth without adding operational stress.</h2>
         <p>
-          Whether you need administrative help, recruitment assistance, or
-          customer support, VertexOps is ready to help your business operate
-          more efficiently.
+          VertexOps helps businesses stay focused on strategy, sales, and growth while we support the systems,
+          tasks, and communication that keep your operations moving.
         </p>
-        <a class="btn" href="#contact">Contact Us Today</a>
+        <a class="btn btn-secondary" href="#contact">Contact VertexOps</a>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section class="section" id="contact">
     <div class="container">
       <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>
-          Reach out for service inquiries, support requests, or partnership
-          opportunities.
-        </p>
+        <span>Contact</span>
+        <h2>Let’s connect</h2>
+        <p>Reach out for general inquiries, support, sales, or career opportunities.</p>
       </div>
 
       <div class="contact-grid">
-        <div class="card">
-          <h3>General Inquiries</h3>
-          <p><a href="mailto:contact@vertexops.net">contact@vertexops.net</a></p>
-          <p>For general questions and service inquiries.</p>
+        <div class="contact-card">
+          <h3>General</h3>
+          <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
+          <p>General business questions and service inquiries.</p>
         </div>
 
-        <div class="card">
+        <div class="contact-card">
           <h3>Sales</h3>
-          <p><a href="mailto:sales@vertexops.net">sales@vertexops.net</a></p>
-          <p>For business opportunities and new client discussions.</p>
+          <a href="mailto:sales@vertexops.net">sales@vertexops.net</a>
+          <p>New client discussions and business opportunities.</p>
         </div>
 
-        <div class="card">
+        <div class="contact-card">
           <h3>Support</h3>
-          <p><a href="mailto:support@vertexops.net">support@vertexops.net</a></p>
-          <p>For current client support and service assistance.</p>
+          <a href="mailto:support@vertexops.net">support@vertexops.net</a>
+          <p>Current client support and service-related help.</p>
         </div>
 
-        <div class="card">
+        <div class="contact-card">
           <h3>Careers</h3>
-          <p><a href="mailto:careers@vertexops.net">careers@vertexops.net</a></p>
-          <p>For applicants and future team opportunities.</p>
+          <a href="mailto:careers@vertexops.net">careers@vertexops.net</a>
+          <p>Job applications and future team opportunities.</p>
         </div>
       </div>
     </div>
@@ -614,9 +780,9 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 VertexOps. All rights reserved.</p>
-      <p>Business Support & Outsourcing Services</p>
+      © 2026 VertexOps. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>
