@@ -133,9 +133,9 @@
     }
 
     .brand-mark {
-      width: 64px;
-      height: 64px;
-      filter: drop-shadow(0 0 14px rgba(87, 194, 255, 0.58)) drop-shadow(0 0 28px rgba(37, 115, 255, 0.32));
+      width: 68px;
+      height: 68px;
+      filter: drop-shadow(0 0 16px rgba(87, 194, 255, 0.62)) drop-shadow(0 0 32px rgba(37, 115, 255, 0.34));
       flex: 0 0 auto;
       animation: pulseGlow 3.5s ease-in-out infinite alternate;
     }
@@ -481,6 +481,100 @@
       font-weight: 800;
     }
 
+    .service-pages {
+      display: none;
+    }
+
+    .service-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(2, 6, 14, 0.84);
+      backdrop-filter: blur(12px);
+      display: none;
+      padding: 26px 14px;
+      overflow-y: auto;
+    }
+
+    .service-overlay.active {
+      display: block;
+    }
+
+    .service-shell {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(10, 20, 37, 0.96), rgba(5, 12, 24, 0.98));
+      border: 1px solid rgba(122, 164, 255, 0.16);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .service-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 0;
+      min-height: 460px;
+    }
+
+    .service-copy {
+      padding: 42px 38px 34px;
+    }
+
+    .service-copy h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+
+    .service-copy p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0 0 16px;
+    }
+
+    .service-copy ul {
+      padding-left: 18px;
+      color: #dce9ff;
+      line-height: 1.7;
+      margin: 18px 0 0;
+    }
+
+    .service-image {
+      min-height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(122, 164, 255, 0.12);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .close-page {
+      appearance: none;
+      border: 1px solid rgba(122, 164, 255, 0.18);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .service-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
     .showcase {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
@@ -518,6 +612,7 @@
     }
 
     .image-tile {
+      text-decoration: none;
       min-height: 250px;
       padding: 0;
       position: relative;
@@ -735,6 +830,7 @@
     }
 
     @media (max-width: 1180px) {
+      .service-hero { grid-template-columns: 1fr; }
       .hero-grid, .showcase, .split, .inquiry, .cards-3 { grid-template-columns: 1fr; }
       .mini-grid { grid-template-columns: 1fr 1fr; }
       .hero-visual { min-height: 680px; }
@@ -779,17 +875,24 @@
   <header>
     <div class="container nav">
       <a href="#home" class="brand">
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <svg class="brand-mark" viewBox="0 0 90 90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="vGlowFinal" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#86eeff"/>
-              <stop offset="52%" stop-color="#51bbff"/>
-              <stop offset="100%" stop-color="#1d64ff"/>
+            <linearGradient id="crystalV1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#9af7ff"/>
+              <stop offset="55%" stop-color="#49d8ff"/>
+              <stop offset="100%" stop-color="#1d7dff"/>
+            </linearGradient>
+            <linearGradient id="crystalV2" x1="0" y1="0" x2="0.8" y2="1">
+              <stop offset="0%" stop-color="#7ceeff"/>
+              <stop offset="100%" stop-color="#1572ff"/>
             </linearGradient>
           </defs>
-          <path d="M9 12 L24 12 L32 42 L40 12 L55 12 L38 54 L26 54 Z" fill="none" stroke="url(#vGlowFinal)" stroke-width="6" stroke-linejoin="round"/>
-          <path d="M14 12 L26 12 L32 33" fill="none" stroke="#c8fbff" stroke-opacity="0.92" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M50 12 L38 12 L32 33" fill="none" stroke="#89ddff" stroke-opacity="0.7" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M14 18 L38 18 L45 29 L52 18 L76 18 L45 74 Z" fill="url(#crystalV1)" opacity="0.96"/>
+          <path d="M38 18 L45 29 L45 74 L28 34 Z" fill="#70f0ff" opacity="0.78"/>
+          <path d="M52 18 L45 29 L45 74 L62 34 Z" fill="#1686ff" opacity="0.55"/>
+          <path d="M22 22 L36 22 L43 31" fill="none" stroke="#d9ffff" stroke-opacity="0.72" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M68 22 L54 22 L47 31" fill="none" stroke="#d9ffff" stroke-opacity="0.42" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M14 18 L38 18 L45 29 L52 18 L76 18 L45 74 Z" fill="none" stroke="url(#crystalV2)" stroke-width="2.2" stroke-linejoin="round"/>
         </svg>
         <span class="brand-text">
           <strong>VertexOps</strong>
@@ -863,17 +966,17 @@
           <article class="card">
             <h3>Operations Support</h3>
             <p>Execution support for recurring tasks, internal coordination, documentation, inbox flow, client-facing admin, and business process consistency.</p>
-            <a href="#contact">Discuss Operations →</a>
+            <a class="service-link" href="#page-operations-support" data-page="page-operations-support">View service details →</a>
           </article>
           <article class="card">
             <h3>Digital Systems Support</h3>
             <p>Website updates, branded business email setup, domain support, contact flow planning, and light technical coordination for a stronger online presence.</p>
-            <a href="#contact">Discuss Digital Support →</a>
+            <a class="service-link" href="#page-digital-systems" data-page="page-digital-systems">View service details →</a>
           </article>
           <article class="card">
             <h3>Customer & Back-Office Support</h3>
             <p>Practical help with service workflows, support routing, communication follow-up, back-office organization, and better operational consistency.</p>
-            <a href="#contact">Discuss Back-Office Support →</a>
+            <a class="service-link" href="#page-client-execution" data-page="page-client-execution">View service details →</a>
           </article>
         </div>
       </div>
@@ -889,22 +992,22 @@
           </div>
         </div>
         <div class="mini-grid">
-          <div class="panel card image-tile">
-            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=900&q=80" alt="Recruitment discussion in a modern office">
+          <a class="panel card image-tile service-link" href="#page-recruitment-support" data-page="page-recruitment-support">
+            <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=900&q=80" alt="Recruitment discussion in a modern office">
             <div class="image-label">Recruitment support</div>
-          </div>
-          <div class="panel card image-tile">
+          </a>
+          <a class="panel card image-tile service-link" href="#page-digital-systems" data-page="page-digital-systems">
             <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Digital systems and dashboard workspace">
             <div class="image-label">Digital systems</div>
-          </div>
-          <div class="panel card image-tile">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Business operations planning team">
+          </a>
+          <a class="panel card image-tile service-link" href="#page-operations-planning" data-page="page-operations-planning">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Business operations planning team">
             <div class="image-label">Operations planning</div>
-          </div>
-          <div class="panel card image-tile">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Client support and team collaboration">
+          </a>
+          <a class="panel card image-tile service-link" href="#page-client-execution" data-page="page-client-execution">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Client support and team collaboration">
             <div class="image-label">Client execution</div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -922,17 +1025,17 @@
           <article class="card">
             <h3>Candidate Sourcing</h3>
             <p>Find better-fit candidates faster with structured sourcing support designed for cleaner pipelines and stronger role alignment.</p>
-            <a href="#contact">Discuss Hiring Needs →</a>
+            <a class="service-link" href="#page-candidate-sourcing" data-page="page-candidate-sourcing">View service details →</a>
           </article>
           <article class="card">
             <h3>Interview Coordination</h3>
             <p>Reduce delays in the hiring process with organized scheduling, communication follow-up, and candidate coordination.</p>
-            <a href="#contact">Request Support →</a>
+            <a class="service-link" href="#page-interview-coordination" data-page="page-interview-coordination">View service details →</a>
           </article>
           <article class="card">
             <h3>Recruitment Operations</h3>
             <p>Create a more professional candidate experience with support that helps your hiring workflow feel polished, responsive, and efficient.</p>
-            <a href="#contact">Get Started →</a>
+            <a class="service-link" href="#page-recruitment-support" data-page="page-recruitment-support">View service details →</a>
           </article>
         </div>
       </div>
@@ -941,37 +1044,38 @@
     <section class="section" id="hiring">
       <div class="container split">
         <div class="panel card">
-          <div class="eyebrow">How it works</div>
-          <h2 style="margin:0 0 10px; font-size:2.4rem; letter-spacing:-0.05em;">A simple path from inquiry to support.</h2>
-          <p class="form-note">The site is already set up to look polished today and stay useful later when you connect a backend, CRM, form service, autoresponder, or inquiry dashboard.</p>
+          <div class="eyebrow">What to expect</div>
+          <h2 style="margin:0 0 10px; font-size:2.4rem; letter-spacing:-0.05em;">A clear and professional path from first message to active support.</h2>
+          <p class="form-note">VertexOps keeps the process simple so clients know what happens next, what information is needed, and how support begins without confusion or delay.</p>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
               <div>
-                <strong>Submit an inquiry</strong>
-                <p>Visitors complete the inquiry form with service type, project details, and business needs.</p>
+                <strong>Share your needs</strong>
+                <p>Send a message with your business goals, service needs, timeline, and the kind of support you are looking for.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div>
-                <strong>Route by service type</strong>
-                <p>Operations, recruitment, support, and digital system inquiries can later route to different inboxes or automations.</p>
+                <strong>Receive the right service path</strong>
+                <p>Your request is reviewed and aligned to the most relevant support area, whether that is operations, recruitment, systems, or back-office execution.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div>
-                <strong>Follow up professionally</strong>
-                <p>With a backend added later, this same form can save messages, trigger notifications, and send automatic replies.</p>
+                <strong>Move into next steps quickly</strong>
+                <p>Once the need is clear, the conversation moves into scope, follow-up, and the best support format for your business.</p>
               </div>
             </div>
           </div>
           <div class="tags">
-            <span class="tag">Form-ready structure</span>
-            <span class="tag">Auto-reply compatible</span>
-            <span class="tag">CRM / Formspree / Zapier ready</span>
+            <span class="tag">Clear onboarding</span>
+            <span class="tag">Fast follow-up</span>
+            <span class="tag">Professional support flow</span>
           </div>
+          
         </div>
 
         <div class="panel card" id="about">
@@ -1098,6 +1202,204 @@
     </section>
   </main>
 
+    <div class="service-pages">
+    <section class="service-overlay" id="page-operations-support">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Operations Support</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Operations Support</div>
+            <h2>Reliable execution for teams that need structure and follow-through.</h2>
+            <p>VertexOps supports the work that keeps a business organized behind the scenes: recurring coordination, business admin, communication flow, documentation, inbox support, and task follow-up.</p>
+            <p>This service is designed for founders, managers, and growing teams that need dependable execution without adding unnecessary complexity.</p>
+            <ul>
+              <li>Business administration and recurring workflow support</li>
+              <li>Inbox organization and follow-up structure</li>
+              <li>Documentation, coordination, and execution support</li>
+              <li>Flexible support for growth-stage operations</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Request support</a>
+              <a class="btn secondary" href="mailto:contact@vertexops.net?subject=Operations%20Support">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-digital-systems">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Digital Systems Support</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Digital Systems</div>
+            <h2>Sharper digital infrastructure for a more professional business presence.</h2>
+            <p>VertexOps helps businesses strengthen the digital side of operations through website updates, branded email setup, domain support, and service flow planning.</p>
+            <p>This is ideal for businesses that want a cleaner online presence without turning simple execution into a major technical project.</p>
+            <ul>
+              <li>Website updates and support coordination</li>
+              <li>Business email, domain, and contact flow setup</li>
+              <li>Digital support for smoother client-facing systems</li>
+              <li>Light technical execution with a business-first approach</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Start a digital project</a>
+              <a class="btn secondary" href="mailto:contact@vertexops.net?subject=Digital%20Systems%20Support">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-client-execution">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Customer & Back-Office Support</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Client Execution</div>
+            <h2>Back-office support that improves consistency and client experience.</h2>
+            <p>VertexOps helps keep service businesses organized through workflow support, communication routing, follow-up structure, and practical back-office coordination.</p>
+            <p>The result is a business that feels more responsive, more organized, and more professional to both clients and internal teams.</p>
+            <ul>
+              <li>Support routing and communication follow-up</li>
+              <li>Back-office organization and workflow cleanup</li>
+              <li>Improved execution across recurring service tasks</li>
+              <li>Stronger consistency in client-facing processes</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Discuss support needs</a>
+              <a class="btn secondary" href="mailto:contact@vertexops.net?subject=Back-Office%20Support">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-candidate-sourcing">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Candidate Sourcing</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Candidate Sourcing</div>
+            <h2>Find stronger-fit candidates with a cleaner, more focused pipeline.</h2>
+            <p>VertexOps supports teams that want a more organized sourcing process and better role alignment before interviews begin.</p>
+            <p>This service helps reduce wasted time by creating a more deliberate and more targeted candidate flow.</p>
+            <ul>
+              <li>Structured sourcing support for open roles</li>
+              <li>Cleaner pipeline visibility and candidate organization</li>
+              <li>Better alignment between role needs and outreach</li>
+              <li>Support for growing teams that need practical recruiting help</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Discuss hiring needs</a>
+              <a class="btn secondary" href="mailto:careers@vertexops.net?subject=Candidate%20Sourcing">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-interview-coordination">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Interview Coordination</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Interview Coordination</div>
+            <h2>Keep interviews moving with less delay and stronger communication.</h2>
+            <p>VertexOps helps businesses reduce friction in the interview process through scheduling support, communication follow-up, and candidate coordination.</p>
+            <p>That creates a more organized experience for internal teams and a more polished experience for candidates.</p>
+            <ul>
+              <li>Interview scheduling and calendar coordination</li>
+              <li>Candidate follow-up and communication support</li>
+              <li>Cleaner hiring flow with fewer avoidable delays</li>
+              <li>More professional coordination across interview stages</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Request coordination support</a>
+              <a class="btn secondary" href="mailto:careers@vertexops.net?subject=Interview%20Coordination">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-recruitment-support">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Recruitment Operations</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Recruitment Operations</div>
+            <h2>Create a more polished, responsive, and efficient hiring experience.</h2>
+            <p>VertexOps helps businesses strengthen the operational side of recruitment so hiring feels more organized from first contact to next steps.</p>
+            <p>This is ideal for teams that want better candidate experience, better internal coordination, and a smoother recruiting workflow overall.</p>
+            <ul>
+              <li>Recruitment workflow support across active hiring needs</li>
+              <li>Candidate experience improvements and communication structure</li>
+              <li>Organized support for hiring-related operations</li>
+              <li>Scalable recruiting help for growing companies</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Get recruitment support</a>
+              <a class="btn secondary" href="mailto:careers@vertexops.net?subject=Recruitment%20Operations">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-overlay" id="page-operations-planning">
+      <div class="service-shell">
+        <div class="service-bar">
+          <strong>Operations Planning</strong>
+          <button class="close-page" data-close>Back to site</button>
+        </div>
+        <div class="service-hero">
+          <div class="service-copy">
+            <div class="eyebrow">Operations Planning</div>
+            <h2>Support for businesses that need stronger planning behind execution.</h2>
+            <p>VertexOps helps teams organize the planning layer behind daily work so execution becomes more consistent and less reactive.</p>
+            <p>That can include structure around recurring tasks, communication flow, handoffs, and support systems that reduce friction.</p>
+            <ul>
+              <li>Planning support for recurring operational work</li>
+              <li>More consistent workflow structure</li>
+              <li>Clearer task visibility and coordination</li>
+              <li>Practical support for scaling operations with less chaos</li>
+            </ul>
+            <div class="service-actions">
+              <a class="btn" href="#contact">Plan with VertexOps</a>
+              <a class="btn secondary" href="mailto:contact@vertexops.net?subject=Operations%20Planning">Email about this service</a>
+            </div>
+          </div>
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80');"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <footer>
     <div class="container footer-wrap">
       <div>© 2026 VertexOps Global. All rights reserved.</div>
@@ -1156,13 +1458,67 @@
       const message = document.getElementById('messageBody').value.trim();
 
       const body = encodeURIComponent(
-        `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nBudget: ${budget}\nTimeline: ${timeline}\nReferral: ${referral}\n\nMessage:\n${message}`
+        `Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${phone}
+Service: ${service}
+Budget: ${budget}
+Timeline: ${timeline}
+Referral: ${referral}
+
+Message:
+${message}`
       );
 
       setTimeout(() => {
         window.location.href = `mailto:contact@vertexops.net?subject=${encodeURIComponent(subject)}&body=${body}`;
       }, 450);
     });
+
+    const overlays = document.querySelectorAll('.service-overlay');
+    const links = document.querySelectorAll('.service-link');
+    const closeButtons = document.querySelectorAll('[data-close]');
+
+    function closeAllPages() {
+      overlays.forEach(o => o.classList.remove('active'));
+      document.body.style.overflow = '';
+      if (location.hash.startsWith('#page-')) history.replaceState(null, '', '#services');
+    }
+
+    function openPage(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      overlays.forEach(o => o.classList.remove('active'));
+      target.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        const pageId = this.dataset.page;
+        if (!pageId) return;
+        e.preventDefault();
+        openPage(pageId);
+        history.replaceState(null, '', `#${pageId}`);
+      });
+    });
+
+    closeButtons.forEach(btn => btn.addEventListener('click', closeAllPages));
+
+    overlays.forEach(overlay => {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeAllPages();
+      });
+    });
+
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAllPages();
+    });
+
+    if (location.hash.startsWith('#page-')) {
+      openPage(location.hash.replace('#', ''));
+    }
   </script>
 </body>
 </html>
