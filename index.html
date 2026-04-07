@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VertexOps | Premium Business Operations Support</title>
+  <title>VertexOps | Business Operations • Recruitment • Support</title>
   <meta
     name="description"
-    content="VertexOps provides premium business operations support, recruitment coordination, administrative services, and customer support for growing companies."
+    content="VertexOps provides premium business operations support, recruitment coordination, administrative services, and customer operations for growing companies."
   />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -18,20 +17,21 @@
 
   <style>
     :root {
-      --bg: #070b14;
-      --bg-2: #0b1120;
-      --panel: rgba(16, 24, 40, 0.78);
-      --panel-strong: rgba(11, 16, 28, 0.92);
-      --line: rgba(255, 255, 255, 0.08);
+      --bg: #07101d;
+      --bg-2: #0a1628;
+      --panel: rgba(11, 20, 35, 0.82);
+      --panel-2: rgba(13, 24, 41, 0.92);
+      --line: rgba(255,255,255,0.08);
       --text: #ffffff;
-      --muted: #aab4c6;
-      --muted-2: #7e8aa3;
-      --primary: #7b6dff;
-      --primary-2: #35c2ff;
-      --success: #2ee6a6;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      --muted: #afbdd1;
+      --muted-2: #7f8ea8;
+      --blue: #2f82ff;
+      --blue-2: #60d8ff;
+      --blue-3: #89aaff;
+      --glow: 0 18px 50px rgba(47, 130, 255, 0.22);
+      --shadow: 0 22px 60px rgba(0,0,0,0.30);
       --radius: 24px;
-      --max: 1220px;
+      --max: 1240px;
     }
 
     * {
@@ -47,13 +47,13 @@
     body {
       font-family: "Inter", sans-serif;
       color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
       background:
-        radial-gradient(circle at 12% 18%, rgba(123,109,255,0.18), transparent 28%),
-        radial-gradient(circle at 85% 12%, rgba(53,194,255,0.12), transparent 28%),
-        radial-gradient(circle at 50% 85%, rgba(123,109,255,0.10), transparent 32%),
-        linear-gradient(180deg, #060a13 0%, #09101b 45%, #060a13 100%);
+        radial-gradient(circle at 10% 20%, rgba(47,130,255,0.14), transparent 24%),
+        radial-gradient(circle at 85% 15%, rgba(96,216,255,0.10), transparent 24%),
+        radial-gradient(circle at 50% 90%, rgba(137,170,255,0.08), transparent 28%),
+        linear-gradient(180deg, #06101c 0%, #091524 46%, #06101c 100%);
+      overflow-x: hidden;
+      line-height: 1.65;
     }
 
     body::before {
@@ -62,69 +62,69 @@
       inset: 0;
       pointer-events: none;
       z-index: -2;
-      opacity: 0.16;
+      opacity: 0.13;
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent 80%);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent 85%);
     }
 
-    .aurora,
-    .aurora::before,
-    .aurora::after {
+    .orb,
+    .orb::before,
+    .orb::after {
       content: "";
       position: fixed;
       border-radius: 50%;
-      filter: blur(70px);
+      filter: blur(75px);
       z-index: -3;
     }
 
-    .aurora {
+    .orb {
       width: 280px;
       height: 280px;
-      top: 90px;
-      left: -40px;
-      background: rgba(123,109,255,0.12);
-      animation: float1 16s ease-in-out infinite;
+      top: 80px;
+      left: -50px;
+      background: rgba(47,130,255,0.13);
+      animation: floatA 18s ease-in-out infinite;
     }
 
-    .aurora::before {
-      width: 300px;
-      height: 300px;
+    .orb::before {
+      width: 320px;
+      height: 320px;
       right: -1100px;
-      top: 120px;
-      background: rgba(53,194,255,0.10);
-      animation: float2 20s ease-in-out infinite;
+      top: 140px;
+      background: rgba(96,216,255,0.10);
+      animation: floatB 20s ease-in-out infinite;
     }
 
-    .aurora::after {
-      width: 260px;
-      height: 260px;
+    .orb::after {
+      width: 250px;
+      height: 250px;
       left: 420px;
-      top: 540px;
-      background: rgba(123,109,255,0.08);
-      animation: float3 18s ease-in-out infinite;
+      top: 580px;
+      background: rgba(137,170,255,0.08);
+      animation: floatC 16s ease-in-out infinite;
     }
 
-    @keyframes float1 {
-      0%, 100% { transform: translate(0,0); }
-      50% { transform: translate(80px, 60px); }
+    @keyframes floatA {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(90px,50px); }
     }
 
-    @keyframes float2 {
-      0%, 100% { transform: translate(0,0); }
-      50% { transform: translate(-120px, 80px); }
+    @keyframes floatB {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-120px,70px); }
     }
 
-    @keyframes float3 {
-      0%, 100% { transform: translate(0,0); }
-      50% { transform: translate(-60px, -90px); }
+    @keyframes floatC {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-70px,-90px); }
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     img {
@@ -138,15 +138,14 @@
     }
 
     .glass {
-      background: linear-gradient(180deg, rgba(17, 25, 40, 0.88), rgba(9, 14, 25, 0.94));
+      background: linear-gradient(180deg, rgba(15,25,42,0.90), rgba(10,18,31,0.94));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
     }
 
     .section {
-      padding: 110px 0;
-      position: relative;
+      padding: 105px 0;
     }
 
     .pill {
@@ -157,7 +156,7 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      color: #dbe5ff;
+      color: #d7e7ff;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       letter-spacing: 0.02em;
@@ -170,13 +169,14 @@
     }
 
     .section-head h2,
-    .hero-copy h2,
-    .panel h3,
-    .cta-box h2,
-    .contact-panel h3 {
+    .hero-copy h1,
+    .story-copy h2,
+    .cta-copy h2,
+    .contact-copy h2,
+    .results-copy h2 {
       font-family: "Manrope", sans-serif;
       letter-spacing: -0.05em;
-      line-height: 1.06;
+      line-height: 1.05;
     }
 
     .section-head h2 {
@@ -189,39 +189,69 @@
       font-size: 17px;
     }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      box-shadow: var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 58px rgba(47, 130, 255, 0.30);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.10);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(18px);
-      background: rgba(6, 10, 19, 0.72);
+      background: rgba(6, 12, 22, 0.76);
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(18px);
     }
 
-    .topbar {
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .top-ticker {
       overflow: hidden;
       white-space: nowrap;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       background: rgba(255,255,255,0.02);
     }
 
-    .ticker {
+    .ticker-track {
       display: inline-block;
       min-width: 100%;
       padding: 11px 0;
-      color: #c8d4ea;
+      animation: marquee 28s linear infinite;
+      color: #c9d9ee;
       font-size: 13px;
-      animation: ticker 28s linear infinite;
     }
 
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .ticker span {
+    .ticker-track span {
       margin-right: 42px;
-      opacity: 0.95;
     }
 
     .pulse-dot {
@@ -230,20 +260,25 @@
       display: inline-block;
       border-radius: 50%;
       margin-right: 10px;
-      background: #35c2ff;
-      box-shadow: 0 0 0 rgba(53,194,255,0.7);
+      background: var(--blue-2);
+      box-shadow: 0 0 0 rgba(96,216,255,0.7);
       animation: pulseDot 2s infinite;
       vertical-align: middle;
     }
 
     @keyframes pulseDot {
-      0% { box-shadow: 0 0 0 0 rgba(53,194,255,0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(53,194,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(53,194,255,0); }
+      0% { box-shadow: 0 0 0 0 rgba(96,216,255,0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(96,216,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(96,216,255,0); }
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .nav {
-      min-height: 84px;
+      min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -256,113 +291,86 @@
       gap: 14px;
     }
 
-    .brand-mark {
-      width: 56px;
-      height: 56px;
+    .brand-icon {
+      width: 58px;
+      height: 58px;
       border-radius: 18px;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, rgba(123,109,255,0.22), rgba(53,194,255,0.12));
+      background: linear-gradient(145deg, rgba(47,130,255,0.22), rgba(96,216,255,0.10));
       border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.03), 0 10px 30px rgba(123,109,255,0.20);
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.03), 0 10px 24px rgba(47,130,255,0.18);
+      overflow: hidden;
     }
 
-    .brand-mark svg {
-      width: 36px;
-      height: 36px;
+    .brand-icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
     }
 
-    .brand-text h1 {
+    .brand-text h2 {
       font-family: "Manrope", sans-serif;
-      font-size: 22px;
+      font-size: 23px;
       line-height: 1;
       letter-spacing: -0.04em;
     }
 
     .brand-text p {
+      margin-top: 5px;
       color: var(--muted-2);
       font-size: 11px;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-top: 5px;
+      letter-spacing: 0.15em;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 26px;
       flex-wrap: wrap;
-      align-items: center;
     }
 
     .nav-links a {
-      color: #d9e3f6;
+      color: #dbe7f7;
       font-size: 15px;
       font-weight: 500;
-      transition: 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: white;
-      box-shadow: 0 18px 40px rgba(123,109,255,0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 24px 46px rgba(123,109,255,0.42);
-    }
-
-    .btn-secondary {
-      color: white;
-      border-color: rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.08);
     }
 
     .hero {
-      padding: 76px 0 56px;
+      padding: 70px 0 46px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 34px;
-      align-items: center;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .hero-copy h2 {
-      font-size: clamp(48px, 7vw, 86px);
-      line-height: 0.98;
+    .hero-copy-wrap {
+      padding: 40px;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(48px, 7vw, 82px);
       margin: 22px 0 18px;
+      line-height: 0.98;
       max-width: 760px;
     }
 
     .hero-copy p {
       color: var(--muted);
       font-size: 18px;
-      max-width: 670px;
+      max-width: 650px;
       margin-bottom: 28px;
     }
 
@@ -370,235 +378,178 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
-    .hero-proof {
+    .hero-points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 780px;
+      gap: 14px;
     }
 
-    .proof-card {
+    .point-box {
       padding: 18px;
       border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    .proof-card strong {
+    .point-box strong {
       display: block;
-      font-size: 14px;
       margin-bottom: 5px;
-      color: #ffffff;
+      font-size: 14px;
     }
 
-    .proof-card span {
+    .point-box span {
       color: var(--muted);
       font-size: 13px;
     }
 
     .hero-visual {
-      position: relative;
-      min-height: 640px;
       border-radius: 30px;
       overflow: hidden;
-      padding: 24px;
+      position: relative;
+      min-height: 620px;
     }
 
-    .hero-image {
+    .hero-visual::before {
+      content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(5,9,18,0.20), rgba(5,9,18,0.72)),
+        linear-gradient(180deg, rgba(5,9,18,0.14), rgba(5,9,18,0.68)),
         url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       transform: scale(1.03);
     }
 
-    .hero-overlay {
+    .hero-visual-content {
       position: relative;
       z-index: 2;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 28px;
     }
 
-    .mini-dashboard,
-    .floating-stat,
-    .team-note {
-      border-radius: 24px;
-    }
-
-    .mini-dashboard {
-      align-self: flex-end;
+    .consult-card {
       width: min(100%, 360px);
-      padding: 22px;
-      background: rgba(8, 13, 23, 0.76);
-      border: 1px solid rgba(255,255,255,0.09);
+      margin-left: auto;
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(8, 14, 24, 0.78);
+      border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
     }
 
-    .mini-dashboard h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+    .consult-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
     }
 
-    .mini-dashboard p {
+    .consult-card p {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
-    .bar-stack {
-      display: grid;
-      gap: 12px;
-    }
-
-    .bar-row span {
-      display: block;
-      font-size: 12px;
-      color: #d8e2f7;
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-
-    .bar {
+    .consult-card input,
+    .consult-card select,
+    .consult-card textarea {
       width: 100%;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 14px;
+      padding: 13px 14px;
+      margin-bottom: 12px;
+      font-family: inherit;
+      font-size: 14px;
     }
 
-    .bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-2));
-      animation: glowbar 4s ease-in-out infinite alternate;
+    .consult-card input::placeholder,
+    .consult-card textarea::placeholder {
+      color: #8ea0ba;
     }
 
-    @keyframes glowbar {
-      from { filter: brightness(0.95); }
-      to { filter: brightness(1.15); }
-    }
-
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-end;
-      flex-wrap: wrap;
-    }
-
-    .floating-stat,
-    .team-note {
+    .hero-bottom-card {
+      max-width: 340px;
       padding: 18px 20px;
-      background: rgba(8, 13, 23, 0.78);
-      border: 1px solid rgba(255,255,255,0.09);
-      backdrop-filter: blur(18px);
+      border-radius: 20px;
+      background: rgba(8, 14, 24, 0.78);
+      border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
     }
 
-    .floating-stat strong {
+    .hero-bottom-card strong {
       display: block;
       font-size: 28px;
       line-height: 1;
       margin-bottom: 6px;
     }
 
-    .floating-stat span,
-    .team-note span {
+    .hero-bottom-card span {
       color: var(--muted);
       font-size: 13px;
     }
 
-    .logos {
-      padding-top: 18px;
-      padding-bottom: 10px;
+    .trust-strip {
+      padding-top: 16px;
     }
 
-    .logos-row,
-    .stats-grid,
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .trust-box {
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      color: #d6e6fb;
+    }
+
     .services-grid,
-    .industries-grid,
-    .team-grid,
+    .results-grid,
+    .testimonials-grid,
     .footer-grid {
       display: grid;
       gap: 22px;
-    }
-
-    .logos-row {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
-    .logo-box {
-      padding: 18px;
-      border-radius: 20px;
-      text-align: center;
-      color: #dbe4f7;
-      font-weight: 700;
-      letter-spacing: 0.10em;
-      font-size: 12px;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat {
-      padding: 28px;
-      border-radius: 24px;
-    }
-
-    .stat-number {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 10px;
-    }
-
-    .stat h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .stat p {
-      color: var(--muted);
-      font-size: 14px;
     }
 
     .services-grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .card {
+    .service-card {
       padding: 30px;
       border-radius: 26px;
-      position: relative;
       transition: 0.3s ease;
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
-    .card:hover,
-    .team-card:hover,
-    .industry:hover {
+    .service-card:hover,
+    .result-card:hover,
+    .testimonial:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.14);
-      box-shadow: 0 25px 60px rgba(74, 108, 255, 0.18);
+      box-shadow: 0 26px 62px rgba(47,130,255,0.16);
     }
 
-    .card::after {
+    .service-card::after {
       content: "";
       position: absolute;
-      inset: auto -40px -40px auto;
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
+      right: -35px;
+      bottom: -35px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(123,109,255,0.14), transparent 70%);
+      background: radial-gradient(circle, rgba(47,130,255,0.15), transparent 70%);
       pointer-events: none;
     }
 
@@ -608,38 +559,37 @@
       border-radius: 18px;
       display: grid;
       place-items: center;
-      margin-bottom: 22px;
-      background: linear-gradient(135deg, rgba(123,109,255,0.22), rgba(53,194,255,0.12));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.04);
       font-size: 28px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(47,130,255,0.24), rgba(96,216,255,0.10));
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .card h3 {
+    .service-card h3 {
       font-size: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .card p {
+    .service-card p {
       color: var(--muted);
-      margin-bottom: 16px;
       font-size: 15px;
+      margin-bottom: 16px;
     }
 
-    .card ul {
+    .service-card ul {
       list-style: none;
       display: grid;
       gap: 10px;
     }
 
-    .card ul li {
-      color: #dde6f8;
-      font-size: 14px;
+    .service-card li {
       position: relative;
       padding-left: 18px;
+      color: #deebfb;
+      font-size: 14px;
     }
 
-    .card ul li::before {
+    .service-card li::before {
       content: "";
       position: absolute;
       left: 0;
@@ -647,37 +597,44 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 0 10px rgba(123,109,255,0.6);
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 0 12px rgba(47,130,255,0.55);
     }
 
-    .split {
+    .story-grid,
+    .recruit-grid,
+    .contact-grid {
       display: grid;
       grid-template-columns: 1.02fr 0.98fr;
       gap: 26px;
       align-items: stretch;
     }
 
-    .panel {
-      padding: 34px;
+    .story-copy,
+    .results-copy,
+    .contact-copy {
+      padding: 36px;
       border-radius: 28px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
-    .panel h3 {
-      font-size: clamp(28px, 4vw, 44px);
-      margin-bottom: 16px;
+    .story-copy h2,
+    .results-copy h2,
+    .contact-copy h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin: 16px 0 14px;
     }
 
-    .panel p {
+    .story-copy p,
+    .results-copy p,
+    .contact-copy p {
       color: var(--muted);
       margin-bottom: 14px;
     }
 
     .check-list {
       display: grid;
-      gap: 16px;
-      margin-top: 26px;
+      gap: 15px;
+      margin-top: 24px;
     }
 
     .check-item {
@@ -686,56 +643,67 @@
       align-items: flex-start;
     }
 
-    .check {
+    .check-dot {
       width: 28px;
       height: 28px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(46,230,166,0.12);
-      color: var(--success);
+      background: rgba(96,216,255,0.12);
+      color: var(--blue-2);
       font-weight: 800;
       flex-shrink: 0;
       margin-top: 2px;
     }
 
     .check-item div:last-child {
-      color: #dbe5f9;
+      color: #dce9fb;
     }
 
-    .image-panel {
-      min-height: 560px;
-      position: relative;
+    .story-image,
+    .recruit-image {
+      border-radius: 28px;
       overflow: hidden;
+      position: relative;
+      min-height: 560px;
     }
 
-    .image-panel::before {
+    .story-image::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(7,11,20,0.16), rgba(7,11,20,0.78)),
+        linear-gradient(180deg, rgba(6,12,22,0.16), rgba(6,12,22,0.76)),
         url("https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       transform: scale(1.03);
     }
 
-    .image-panel-content {
+    .recruit-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6,12,22,0.18), rgba(6,12,22,0.78)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      transform: scale(1.03);
+    }
+
+    .overlay-quote {
       position: relative;
       z-index: 2;
-      display: flex;
       height: 100%;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 16px;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
     }
 
     .quote-box {
-      width: min(100%, 360px);
+      max-width: 360px;
       padding: 22px;
       border-radius: 22px;
-      background: rgba(8, 13, 23, 0.78);
+      background: rgba(8, 14, 24, 0.78);
       border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
 
     .quote-box strong {
@@ -745,154 +713,101 @@
     }
 
     .quote-box p {
-      color: var(--muted);
-      font-size: 14px;
       margin: 0;
-    }
-
-    .industries-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .industry {
-      padding: 26px;
-      border-radius: 24px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
-    }
-
-    .industry h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .industry p {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .team-grid {
+    .results-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .result-card {
+      padding: 28px;
+      border-radius: 24px;
+      transition: 0.3s ease;
+    }
+
+    .result-number {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.05em;
+    }
+
+    .result-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .testimonials-grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .team-card {
-      border-radius: 26px;
-      overflow: hidden;
+    .testimonial {
+      padding: 28px;
+      border-radius: 24px;
       transition: 0.3s ease;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
-    .team-photo {
-      height: 320px;
-      position: relative;
-      overflow: hidden;
+    .testimonial p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
     }
 
-    .team-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .team-info {
-      padding: 24px;
-    }
-
-    .team-info h3 {
-      font-size: 22px;
+    .testimonial strong {
+      display: block;
+      font-size: 16px;
       margin-bottom: 4px;
     }
 
-    .team-role {
-      color: #c9d5eb;
-      font-size: 14px;
-      margin-bottom: 12px;
+    .testimonial span {
+      color: var(--muted-2);
+      font-size: 13px;
     }
 
-    .team-info p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .cta {
-      padding-top: 30px;
-    }
-
-    .cta-box {
-      padding: 46px 34px;
+    .cta-panel {
+      padding: 48px 34px;
       border-radius: 34px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
       background:
-        radial-gradient(circle at top left, rgba(123,109,255,0.26), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(53,194,255,0.18), transparent 24%),
-        linear-gradient(135deg, #0f1630 0%, #111a32 40%, #0d1426 100%);
+        radial-gradient(circle at top left, rgba(47,130,255,0.25), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(96,216,255,0.16), transparent 24%),
+        linear-gradient(135deg, #0f1d34 0%, #10203a 42%, #0b1627 100%);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
     }
 
-    .cta-box h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.04;
+    .cta-copy h2 {
+      font-size: clamp(34px, 5vw, 56px);
       margin-bottom: 14px;
     }
 
-    .cta-box p {
+    .cta-copy p {
+      color: var(--muted);
       max-width: 760px;
       margin: 0 auto 24px;
-      color: var(--muted);
       font-size: 17px;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .contact-panel,
-    .contact-cards {
-      padding: 34px;
-      border-radius: 28px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
-    }
-
-    .contact-panel h3 {
-      font-size: clamp(30px, 4vw, 46px);
-      margin-bottom: 14px;
-    }
-
-    .contact-panel p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 26px;
-    }
-
-    .contact-item {
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
-    }
-
-    .contact-item strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 4px;
-      color: #ffffff;
-    }
-
-    .contact-item a {
-      color: #90d7ff;
-      font-weight: 700;
-      word-break: break-word;
+    .contact-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-cards {
@@ -900,32 +815,40 @@
       gap: 18px;
     }
 
-    .contact-box {
+    .contact-card {
       padding: 22px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
     }
 
-    .contact-box h4 {
+    .contact-card h3 {
       font-size: 18px;
       margin-bottom: 8px;
     }
 
-    .contact-box p {
+    .contact-card a {
+      color: #95ddff;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .contact-card p {
       color: var(--muted);
       font-size: 14px;
+      margin-top: 10px;
     }
 
     footer {
-      padding: 26px 0 44px;
+      padding: 28px 0 46px;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     .footer-grid {
       grid-template-columns: 1.2fr 0.8fr 0.8fr;
       align-items: start;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 18px;
     }
 
     .footer-brand p,
@@ -935,8 +858,9 @@
       font-size: 14px;
     }
 
-    .footer-brand .brand {
-      margin-bottom: 18px;
+    .footer-links {
+      display: grid;
+      gap: 10px;
     }
 
     .footer-links h4 {
@@ -944,14 +868,9 @@
       font-size: 16px;
     }
 
-    .footer-links {
-      display: grid;
-      gap: 10px;
-    }
-
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(24px);
       transition: all 0.8s ease;
     }
 
@@ -962,19 +881,20 @@
 
     @media (max-width: 1100px) {
       .hero-grid,
-      .split,
+      .story-grid,
+      .recruit-grid,
+      .results-layout,
       .contact-grid,
       .footer-grid,
       .services-grid,
-      .industries-grid,
-      .stats-grid,
-      .team-grid,
-      .logos-row {
+      .results-grid,
+      .testimonials-grid,
+      .trust-grid {
         grid-template-columns: 1fr 1fr;
       }
 
       .hero-visual {
-        min-height: 540px;
+        min-height: 560px;
       }
     }
 
@@ -990,46 +910,43 @@
       }
 
       .hero-grid,
-      .split,
+      .story-grid,
+      .recruit-grid,
+      .results-layout,
       .contact-grid,
       .footer-grid,
       .services-grid,
-      .industries-grid,
-      .stats-grid,
-      .team-grid,
-      .logos-row,
-      .hero-proof {
+      .results-grid,
+      .testimonials-grid,
+      .trust-grid,
+      .hero-points {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 42px;
+      .hero-copy-wrap {
+        padding: 28px;
       }
 
-      .hero-copy h2 {
+      .hero-copy h1 {
         font-size: clamp(42px, 14vw, 64px);
       }
 
-      .hero-visual {
-        min-height: 500px;
-      }
-
       .section {
-        padding: 86px 0;
+        padding: 82px 0;
       }
     }
   </style>
 </head>
 <body>
-  <div class="aurora"></div>
+  <div class="orb"></div>
 
   <header>
-    <div class="topbar">
-      <div class="ticker">
+    <div class="top-ticker">
+      <div class="ticker-track">
         <span><span class="pulse-dot"></span> Premium remote operations support</span>
         <span><span class="pulse-dot"></span> Recruitment coordination for growing teams</span>
-        <span><span class="pulse-dot"></span> Administrative structure for modern businesses</span>
-        <span><span class="pulse-dot"></span> Customer support and business continuity</span>
+        <span><span class="pulse-dot"></span> Administrative systems for modern businesses</span>
+        <span><span class="pulse-dot"></span> Customer operations and back-office execution</span>
         <span><span class="pulse-dot"></span> Premium remote operations support</span>
         <span><span class="pulse-dot"></span> Recruitment coordination for growing teams</span>
       </div>
@@ -1037,33 +954,22 @@
 
     <div class="container nav">
       <div class="brand">
-        <div class="brand-mark">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 14H26L36 34L46 14H60L40 58H31L12 14Z" fill="url(#vx1)"/>
-            <path d="M31 58L23 40L36 34L40 58H31Z" fill="#D9E4FF" fill-opacity="0.18"/>
-            <path d="M36 34L46 14H60L47 34H36Z" fill="#38BDF8" fill-opacity="0.35"/>
-            <defs>
-              <linearGradient id="vx1" x1="12" y1="14" x2="60" y2="58" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#8B7CFF"/>
-                <stop offset="0.55" stop-color="#5B6CFF"/>
-                <stop offset="1" stop-color="#35C2FF"/>
-              </linearGradient>
-            </defs>
-          </svg>
+        <div class="brand-icon">
+          <img src="logo-v.png" alt="VertexOps V logo" />
         </div>
         <div class="brand-text">
-          <h1>VertexOps</h1>
+          <h2>VertexOps</h2>
           <p>Business Operations • Recruitment • Support</p>
         </div>
       </div>
 
       <nav class="nav-links">
         <a href="#services">Services</a>
-        <a href="#recruitment-focus">Recruitment</a>
+        <a href="#recruitment">Recruitment</a>
         <a href="#about">About</a>
-        <a href="#industries">Industries</a>
-        <a href="#team">Leadership</a>
-        <a href="#contact" class="btn btn-secondary">Contact</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-secondary">Book Consultation</a>
       </nav>
     </div>
   </header>
@@ -1071,133 +977,70 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="pill">Premium corporate support for modern businesses</span>
-          <h2>Operate like a larger brand with sharper systems, stronger support, and modern execution.</h2>
-          <p>
-            VertexOps is a premium business support company helping startups, service firms,
-            executive teams, and growth-focused organizations strengthen operations through
-            high-quality remote support. From administration and recruitment coordination to
-            customer-facing communication and back-office execution, we help businesses
-            operate with more structure, more polish, and more confidence.
-          </p>
+        <div class="hero-copy-wrap glass reveal">
+          <div class="hero-copy">
+            <span class="pill">Premium operational support for growing companies</span>
+            <h1>Operate like a larger brand with sharper systems and stronger support.</h1>
+            <p>
+              VertexOps helps startups, service firms, executive teams, and growth-focused businesses
+              improve day-to-day execution through premium operations support, recruitment coordination,
+              administrative structure, and customer-facing workflow support.
+            </p>
 
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
-            <a href="#services" class="btn btn-secondary">Explore Services</a>
-          </div>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Book Consultation</a>
+              <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
 
-          <div class="hero-proof">
-            <div class="proof-card glass">
-              <strong>Corporate Presentation</strong>
-              <span>Premium website positioning and polished client-facing brand presence.</span>
-            </div>
-            <div class="proof-card glass">
-              <strong>Operational Precision</strong>
-              <span>Structured workflows, clearer communication, and dependable follow-through.</span>
-            </div>
-            <div class="proof-card glass">
-              <strong>Scalable Support</strong>
-              <span>Flexible support systems for companies ready to grow with confidence.</span>
+            <div class="hero-points">
+              <div class="point-box">
+                <strong>Premium Positioning</strong>
+                <span>A stronger brand presence for client-facing businesses.</span>
+              </div>
+              <div class="point-box">
+                <strong>Recruitment Support</strong>
+                <span>Structured hiring workflows and candidate coordination.</span>
+              </div>
+              <div class="point-box">
+                <strong>Operational Clarity</strong>
+                <span>More organized systems and smoother daily execution.</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="hero-visual glass reveal">
-          <div class="hero-image"></div>
-          <div class="hero-overlay">
-            <div class="mini-dashboard">
-              <h3>Operations Overview</h3>
-              <p>Support layers designed to keep your business moving with less internal friction and more consistency.</p>
-
-              <div class="bar-stack">
-                <div class="bar-row">
-                  <span>Administrative Support</span>
-                  <div class="bar"><div class="bar-fill" style="width: 92%;"></div></div>
-                </div>
-                <div class="bar-row">
-                  <span>Recruitment Coordination</span>
-                  <div class="bar"><div class="bar-fill" style="width: 82%;"></div></div>
-                </div>
-                <div class="bar-row">
-                  <span>Customer Operations</span>
-                  <div class="bar"><div class="bar-fill" style="width: 86%;"></div></div>
-                </div>
-              </div>
-
-              <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px;">
-                <div class="floating-stat">
-                  <strong>Hiring Ready</strong>
-                  <span>Structured recruitment support for scaling teams</span>
-                </div>
-                <div class="floating-stat">
-                  <strong>Client Ready</strong>
-                  <span>Premium support built for corporate presentation</span>
-                </div>
-              </div>
+          <div class="hero-visual-content">
+            <div class="consult-card">
+              <h3>Request a Consultation</h3>
+              <p>Tell us what kind of support your business needs.</p>
+              <input type="text" placeholder="Your name" />
+              <input type="email" placeholder="Business email" />
+              <select>
+                <option>Choose a service</option>
+                <option>Administrative Support</option>
+                <option>Recruitment Support</option>
+                <option>Customer Operations</option>
+                <option>Executive Assistance</option>
+              </select>
+              <button class="btn btn-primary" style="width:100%;">Get Started</button>
             </div>
 
-            <div class="hero-bottom">
-              <div class="floating-stat">
-                <strong>Remote-First</strong>
-                <span>Built for flexible teams and modern growth companies</span>
-              </div>
-
-              <div class="team-note">
-                <strong>Premium Positioning</strong>
-                <span>Designed to look like an established corporate brand</span>
-              </div>
+            <div class="hero-bottom-card">
+              <strong>Remote-Ready</strong>
+              <span>Built for modern teams, growing brands, and distributed operations.</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container logos reveal">
-        <div class="logos-row">
-          <div class="logo-box glass">OPERATIONS</div>
-          <div class="logo-box glass">RECRUITMENT</div>
-          <div class="logo-box glass">CUSTOMER SUPPORT</div>
-          <div class="logo-box glass">ADMINISTRATION</div>
-          <div class="logo-box glass">EXECUTION</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Core Strengths</span>
-          <h2>Support infrastructure that helps ambitious businesses move faster.</h2>
-          <p>
-            We help companies present better, organize better, and operate better with premium
-            support systems that reduce clutter and improve consistency across the business.
-          </p>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat glass reveal">
-            <div class="stat-number" data-target="24">0</div>
-            <h3>Hour responsiveness mindset</h3>
-            <p>Fast communication standards designed for modern client expectations.</p>
-          </div>
-
-          <div class="stat glass reveal">
-            <div class="stat-number" data-target="6">0</div>
-            <h3>Core support areas</h3>
-            <p>Focused services that align with real operational business needs.</p>
-          </div>
-
-          <div class="stat glass reveal">
-            <div class="stat-number" data-target="100">0</div>
-            <h3>Remote-ready structure</h3>
-            <p>Designed for startups, executives, and distributed organizations.</p>
-          </div>
-
-          <div class="stat glass reveal">
-            <div class="stat-number" data-target="1">0</div>
-            <h3>Premium support partner</h3>
-            <p>One brand experience across administration, coordination, and support.</p>
-          </div>
+      <div class="container trust-strip reveal">
+        <div class="trust-grid">
+          <div class="trust-box glass">OPERATIONS</div>
+          <div class="trust-box glass">RECRUITMENT</div>
+          <div class="trust-box glass">CUSTOMER SUPPORT</div>
+          <div class="trust-box glass">ADMINISTRATION</div>
+          <div class="trust-box glass">EXECUTION</div>
         </div>
       </div>
     </section>
@@ -1205,211 +1048,132 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="pill">Services</span>
-          <h2>High-value services designed to give your company a larger, sharper operational footprint.</h2>
+          <span class="pill">Core Services</span>
+          <h2>Support services structured like a premium corporate partner.</h2>
           <p>
-            VertexOps focuses on premium support services that make businesses look more organized,
-            more responsive, and more capable in the eyes of clients, candidates, and internal teams.
+            Built for companies that need stronger operations, cleaner hiring workflows,
+            and better client-facing organization.
           </p>
         </div>
 
         <div class="services-grid">
-          <div class="card glass reveal">
+          <div class="service-card glass reveal">
             <div class="service-icon">▦</div>
             <h3>Administrative Support</h3>
-            <p>
-              Day-to-day business administration handled with structure, professionalism, and a focus on
-              keeping your internal operations organized.
-            </p>
+            <p>Structured support for daily business administration and internal organization.</p>
             <ul>
-              <li>Inbox and correspondence support</li>
-              <li>Calendar management and scheduling</li>
-              <li>Document preparation and organization</li>
-              <li>Reporting support and follow-up coordination</li>
+              <li>Email and calendar management</li>
+              <li>Document preparation</li>
+              <li>Reporting and follow-up</li>
+              <li>Data entry and coordination</li>
             </ul>
           </div>
 
-          <div class="card glass reveal">
-            <div class="service-icon">✦</div>
-            <h3>Virtual Executive Assistance</h3>
-            <p>
-              Flexible support for entrepreneurs, founders, consultants, and busy teams that need reliable
-              remote assistance across priorities and moving parts.
-            </p>
-            <ul>
-              <li>Task coordination and executive support</li>
-              <li>Research and information gathering</li>
-              <li>Meeting preparation and logistics</li>
-              <li>CRM updates and workflow continuity</li>
-            </ul>
-          </div>
-
-          <div class="card glass reveal">
+          <div class="service-card glass reveal">
             <div class="service-icon">◎</div>
             <h3>Recruitment &amp; Talent Support</h3>
-            <p>
-              Premium hiring support for growing companies that need a more organized,
-              professional recruitment process without building a full internal talent team.
-            </p>
+            <p>Professional hiring workflow support for growing companies and scaling teams.</p>
             <ul>
-              <li>Candidate sourcing and pipeline support</li>
-              <li>Resume review and applicant filtering</li>
-              <li>Interview scheduling and coordination</li>
-              <li>Recruitment communication and follow-up</li>
+              <li>Candidate sourcing</li>
+              <li>Resume review</li>
+              <li>Interview scheduling</li>
+              <li>Candidate communication</li>
             </ul>
           </div>
 
-          <div class="card glass reveal">
+          <div class="service-card glass reveal">
             <div class="service-icon">◈</div>
             <h3>Customer Operations</h3>
-            <p>
-              Stronger front-line communication and organized support systems that improve consistency
-              across customer interactions.
-            </p>
+            <p>Support systems that improve communication quality and service consistency.</p>
             <ul>
-              <li>Email and ticket support coordination</li>
-              <li>Client communication workflows</li>
-              <li>Support follow-up and case handling</li>
-              <li>Escalation organization and service tracking</li>
+              <li>Email and ticket support</li>
+              <li>Client follow-up</li>
+              <li>Workflow coordination</li>
+              <li>Service continuity support</li>
             </ul>
           </div>
 
-          <div class="card glass reveal">
+          <div class="service-card glass reveal">
+            <div class="service-icon">✦</div>
+            <h3>Executive Assistance</h3>
+            <p>Flexible remote support for founders, consultants, and busy leadership teams.</p>
+            <ul>
+              <li>Priority management</li>
+              <li>Research support</li>
+              <li>Meeting logistics</li>
+              <li>CRM updates</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal">
             <div class="service-icon">⌘</div>
             <h3>Back-Office Support</h3>
-            <p>
-              Quiet but essential operations support that helps the business function behind the scenes
-              with more control and less stress.
-            </p>
+            <p>Quiet but essential support that keeps the business running behind the scenes.</p>
             <ul>
-              <li>Data entry and file management</li>
-              <li>Internal coordination support</li>
-              <li>Workflow and checklist administration</li>
-              <li>Process documentation assistance</li>
+              <li>Internal coordination</li>
+              <li>Workflow organization</li>
+              <li>Process support</li>
+              <li>Administrative continuity</li>
             </ul>
           </div>
 
-          <div class="card glass reveal">
+          <div class="service-card glass reveal">
             <div class="service-icon">⬢</div>
-            <h3>Growth Operations Support</h3>
-            <p>
-              Support designed for companies that want to operate with a stronger brand impression,
-              more disciplined systems, and a better client experience.
-            </p>
+            <h3>Growth Operations</h3>
+            <p>Support for companies that want a stronger operational footprint as they scale.</p>
             <ul>
-              <li>Business process support</li>
-              <li>Follow-up systems and accountability</li>
-              <li>Communication consistency</li>
-              <li>Operational polish for scaling teams</li>
+              <li>Operational polish</li>
+              <li>Brand-facing consistency</li>
+              <li>Process alignment</li>
+              <li>Scalable support structure</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="recruitment-focus">
-      <div class="container split">
-        <div class="panel glass reveal">
-          <span class="pill">Recruitment Focus</span>
-          <h3>Recruitment support that helps your business hire with more structure and less delay.</h3>
-          <p>
-            VertexOps supports growing companies with the operational side of hiring,
-            helping teams stay organized across sourcing, screening, interview coordination,
-            and candidate communication.
-          </p>
-          <p>
-            For businesses that are scaling, recruitment is not just about finding people.
-            It is about creating a process that feels professional, efficient, and aligned
-            with the quality of the brand.
-          </p>
-          <div class="check-list">
-            <div class="check-item">
-              <div class="check">✓</div>
-              <div>Candidate sourcing support for open roles</div>
-            </div>
-            <div class="check-item">
-              <div class="check">✓</div>
-              <div>Resume screening and shortlist preparation</div>
-            </div>
-            <div class="check-item">
-              <div class="check">✓</div>
-              <div>Interview scheduling and hiring coordination</div>
-            </div>
-            <div class="check-item">
-              <div class="check">✓</div>
-              <div>Professional communication throughout the hiring process</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel glass reveal" style="min-height:560px; overflow:hidden; position:relative;">
-          <div style="
-            position:absolute;
-            inset:0;
-            background:
-              linear-gradient(180deg, rgba(7,11,20,0.18), rgba(7,11,20,0.78)),
-              url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-          "></div>
-          <div class="image-panel-content" style="position:relative; z-index:2; height:100%; display:flex; align-items:flex-end;">
-            <div class="quote-box">
-              <strong>Talent Operations</strong>
-              <p>
-                Better hiring workflows create a stronger candidate experience and
-                help companies move faster when growth opportunities appear.
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <div class="container split">
-        <div class="panel glass reveal">
-          <span class="pill">About VertexOps</span>
-          <h3>Built to help businesses look more established, operate more smoothly, and scale with confidence.</h3>
+      <div class="container story-grid">
+        <div class="story-copy glass reveal">
+          <span class="pill">Why VertexOps</span>
+          <h2>Built to make businesses feel more established, responsive, and operationally sharp.</h2>
           <p>
-            VertexOps was created for modern companies that need premium support without the friction of
-            building large in-house teams too early. We believe operational excellence is not only about
-            what gets done, but about how consistently, clearly, and professionally it gets done.
+            VertexOps was created for modern businesses that need premium support without the friction
+            of building a larger in-house structure too early. We focus on the areas that most affect
+            how a company performs and how a company is perceived.
           </p>
           <p>
-            Our role is to support business leaders with reliable remote execution across the essential
-            areas that often create bottlenecks: administration, coordination, recruitment workflow,
-            communication handling, and customer-facing support structure.
-          </p>
-          <p>
-            The result is a business that feels more organized internally and appears more capable externally.
-            That combination helps build trust, improve efficiency, and create a stronger foundation for growth.
+            From administration and customer operations to recruitment workflow and leadership support,
+            our role is to bring structure, professionalism, and a better daily rhythm to your business.
           </p>
 
           <div class="check-list">
             <div class="check-item">
-              <div class="check">✓</div>
-              <div>Premium brand presentation with modern corporate positioning</div>
+              <div class="check-dot">✓</div>
+              <div>Premium corporate presentation and stronger client confidence</div>
             </div>
             <div class="check-item">
-              <div class="check">✓</div>
-              <div>Remote support systems aligned with real business operations</div>
+              <div class="check-dot">✓</div>
+              <div>Remote-ready support systems for growing companies</div>
             </div>
             <div class="check-item">
-              <div class="check">✓</div>
-              <div>Clear communication standards and stronger execution discipline</div>
+              <div class="check-dot">✓</div>
+              <div>Clearer communication and more organized workflows</div>
             </div>
             <div class="check-item">
-              <div class="check">✓</div>
-              <div>Designed for startups, growing firms, and client-facing teams</div>
+              <div class="check-dot">✓</div>
+              <div>Operational support that scales with your business</div>
             </div>
           </div>
         </div>
 
-        <div class="panel glass image-panel reveal">
-          <div class="image-panel-content">
+        <div class="story-image glass reveal">
+          <div class="overlay-quote">
             <div class="quote-box">
-              <strong>Premium Support Philosophy</strong>
+              <strong>Operational Excellence</strong>
               <p>
-                Businesses do not just need tasks completed. They need structure, professionalism,
-                consistency, and support that reflects the quality of the brand they are trying to build.
+                Premium support is not just about getting tasks done. It is about helping the business
+                feel more organized, more responsive, and more capable every day.
               </p>
             </div>
           </div>
@@ -1417,161 +1181,190 @@
       </div>
     </section>
 
-    <section id="industries" class="section">
+    <section id="recruitment" class="section">
+      <div class="container recruit-grid">
+        <div class="recruit-image glass reveal">
+          <div class="overlay-quote">
+            <div class="quote-box">
+              <strong>Recruitment Focus</strong>
+              <p>
+                Better hiring systems create stronger candidate experience, faster coordination,
+                and a more professional brand impression.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-copy glass reveal">
+          <span class="pill">Recruitment Support</span>
+          <h2>Hiring support that helps growing teams move with more structure and less delay.</h2>
+          <p>
+            VertexOps helps businesses manage the operational side of recruitment, including sourcing,
+            screening, scheduling, candidate communication, and follow-up coordination.
+          </p>
+          <p>
+            For companies that are growing, hiring is not just a task. It is a process that shapes
+            reputation, speed, and internal efficiency.
+          </p>
+
+          <div class="check-list">
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <div>Candidate sourcing and pipeline support</div>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <div>Resume screening and shortlist preparation</div>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <div>Interview scheduling and hiring coordination</div>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <div>Professional candidate communication throughout the process</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section">
+      <div class="container results-layout">
+        <div class="results-copy glass reveal">
+          <span class="pill">Results-Driven Structure</span>
+          <h2>Support infrastructure that helps ambitious businesses move faster.</h2>
+          <p>
+            Great support should create visible operational value. These proof points help position
+            VertexOps like a more established and more premium business partner.
+          </p>
+          <p>
+            You can later replace these with real business metrics, client results, or service KPIs.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card glass reveal">
+            <div class="result-number">24h</div>
+            <h3>Responsive communication mindset</h3>
+            <p>Fast, professional communication standards built for modern business expectations.</p>
+          </div>
+
+          <div class="result-card glass reveal">
+            <div class="result-number">6+</div>
+            <h3>Core support areas</h3>
+            <p>Focused services aligned with real operational business needs.</p>
+          </div>
+
+          <div class="result-card glass reveal">
+            <div class="result-number">100%</div>
+            <h3>Remote-ready structure</h3>
+            <p>Designed for startups, consultants, and distributed organizations.</p>
+          </div>
+
+          <div class="result-card glass reveal">
+            <div class="result-number">1</div>
+            <h3>Premium support partner</h3>
+            <p>One brand experience across operations, recruitment, and support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="pill">Industries We Support</span>
-          <h2>Flexible support for companies that need operational sharpness without unnecessary complexity.</h2>
+          <span class="pill">Client Impression</span>
+          <h2>A premium website feels bigger when trust and credibility are stacked well.</h2>
           <p>
-            Our services are especially useful for businesses that value responsiveness, organization,
-            client experience, and scalable systems.
+            These sample testimonials make the homepage feel more complete and more established.
           </p>
         </div>
 
-        <div class="industries-grid">
-          <div class="industry glass reveal">
-            <h3>Startups</h3>
-            <p>Lean teams that need support infrastructure, executive assistance, and stronger operational rhythm.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial glass reveal">
+            <p>
+              “VertexOps brought a more organized structure to our day-to-day workflow and immediately
+              improved how our support systems felt internally.”
+            </p>
+            <strong>Operations Lead</strong>
+            <span>Professional Services Firm</span>
           </div>
 
-          <div class="industry glass reveal">
-            <h3>Consulting Firms</h3>
-            <p>Client-facing businesses that need polished communication, scheduling, and back-office support.</p>
+          <div class="testimonial glass reveal">
+            <p>
+              “The recruitment support made our hiring process smoother, faster, and far more professional
+              from the candidate side.”
+            </p>
+            <strong>Founder</strong>
+            <span>Growth-Stage Startup</span>
           </div>
 
-          <div class="industry glass reveal">
-            <h3>E-commerce Brands</h3>
-            <p>Companies that need customer handling, order-related support, and smoother workflow support.</p>
-          </div>
-
-          <div class="industry glass reveal">
-            <h3>Professional Services</h3>
-            <p>Businesses that benefit from stronger administration, client communication, and follow-up systems.</p>
+          <div class="testimonial glass reveal">
+            <p>
+              “The biggest difference was clarity. Communication improved, follow-through improved,
+              and the entire business felt more coordinated.”
+            </p>
+            <strong>Managing Director</strong>
+            <span>Consulting Company</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="team" class="section">
+    <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Leadership Presence</span>
-          <h2>A premium brand should feel human, structured, and credible.</h2>
-          <p>
-            This section gives your website the presence of a larger corporate business. You can later replace
-            these images and names with your real team or leadership information.
-          </p>
-        </div>
-
-        <div class="team-grid">
-          <div class="team-card glass reveal">
-            <div class="team-photo">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" alt="Operations executive" />
-            </div>
-            <div class="team-info">
-              <h3>Operations Leadership</h3>
-              <div class="team-role">Strategic oversight and client support direction</div>
-              <p>
-                Focused on keeping service delivery aligned, organized, and reflective of a premium business standard.
-              </p>
-            </div>
+        <div class="cta-panel reveal">
+          <div class="cta-copy">
+            <span class="pill">Book a Consultation</span>
+            <h2>Bring more structure, polish, and confidence to the way your business operates.</h2>
+            <p>
+              Whether your company needs stronger administrative support, recruitment workflow coordination,
+              customer operations assistance, or executive support, VertexOps is built to help your business
+              feel more capable and more prepared for growth.
+            </p>
+            <a href="#contact" class="btn btn-primary">Talk to VertexOps</a>
           </div>
-
-          <div class="team-card glass reveal">
-            <div class="team-photo">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Client success lead" />
-            </div>
-            <div class="team-info">
-              <h3>Client Success Support</h3>
-              <div class="team-role">Communication quality and service continuity</div>
-              <p>
-                Ensuring clients experience responsive communication, clean workflows, and dependable support coordination.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card glass reveal">
-            <div class="team-photo">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80" alt="Recruitment and support professional" />
-            </div>
-            <div class="team-info">
-              <h3>Talent &amp; Workflow Support</h3>
-              <div class="team-role">Recruitment operations and internal coordination</div>
-              <p>
-                Supporting hiring processes, administrative structure, and the day-to-day systems that keep work moving.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta">
-      <div class="container">
-        <div class="cta-box reveal">
-          <span class="pill">Premium Positioning</span>
-          <h2>VertexOps brings structure, polish, and premium support to the parts of your business that matter every day.</h2>
-          <p>
-            A premium company should look organized, responsive, and operationally strong.
-            VertexOps helps create that impression through structured support services that
-            improve internal efficiency while strengthening the way your business is experienced
-            by clients, candidates, and partners.
-          </p>
-          <a href="#contact" class="btn btn-primary">Talk to VertexOps</a>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="container contact-grid">
-        <div class="contact-panel glass reveal">
+        <div class="contact-copy glass reveal">
           <span class="pill">Contact</span>
-          <h3>Start building a more polished and more capable business presence.</h3>
+          <h2>Start building a more polished and more capable business presence.</h2>
           <p>
-            Whether you need administrative support, executive assistance, recruitment coordination,
-            or help improving operational flow, VertexOps is ready to support your next stage of growth.
+            Reach out through the appropriate channel below to start the conversation with VertexOps.
           </p>
           <p>
-            Reach out through the appropriate channel below and begin the conversation with a brand that
-            is positioned to look premium, responsive, and business-ready.
+            This section can later be upgraded into a real form connected to email or a CRM.
           </p>
-
-          <div class="contact-list">
-            <div class="contact-item">
-              <strong>General Inquiries</strong>
-              <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
-            </div>
-            <div class="contact-item">
-              <strong>Sales</strong>
-              <a href="mailto:sales@vertexops.net">sales@vertexops.net</a>
-            </div>
-            <div class="contact-item">
-              <strong>Support</strong>
-              <a href="mailto:support@vertexops.net">support@vertexops.net</a>
-            </div>
-            <div class="contact-item">
-              <strong>Careers</strong>
-              <a href="mailto:careers@vertexops.net">careers@vertexops.net</a>
-            </div>
-          </div>
         </div>
 
-        <div class="contact-cards glass reveal">
-          <div class="contact-box">
-            <h4>Professional Brand Presence</h4>
-            <p>Your website now feels larger, more established, and more corporate in its visual language.</p>
+        <div class="contact-cards">
+          <div class="contact-card glass reveal">
+            <h3>General Inquiries</h3>
+            <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
+            <p>General questions, partnership discussions, and service inquiries.</p>
           </div>
-          <div class="contact-box">
-            <h4>Better Client Perception</h4>
-            <p>Premium design, deeper copy, stronger structure, and clearer service positioning build trust faster.</p>
+
+          <div class="contact-card glass reveal">
+            <h3>Sales</h3>
+            <a href="mailto:sales@vertexops.net">sales@vertexops.net</a>
+            <p>New client conversations and growth opportunities.</p>
           </div>
-          <div class="contact-box">
-            <h4>Recruitment Visibility</h4>
-            <p>Recruitment now has its own dedicated section so that hiring support stands out more clearly.</p>
+
+          <div class="contact-card glass reveal">
+            <h3>Support</h3>
+            <a href="mailto:support@vertexops.net">support@vertexops.net</a>
+            <p>Current support requests and service follow-up.</p>
           </div>
-          <div class="contact-box">
-            <h4>Tagline Included</h4>
-            <p>The logo now carries a stronger corporate identity with recruitment built directly into the brand line.</p>
+
+          <div class="contact-card glass reveal">
+            <h3>Careers</h3>
+            <a href="mailto:careers@vertexops.net">careers@vertexops.net</a>
+            <p>Recruitment inquiries, talent outreach, and future opportunities.</p>
           </div>
         </div>
       </div>
@@ -1582,37 +1375,26 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand">
-          <div class="brand-mark">
-            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M12 14H26L36 34L46 14H60L40 58H31L12 14Z" fill="url(#vx2)"/>
-              <path d="M31 58L23 40L36 34L40 58H31Z" fill="#D9E4FF" fill-opacity="0.18"/>
-              <path d="M36 34L46 14H60L47 34H36Z" fill="#38BDF8" fill-opacity="0.35"/>
-              <defs>
-                <linearGradient id="vx2" x1="12" y1="14" x2="60" y2="58" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#8B7CFF"/>
-                  <stop offset="0.55" stop-color="#5B6CFF"/>
-                  <stop offset="1" stop-color="#35C2FF"/>
-                </linearGradient>
-              </defs>
-            </svg>
+          <div class="brand-icon">
+            <img src="logo-v.png" alt="VertexOps V logo" />
           </div>
           <div class="brand-text">
-            <h1>VertexOps</h1>
+            <h2>VertexOps</h2>
             <p>Business Operations • Recruitment • Support</p>
           </div>
         </div>
         <p>
           VertexOps provides premium remote business support services designed to help modern companies
-          operate with more structure, better communication, and stronger execution.
+          operate with more structure, stronger communication, and sharper daily execution.
         </p>
       </div>
 
       <div class="footer-links">
         <h4>Navigation</h4>
         <a href="#services">Services</a>
-        <a href="#recruitment-focus">Recruitment</a>
+        <a href="#recruitment">Recruitment</a>
         <a href="#about">About</a>
-        <a href="#industries">Industries</a>
+        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -1629,7 +1411,7 @@
   <script>
     const reveals = document.querySelectorAll(".reveal");
 
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
@@ -1637,45 +1419,7 @@
       });
     }, { threshold: 0.15 });
 
-    reveals.forEach((el) => revealObserver.observe(el));
-
-    const counters = document.querySelectorAll(".stat-number");
-    let counterStarted = false;
-
-    function animateCounter(el) {
-      const target = +el.getAttribute("data-target");
-      let count = 0;
-      const duration = 1400;
-      const stepTime = Math.max(20, Math.floor(duration / target));
-
-      const timer = setInterval(() => {
-        count += Math.ceil(target / 32);
-        if (count >= target) {
-          count = target;
-          clearInterval(timer);
-        }
-
-        if (target === 100) {
-          el.textContent = count + "%";
-        } else if (target === 24) {
-          el.textContent = count + "h";
-        } else {
-          el.textContent = count + "+";
-        }
-      }, stepTime);
-    }
-
-    const statsSection = document.querySelector(".stats-grid");
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !counterStarted) {
-          counterStarted = true;
-          counters.forEach((counter) => animateCounter(counter));
-        }
-      });
-    }, { threshold: 0.35 });
-
-    if (statsSection) statsObserver.observe(statsSection);
+    reveals.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
