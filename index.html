@@ -4,26 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VertexOps Global | Operations, Recruitment & Support</title>
-  <meta name="description" content="VertexOps Global helps growing companies improve operations, hiring coordination, digital systems, and support workflows." />
+  <meta name="description" content="VertexOps Global helps growing companies improve operations, recruitment coordination, digital systems, and back-office execution." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #06111f;
-      --bg-2: #0b1a2c;
-      --panel: rgba(12, 24, 42, 0.82);
-      --panel-2: rgba(19, 35, 58, 0.92);
-      --line: rgba(122, 164, 255, 0.18);
-      --text: #f4f8ff;
-      --muted: #b8c7dd;
-      --primary: #56a4ff;
-      --primary-2: #6be0ff;
-      --success: #55d49b;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --max: 1220px;
+      --bg: #030813;
+      --bg2: #071326;
+      --panel: rgba(8, 18, 34, 0.82);
+      --panel-2: rgba(14, 28, 51, 0.9);
+      --line: rgba(116, 171, 255, 0.16);
+      --text: #eef5ff;
+      --muted: #a9bbd5;
+      --blue: #4fa1ff;
+      --cyan: #71e3ff;
+      --glow: 0 0 18px rgba(97, 188, 255, 0.45), 0 0 36px rgba(53, 124, 255, 0.25);
+      --shadow: 0 24px 70px rgba(0,0,0,0.34);
+      --radius: 28px;
+      --max: 1680px;
     }
 
     * { box-sizing: border-box; }
@@ -31,42 +30,78 @@
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(68, 152, 255, 0.22), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(70, 219, 255, 0.18), transparent 22%),
-        linear-gradient(180deg, #04101d 0%, #081426 40%, #07111d 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(77, 161, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 90% 12%, rgba(113, 227, 255, 0.12), transparent 20%),
+        linear-gradient(180deg, #030814 0%, #071120 45%, #040913 100%);
+      overflow-x: hidden;
     }
 
-    img { max-width: 100%; display: block; }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 34vw;
+      height: 34vw;
+      border-radius: 50%;
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: -1;
+      opacity: .35;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      top: -6vw;
+      left: -8vw;
+      background: rgba(59, 135, 255, 0.2);
+    }
+
+    body::after {
+      right: -10vw;
+      top: 18vh;
+      background: rgba(80, 224, 255, 0.12);
+      animation-duration: 18s;
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(3vw, 2vh, 0) scale(1.08); }
+    }
+
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
     button, input, select, textarea { font: inherit; }
 
-    .container { width: min(1540px, calc(100% - 24px)); margin: 0 auto; }
+    .container {
+      width: min(var(--max), calc(100% - 24px));
+      margin: 0 auto;
+    }
 
     .topbar {
-      border-bottom: 1px solid var(--line);
-      background: rgba(3, 9, 18, 0.74);
-      backdrop-filter: blur(14px);
       overflow: hidden;
+      background: rgba(2, 8, 17, 0.88);
+      border-bottom: 1px solid rgba(102, 170, 255, 0.12);
+      backdrop-filter: blur(12px);
     }
 
-    .ticker {
+    .ticker-track {
       display: flex;
-      gap: 28px;
+      gap: 34px;
       white-space: nowrap;
-      padding: 10px 0;
       min-width: max-content;
-      animation: marquee 24s linear infinite;
-      color: #d7e6ff;
-      font-size: 0.93rem;
+      padding: 12px 0;
+      color: #d9e8ff;
+      font-size: 0.95rem;
+      animation: marquee 26s linear infinite;
     }
 
-    .ticker span::before {
+    .ticker-track span::before {
       content: '•';
-      color: var(--primary-2);
       margin-right: 12px;
-      font-weight: 800;
+      color: var(--cyan);
+      text-shadow: var(--glow);
     }
 
     @keyframes marquee {
@@ -78,75 +113,73 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(5, 12, 24, 0.76);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(107, 174, 255, 0.12);
+      background: rgba(3, 8, 18, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(108, 165, 255, 0.1);
     }
 
     .nav {
+      min-height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      min-height: 78px;
+      gap: 18px;
     }
 
     .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .brand-lockup {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
 
     .brand-mark {
-      width: 62px;
-      height: 62px;
-      display: block;
-      filter: drop-shadow(0 0 12px rgba(102, 213, 255, 0.5)) drop-shadow(0 0 24px rgba(47, 127, 255, 0.32));
+      width: 64px;
+      height: 64px;
+      filter: drop-shadow(0 0 14px rgba(87, 194, 255, 0.58)) drop-shadow(0 0 28px rgba(37, 115, 255, 0.32));
       flex: 0 0 auto;
+      animation: pulseGlow 3.5s ease-in-out infinite alternate;
     }
 
-    .brand-text-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
+    @keyframes pulseGlow {
+      from { transform: translateY(0) scale(1); opacity: .95; }
+      to { transform: translateY(-1px) scale(1.02); opacity: 1; }
     }
 
-    .brand strong {
-      font-size: 1.85rem;
-      letter-spacing: -0.04em;
-      background: linear-gradient(90deg, #7dd6ff 0%, #ffffff 45%, #4a93ff 100%);
+    .brand-text strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      background: linear-gradient(90deg, #73ddff 0%, #ffffff 46%, #62a8ff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .brand small {
-      color: #9eb4cf;
-      text-transform: uppercase;
+    .brand-text small {
+      display: block;
+      margin-top: 5px;
+      color: #9eb3cf;
       letter-spacing: 0.18em;
-      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-size: 0.71rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      color: #dce9fb;
+      gap: 26px;
       flex-wrap: wrap;
+      color: #dce8fb;
     }
 
     .nav-links a {
-      transition: color 0.22s ease, transform 0.22s ease;
+      transition: color .22s ease, transform .22s ease, text-shadow .22s ease;
     }
 
     .nav-links a:hover {
-      color: var(--primary-2);
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(113, 227, 255, 0.5);
       transform: translateY(-1px);
     }
 
@@ -154,22 +187,35 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 54px;
+      padding: 0 24px;
       border-radius: 999px;
-      border: 1px solid rgba(110, 168, 255, 0.22);
-      background: linear-gradient(90deg, #2f7fff 0%, #66d5ff 100%);
+      border: 1px solid rgba(110, 174, 255, 0.22);
+      background: linear-gradient(90deg, #2e7fff 0%, #5ad6ff 100%);
       color: white;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       cursor: pointer;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, background 0.22s ease;
-      box-shadow: 0 14px 28px rgba(57, 133, 255, 0.22);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease, border-color .22s ease;
+      box-shadow: 0 12px 28px rgba(63, 138, 255, 0.28);
+      position: relative;
+      overflow: hidden;
     }
 
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.2) 35%, transparent 62%);
+      transform: translateX(-140%);
+      transition: transform .55s ease;
+    }
+
+    .btn:hover::after { transform: translateX(140%); }
+
     .btn:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 20px 36px rgba(57, 133, 255, 0.32);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(63, 138, 255, 0.36), 0 0 22px rgba(113,227,255,0.24);
       filter: brightness(1.04);
     }
 
@@ -180,67 +226,75 @@
     }
 
     .btn.secondary:hover {
-      background: rgba(95, 169, 255, 0.12);
+      background: rgba(79, 161, 255, 0.12);
+      border-color: rgba(113, 227, 255, 0.36);
     }
 
     .hero {
-      padding: 46px 0 34px;
+      padding: 26px 0 32px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
+      gap: 24px;
       align-items: stretch;
     }
 
     .panel {
-      background: linear-gradient(180deg, rgba(10, 19, 35, 0.92), rgba(6, 15, 30, 0.94));
+      background: linear-gradient(180deg, rgba(10, 20, 37, 0.92), rgba(5, 12, 24, 0.94));
       border: 1px solid var(--line);
       border-radius: 34px;
       box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
     }
 
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent 25%);
+      pointer-events: none;
+    }
+
     .hero-copy {
-      padding: 62px 56px 48px;
-      position: relative;
+      padding: 56px 52px 42px;
       background:
-        radial-gradient(circle at top right, rgba(74, 147, 255, 0.26), transparent 30%),
-        linear-gradient(180deg, rgba(7, 18, 33, 0.95), rgba(5, 12, 24, 0.95));
+        radial-gradient(circle at top right, rgba(67, 145, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, rgba(6, 14, 29, 0.96), rgba(4, 10, 21, 0.96));
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      min-height: 42px;
-      border-radius: 999px;
+      min-height: 44px;
       padding: 0 16px;
-      color: #d5e6ff;
-      background: rgba(88, 137, 227, 0.12);
-      border: 1px solid rgba(121, 170, 255, 0.22);
-      font-weight: 600;
-      font-size: 0.94rem;
+      border-radius: 999px;
+      background: rgba(98, 154, 255, 0.11);
+      border: 1px solid rgba(111, 176, 255, 0.2);
+      color: #dce9ff;
+      font-weight: 700;
       margin-bottom: 24px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      max-width: 700px;
+      font-size: clamp(3.6rem, 7vw, 7rem);
+      line-height: 0.93;
+      letter-spacing: -0.08em;
+      max-width: 860px;
     }
 
-    .hero-copy p.lead {
+    .lead {
       margin: 24px 0 28px;
-      max-width: 670px;
-      font-size: 1.15rem;
-      line-height: 1.7;
+      max-width: 760px;
+      font-size: 1.2rem;
+      line-height: 1.75;
       color: var(--muted);
     }
 
-    .actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
@@ -255,9 +309,15 @@
 
     .stat {
       padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(110, 168, 255, 0.14);
+      border-radius: 20px;
       background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(113, 171, 255, 0.12);
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(113, 227, 255, 0.28);
     }
 
     .stat strong {
@@ -268,201 +328,280 @@
 
     .stat span {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: .94rem;
+      line-height: 1.55;
     }
 
     .hero-visual {
-      position: relative;
-      min-height: 860px;
+      min-height: 900px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
 
-    .hero-overlay {
+    .hero-visual::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(3, 10, 21, 0.16), rgba(3, 10, 21, 0.55));
+      background: linear-gradient(180deg, rgba(4,10,20,0.08), rgba(4,10,20,0.45));
     }
 
-    .consultation-card {
+    .consult-card {
       position: absolute;
-      top: 40px;
-      right: 34px;
-      width: min(420px, calc(100% - 68px));
-      padding: 28px;
-      border-radius: 28px;
-      border: 1px solid rgba(138, 184, 255, 0.22);
-      background: rgba(20, 27, 41, 0.82);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.28);
+      top: 36px;
+      right: 30px;
       z-index: 2;
+      width: min(430px, calc(100% - 60px));
+      padding: 28px;
+      border-radius: 30px;
+      background: rgba(21, 27, 42, 0.84);
+      border: 1px solid rgba(131, 184, 255, 0.2);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.28);
+      backdrop-filter: blur(18px);
+      animation: floatCard 4.6s ease-in-out infinite;
     }
 
-    .consultation-card h2 {
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .consult-card h2 {
       margin: 0 0 10px;
-      font-size: 2rem;
-      letter-spacing: -0.04em;
-    }
-
-    .consultation-card p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      margin: 14px 0 18px;
-      color: #deebff;
-      font-size: 0.95rem;
-    }
-
-    .mini-list span {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .mini-list span::before {
-      content: '✓';
-      display: inline-grid;
-      place-items: center;
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: rgba(85, 212, 155, 0.14);
-      color: var(--success);
-      font-weight: 800;
-      font-size: 0.8rem;
-    }
-
-    .section {
-      padding: 36px 0;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(2rem, 3vw, 3rem);
+      font-size: 2.2rem;
       letter-spacing: -0.05em;
     }
 
-    .section-heading p {
-      margin: 0;
-      max-width: 620px;
+    .consult-card p {
+      margin: 0 0 18px;
+      line-height: 1.65;
       color: var(--muted);
-      line-height: 1.7;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .check-list span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #edf5ff;
+      line-height: 1.45;
+    }
+
+    .check-list span::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      color: #daf8e8;
+      background: rgba(85, 212, 155, 0.16);
+      font-size: .78rem;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      letter-spacing: -0.06em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 680px;
+      color: var(--muted);
+      line-height: 1.75;
     }
 
     .cards-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
-    
-
     .card {
-      padding: 24px;
-      border-radius: 24px;
-      border: 1px solid rgba(122, 164, 255, 0.14);
-      background: linear-gradient(180deg, rgba(12, 24, 42, 0.88), rgba(9, 18, 31, 0.88));
+      padding: 26px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(11, 22, 40, 0.9), rgba(7, 14, 28, 0.92));
+      border: 1px solid rgba(122, 164, 255, 0.12);
       box-shadow: var(--shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -35% -55% auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(82, 183, 255, 0.12), transparent 60%);
+      pointer-events: none;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(113, 178, 255, 0.32);
-      background: linear-gradient(180deg, rgba(15, 29, 50, 0.96), rgba(9, 18, 31, 0.96));
+      transform: translateY(-7px);
+      border-color: rgba(113, 227, 255, 0.26);
+      box-shadow: 0 24px 54px rgba(0,0,0,0.34), 0 0 20px rgba(79, 161, 255, 0.12);
     }
 
     .card h3 {
       margin: 0 0 10px;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       letter-spacing: -0.03em;
     }
 
     .card p {
       margin: 0 0 16px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .card a {
-      color: var(--primary-2);
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .big-image {
+      min-height: 520px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+
+    .overlay-copy {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 22px 24px;
+      border-radius: 24px;
+      background: rgba(8, 18, 34, 0.75);
+      border: 1px solid rgba(122, 164, 255, 0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .overlay-copy h3 { margin: 0 0 8px; font-size: 2rem; letter-spacing: -0.04em; }
+    .overlay-copy p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .image-tile {
+      min-height: 250px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .image-tile:hover img { transform: scale(1.05); }
+
+    .image-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 2;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(8, 18, 34, 0.72);
+      border: 1px solid rgba(122, 164, 255, 0.2);
       font-weight: 700;
     }
 
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 20px;
     }
 
-    .process-list {
+    .steps {
       display: grid;
       gap: 14px;
+      margin-top: 18px;
     }
 
-    .process-step {
+    .step {
       display: grid;
-      grid-template-columns: 46px 1fr;
+      grid-template-columns: 48px 1fr;
       gap: 14px;
       align-items: start;
       padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.028);
       border: 1px solid rgba(122, 164, 255, 0.12);
     }
 
     .step-num {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(56, 129, 255, 0.22), rgba(107, 224, 255, 0.16));
-      color: white;
-      font-weight: 800;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(46,127,255,0.24), rgba(90,214,255,0.18));
+      font-weight: 900;
     }
+
+    .step strong { display: block; margin-bottom: 6px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.68; }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
     .tag {
       padding: 10px 14px;
       border-radius: 999px;
-      font-size: 0.92rem;
       background: rgba(255,255,255,0.04);
-      color: #dce9ff;
       border: 1px solid rgba(122, 164, 255, 0.12);
+      color: #dce9ff;
+      font-size: 0.93rem;
     }
 
-    .inquiry-wrap {
+    .inquiry {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 18px;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 20px;
       align-items: start;
-    }
-
-    .form-note {
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 18px;
     }
 
     .contact-boxes {
@@ -474,14 +613,11 @@
     .contact-box {
       padding: 16px 18px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.03);
       border: 1px solid rgba(122, 164, 255, 0.12);
+      background: rgba(255,255,255,0.03);
     }
 
-    .contact-box strong {
-      display: block;
-      margin-bottom: 6px;
-    }
+    .contact-box strong { display: block; margin-bottom: 6px; }
 
     form {
       display: grid;
@@ -496,46 +632,55 @@
 
     input, select, textarea {
       width: 100%;
-      border: 1px solid rgba(126, 174, 255, 0.16);
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(122, 164, 255, 0.14);
       background: rgba(255,255,255,0.03);
       color: var(--text);
-      border-radius: 16px;
-      padding: 15px 16px;
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
     }
 
     input::placeholder, textarea::placeholder { color: #8da5c3; }
 
     input:focus, select:focus, textarea:focus {
-      border-color: rgba(96, 195, 255, 0.7);
-      box-shadow: 0 0 0 4px rgba(96, 195, 255, 0.12);
+      border-color: rgba(113, 227, 255, 0.66);
+      box-shadow: 0 0 0 4px rgba(113, 227, 255, 0.11);
       background: rgba(255,255,255,0.05);
     }
 
-    textarea { min-height: 140px; resize: vertical; }
+    textarea { min-height: 150px; resize: vertical; }
 
     .form-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      align-items: center;
     }
 
-    .helper {
-      color: #9cb5d0;
-      font-size: 0.92rem;
+    .helper, .form-note { color: var(--muted); line-height: 1.72; }
+
+    .backup-box, .success-banner {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: .95rem;
+      line-height: 1.6;
     }
 
     .backup-box {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(107, 224, 255, 0.06);
-      border: 1px dashed rgba(107, 224, 255, 0.28);
+      background: rgba(113, 227, 255, 0.06);
+      border: 1px dashed rgba(113, 227, 255, 0.25);
       color: #d9f7ff;
-      font-size: 0.95rem;
     }
+
+    .success-banner {
+      display: none;
+      background: rgba(85, 212, 155, 0.12);
+      border: 1px solid rgba(85, 212, 155, 0.26);
+      color: #e5fff1;
+    }
+
+    .success-banner.show { display: block; }
 
     .faq {
       display: grid;
@@ -543,96 +688,115 @@
     }
 
     details {
+      padding: 18px;
       border-radius: 18px;
-      border: 1px solid rgba(122, 164, 255, 0.12);
       background: rgba(255,255,255,0.03);
-      padding: 18px 18px;
+      border: 1px solid rgba(122, 164, 255, 0.12);
     }
 
     summary {
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 800;
       list-style: none;
     }
 
     summary::-webkit-details-marker { display: none; }
-
-    details p {
-      color: var(--muted);
-      line-height: 1.75;
-      margin: 12px 0 0;
-    }
+    details p { margin: 12px 0 0; color: var(--muted); line-height: 1.72; }
 
     footer {
-      padding: 26px 0 40px;
-      color: #90a6c2;
+      padding: 28px 0 40px;
+      color: #8ea4c0;
     }
 
     .footer-wrap {
       display: flex;
       justify-content: space-between;
       gap: 16px;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(122, 164, 255, 0.12);
       padding-top: 20px;
-      flex-wrap: wrap;
     }
 
-    .success-banner {
-      display: none;
-      margin-top: 12px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(85, 212, 155, 0.12);
-      border: 1px solid rgba(85, 212, 155, 0.24);
-      color: #dff8eb;
+    .blink-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 14px rgba(113,227,255,.7);
+      animation: blink 1.8s infinite;
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
     }
 
-    .show { display: block; }
-
-    @media (max-width: 1080px) {
-      .hero-grid, .inquiry-wrap, .split, .cards-3 { grid-template-columns: 1fr; }
-      .consultation-card { position: relative; top: auto; right: auto; width: calc(100% - 36px); margin: 18px; }
-      .hero-visual { min-height: 640px; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .35; transform: scale(.8); }
     }
 
-    @media (max-width: 760px) {
-      .nav
+    @media (max-width: 1180px) {
+      .hero-grid, .showcase, .split, .inquiry, .cards-3 { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr 1fr; }
+      .hero-visual { min-height: 680px; }
+      .consult-card { position: relative; top: auto; right: auto; width: calc(100% - 28px); margin: 14px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav { padding: 12px 0 16px; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 16px; }
+      .hero-copy { padding: 36px 24px 30px; }
+      h1 { font-size: clamp(3rem, 15vw, 5rem); }
+      .stats, .grid-2, .mini-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 560px; }
+      .section-head { flex-direction: column; align-items: start; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 16px)); }
+      .brand-mark { width: 52px; height: 52px; }
+      .brand-text strong { font-size: 1.65rem; }
+      .consult-card { width: calc(100% - 20px); margin: 10px; padding: 20px; }
+      .btn { min-height: 50px; padding: 0 18px; }
+    }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <div class="ticker">
-      <span>Recruitment coordination for growing teams</span>
-      <span>Administrative systems for modern businesses</span>
-      <span>Customer operations and back-office execution</span>
+    <div class="ticker-track">
+      <span>Operations and back-office execution</span>
       <span>Premium remote operations support</span>
       <span>Recruitment coordination for growing teams</span>
       <span>Administrative systems for modern businesses</span>
       <span>Customer operations and back-office execution</span>
+      <span>Operations and back-office execution</span>
       <span>Premium remote operations support</span>
+      <span>Recruitment coordination for growing teams</span>
+      <span>Administrative systems for modern businesses</span>
+      <span>Customer operations and back-office execution</span>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a href="#home" class="brand brand-lockup">
+      <a href="#home" class="brand">
         <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="vGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#7ce3ff"/>
-              <stop offset="55%" stop-color="#4aa2ff"/>
-              <stop offset="100%" stop-color="#1e5fff"/>
+            <linearGradient id="vGlowFinal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#86eeff"/>
+              <stop offset="52%" stop-color="#51bbff"/>
+              <stop offset="100%" stop-color="#1d64ff"/>
             </linearGradient>
           </defs>
-          <path d="M10 12 L24 12 L32 42 L40 12 L54 12 L38 54 L26 54 Z" fill="none" stroke="url(#vGlow)" stroke-width="6" stroke-linejoin="round"/>
-          <path d="M14 12 L26 12 L32 33" fill="none" stroke="#b8f3ff" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M50 12 L38 12 L32 33" fill="none" stroke="#7fd6ff" stroke-opacity="0.65" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M9 12 L24 12 L32 42 L40 12 L55 12 L38 54 L26 54 Z" fill="none" stroke="url(#vGlowFinal)" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M14 12 L26 12 L32 33" fill="none" stroke="#c8fbff" stroke-opacity="0.92" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M50 12 L38 12 L32 33" fill="none" stroke="#89ddff" stroke-opacity="0.7" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
-        <span class="brand-text-wrap">
+        <span class="brand-text">
           <strong>VertexOps</strong>
           <small>Business Operations • Recruitment • Support</small>
         </span>
       </a>
+
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#recruitment">Recruitment</a>
@@ -650,35 +814,32 @@
         <div class="panel hero-copy">
           <div class="eyebrow">Premium operational support for growing companies</div>
           <h1>Operate like a larger brand with sharper systems and stronger support.</h1>
-          <p class="lead">
-            VertexOps helps startups, service firms, executive teams, and growth-focused businesses improve day-to-day execution through premium operations support, recruitment coordination, administrative structure, and customer-facing workflow support.
-          </p>
-          <div class="actions">
+          <p class="lead">VertexOps helps startups, service firms, executive teams, and growth-focused businesses improve day-to-day execution through premium operations support, recruitment coordination, administrative structure, and customer-facing workflow support.</p>
+          <div class="hero-actions">
             <a class="btn" href="#contact">Book Consultation</a>
             <a class="btn secondary" href="#services">Explore Services</a>
           </div>
           <div class="stats">
             <div class="stat">
               <strong>Operations</strong>
-              <span>Structured support for admin, execution, and workflow management.</span>
+              <span>Structured support for business admin, systems, communication, and execution.</span>
             </div>
             <div class="stat">
               <strong>Hiring</strong>
-              <span>Candidate coordination, interview flow, and recruitment support.</span>
+              <span>Candidate flow, interview coordination, and recruitment operations support.</span>
             </div>
             <div class="stat">
               <strong>Systems</strong>
-              <span>Digital presence, setup support, email routing, and process refinement.</span>
+              <span>Website support, business email, contact flow, and digital setup refinement.</span>
             </div>
           </div>
         </div>
 
-        <div class="panel hero-visual" aria-label="VertexOps operations support image area">
-          <div class="hero-overlay"></div>
-          <div class="consultation-card">
+        <div class="panel hero-visual">
+          <div class="consult-card">
             <h2>Request a Consultation</h2>
             <p>Tell us what kind of support your business needs and we’ll direct your inquiry to the right service path.</p>
-            <div class="mini-list">
+            <div class="check-list">
               <span>Operations support and admin execution</span>
               <span>Recruitment coordination and hiring assistance</span>
               <span>Digital systems, website, and business email support</span>
@@ -691,41 +852,71 @@
 
     <section class="section" id="services">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-head">
           <div>
             <div class="eyebrow">Services</div>
-            <h2>Support built for teams that need execution, structure, and follow-through.</h2>
+            <h2>Support built for teams that need structure, execution, and follow-through.</h2>
           </div>
-          <p>VertexOps is designed to support the parts of the business that often get delayed, fragmented, or deprioritized when teams are growing quickly.</p>
+          <p>VertexOps is designed to support the parts of the business that often become delayed, fragmented, or under-supported when companies are trying to grow fast.</p>
         </div>
         <div class="cards-3">
           <article class="card">
             <h3>Operations Support</h3>
-            <p>Execution support for recurring tasks, internal coordination, business admin, documentation, inbox flow, and process consistency.</p>
+            <p>Execution support for recurring tasks, internal coordination, documentation, inbox flow, client-facing admin, and business process consistency.</p>
             <a href="#contact">Discuss Operations →</a>
           </article>
           <article class="card">
             <h3>Digital Systems Support</h3>
-            <p>Website updates, branded business email setup, contact flow planning, domain support, and light technical coordination for a stronger online presence.</p>
+            <p>Website updates, branded business email setup, domain support, contact flow planning, and light technical coordination for a stronger online presence.</p>
             <a href="#contact">Discuss Digital Support →</a>
           </article>
           <article class="card">
             <h3>Customer & Back-Office Support</h3>
-            <p>Practical help with service workflows, client-facing admin, communication routing, support process cleanup, and operational organization.</p>
+            <p>Practical help with service workflows, support routing, communication follow-up, back-office organization, and better operational consistency.</p>
             <a href="#contact">Discuss Back-Office Support →</a>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="section">
+      <div class="container showcase">
+        <div class="panel big-image">
+          <div class="overlay-copy">
+            <div class="eyebrow" style="margin-bottom:12px;">Operational support</div>
+            <h3>Business support that looks sharper, feels stronger, and scales with you.</h3>
+            <p>Use premium visuals now, then replace them later with your own brand photography, team photos, client work visuals, or industry-specific service imagery.</p>
+          </div>
+        </div>
+        <div class="mini-grid">
+          <div class="panel card image-tile">
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=900&q=80" alt="Recruitment discussion in a modern office">
+            <div class="image-label">Recruitment support</div>
+          </div>
+          <div class="panel card image-tile">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Digital systems and dashboard workspace">
+            <div class="image-label">Digital systems</div>
+          </div>
+          <div class="panel card image-tile">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Business operations planning team">
+            <div class="image-label">Operations planning</div>
+          </div>
+          <div class="panel card image-tile">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Client support and team collaboration">
+            <div class="image-label">Client execution</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="recruitment">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-head">
           <div>
             <div class="eyebrow">Recruitment</div>
             <h2>Recruitment support that keeps the hiring process organized and responsive.</h2>
           </div>
-          <p>This service is built for businesses that need structured help around candidate flow, communication, and hiring coordination without building a full internal recruiting team.</p>
+          <p>This service is built for companies that need structured help around candidate flow, communication, and hiring coordination without building a full internal recruiting team.</p>
         </div>
         <div class="cards-3">
           <article class="card">
@@ -751,45 +942,46 @@
       <div class="container split">
         <div class="panel card">
           <div class="eyebrow">How it works</div>
-          <h2 style="margin:0 0 10px; font-size:2.2rem; letter-spacing:-0.05em;">A simple path from inquiry to support.</h2>
-          <p style="color:var(--muted); line-height:1.75;">The site is already set up to look polished today and stay useful later when you connect a backend, CRM, form service, or email workflow.</p>
-          <div class="process-list">
-            <div class="process-step">
+          <h2 style="margin:0 0 10px; font-size:2.4rem; letter-spacing:-0.05em;">A simple path from inquiry to support.</h2>
+          <p class="form-note">The site is already set up to look polished today and stay useful later when you connect a backend, CRM, form service, autoresponder, or inquiry dashboard.</p>
+          <div class="steps">
+            <div class="step">
               <div class="step-num">1</div>
               <div>
                 <strong>Submit an inquiry</strong>
-                <p style="margin:6px 0 0; color:var(--muted);">Visitors complete the inquiry form with their needs, service type, and project details.</p>
+                <p>Visitors complete the inquiry form with service type, project details, and business needs.</p>
               </div>
             </div>
-            <div class="process-step">
+            <div class="step">
               <div class="step-num">2</div>
               <div>
                 <strong>Route by service type</strong>
-                <p style="margin:6px 0 0; color:var(--muted);">Operations, digital support, recruitment, and hiring inquiries can later be routed to different inboxes or automations.</p>
+                <p>Operations, recruitment, support, and digital system inquiries can later route to different inboxes or automations.</p>
               </div>
             </div>
-            <div class="process-step">
+            <div class="step">
               <div class="step-num">3</div>
               <div>
                 <strong>Follow up professionally</strong>
-                <p style="margin:6px 0 0; color:var(--muted);">With backend tools added later, this same form can send auto-replies, save backups, and trigger notifications.</p>
+                <p>With a backend added later, this same form can save messages, trigger notifications, and send automatic replies.</p>
               </div>
             </div>
           </div>
           <div class="tags">
-            <span class="tag">Future-ready inquiry flow</span>
+            <span class="tag">Form-ready structure</span>
             <span class="tag">Auto-reply compatible</span>
             <span class="tag">CRM / Formspree / Zapier ready</span>
           </div>
         </div>
+
         <div class="panel card" id="about">
           <div class="eyebrow">About VertexOps</div>
-          <h2 style="margin:0 0 10px; font-size:2.2rem; letter-spacing:-0.05em;">Support that helps businesses look sharper and operate more consistently.</h2>
-          <p style="color:var(--muted); line-height:1.75;">VertexOps Global provides practical support across operations, recruitment coordination, digital systems, and business administration. The goal is simple: help businesses present themselves more professionally and run more smoothly.</p>
-          <p style="color:var(--muted); line-height:1.75;">This site is intentionally structured to feel like a real service business today while staying ready for future additions like inquiry automations, service-specific pages, application forms, and message tracking.</p>
+          <h2 style="margin:0 0 10px; font-size:2.4rem; letter-spacing:-0.05em;">Support that helps businesses look sharper and operate more consistently.</h2>
+          <p class="form-note">VertexOps Global provides practical support across operations, recruitment coordination, digital systems, and business administration. The goal is simple: help businesses present themselves more professionally and run more smoothly.</p>
+          <p class="form-note">This site is intentionally built to feel like a real service business now while staying ready for future additions like inquiry automations, service-specific pages, dashboards, and application flows.</p>
           <div class="contact-boxes">
             <div class="contact-box">
-              <strong>Main business email</strong>
+              <strong>Main business email <span class="blink-dot"></span></strong>
               <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
             </div>
             <div class="contact-box">
@@ -806,11 +998,11 @@
     </section>
 
     <section class="section" id="contact">
-      <div class="container inquiry-wrap">
+      <div class="container inquiry">
         <div class="panel card">
           <div class="eyebrow">Contact</div>
-          <h2 style="margin:0 0 10px; font-size:2.4rem; letter-spacing:-0.05em;">Start the conversation with VertexOps.</h2>
-          <p class="form-note">Use the inquiry form for service requests, hiring support, website updates, or operational questions. Right now the form includes front-end validation and local backup support. Later, you can connect it to Formspree, Netlify Forms, Zapier, Zoho Forms, a backend API, or your own database without redesigning the page.</p>
+          <h2 style="margin:0 0 10px; font-size:2.6rem; letter-spacing:-0.06em;">Start the conversation with VertexOps.</h2>
+          <p class="form-note">Use the inquiry form for service requests, hiring support, website updates, or operational questions. Right now the form includes front-end validation and local backup support. Later, connect it to Formspree, Netlify Forms, Zapier, Zoho Forms, or your own backend to save all inquiries and send automatic responses.</p>
           <div class="contact-boxes">
             <div class="contact-box">
               <strong>General inquiries</strong>
@@ -825,9 +1017,7 @@
               <a href="mailto:sales@vertexops.net">sales@vertexops.net</a>
             </div>
           </div>
-          <div class="backup-box">
-            <strong>Future backend note:</strong> Replace the form <code>action</code> with your live endpoint later. The current form already has named fields, service selection, and a clean structure for email routing and automation.
-          </div>
+          <div class="backup-box"><strong>Future backend note:</strong> replace the form <code>action</code> with your live endpoint later. The current form already includes service routing, named fields, and inquiry structure for automation.</div>
         </div>
 
         <div class="panel card">
@@ -870,7 +1060,7 @@
               <button class="btn" type="submit">Send Inquiry</button>
               <a class="btn secondary" href="mailto:contact@vertexops.net?subject=VertexOps%20Inquiry">Email Instead</a>
             </div>
-            <div class="helper">Form drafts are saved in your browser as a temporary backup while the visitor is typing.</div>
+            <div class="helper">Form drafts are saved in the browser as a temporary backup while someone is typing.</div>
             <div class="success-banner" id="successBanner">Your inquiry has been prepared. When a backend is connected later, this same form can submit live data and trigger an automatic reply.</div>
           </form>
         </div>
@@ -879,29 +1069,29 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-head">
           <div>
             <div class="eyebrow">FAQ</div>
             <h2>Questions clients often ask before reaching out.</h2>
           </div>
-          <p>These answers help your site feel more complete today, and they reduce friction for future clients who want to know how to get started.</p>
+          <p>These answers help the site feel complete now and make it easier for future clients to understand how to get started.</p>
         </div>
         <div class="faq">
           <details>
             <summary>Can VertexOps support both operations and hiring at the same time?</summary>
-            <p>Yes. VertexOps is positioned to support a mix of administrative execution, workflow coordination, and recruitment support depending on the client’s needs.</p>
+            <p>Yes. VertexOps is positioned to support a mix of operational execution, workflow coordination, digital systems, and recruitment support depending on the client’s needs.</p>
           </details>
           <details>
             <summary>Will the website form send email right away?</summary>
-            <p>The design is ready now. To make it send live submissions, connect the form later to Formspree, Netlify Forms, Zoho Forms, Zapier, or your own backend endpoint.</p>
+            <p>The design is ready now. To make it send live submissions and save every inquiry, connect the form later to Formspree, Netlify Forms, Zoho Forms, Zapier, or your own backend endpoint.</p>
           </details>
           <details>
             <summary>Can inquiry messages be routed to different inboxes later?</summary>
-            <p>Yes. The service dropdown and field names are already structured so you can later route submissions by service type to contact, sales, support, or careers inboxes.</p>
+            <p>Yes. The service dropdown and named fields are already structured so you can later route submissions by service type to contact, sales, support, or careers inboxes.</p>
           </details>
           <details>
             <summary>Can automated email replies be added later?</summary>
-            <p>Yes. Once a live form backend is connected, you can trigger an auto-reply from the form service or from your email workflow. You can also set an email autoresponder directly in Hostinger for mailbox-based inquiries.</p>
+            <p>Yes. Once a live form backend is connected, you can trigger an auto-reply from the form service or your email workflow. You can also set an autoresponder directly in Hostinger for mailbox-based inquiries.</p>
           </details>
         </div>
       </div>
@@ -971,7 +1161,7 @@
 
       setTimeout(() => {
         window.location.href = `mailto:contact@vertexops.net?subject=${encodeURIComponent(subject)}&body=${body}`;
-      }, 500);
+      }, 450);
     });
   </script>
 </body>
