@@ -42,7 +42,7 @@
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
 
-    .container { width: min(1380px, calc(100% - 32px)); margin: 0 auto; }
+    .container { width: min(1540px, calc(100% - 24px)); margin: 0 auto; }
 
     .topbar {
       border-bottom: 1px solid var(--line);
@@ -104,18 +104,11 @@
     }
 
     .brand-mark {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.75rem;
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      color: white;
-      background: linear-gradient(135deg, #2f7fff 0%, #66d5ff 100%);
-      box-shadow: 0 14px 28px rgba(57, 133, 255, 0.22);
-      border: 1px solid rgba(255,255,255,0.18);
+      width: 62px;
+      height: 62px;
+      display: block;
+      filter: drop-shadow(0 0 12px rgba(102, 213, 255, 0.5)) drop-shadow(0 0 24px rgba(47, 127, 255, 0.32));
+      flex: 0 0 auto;
     }
 
     .brand-text-wrap {
@@ -196,7 +189,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 28px;
       align-items: stretch;
     }
@@ -210,7 +203,7 @@
     }
 
     .hero-copy {
-      padding: 52px 46px 40px;
+      padding: 62px 56px 48px;
       position: relative;
       background:
         radial-gradient(circle at top right, rgba(74, 147, 255, 0.26), transparent 30%),
@@ -280,10 +273,10 @@
 
     .hero-visual {
       position: relative;
-      min-height: 100%;
+      min-height: 860px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-        url('hero-image.jpg') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -294,10 +287,10 @@
 
     .consultation-card {
       position: absolute;
-      top: 34px;
-      right: 28px;
-      width: min(380px, calc(100% - 56px));
-      padding: 24px;
+      top: 40px;
+      right: 34px;
+      width: min(420px, calc(100% - 68px));
+      padding: 28px;
       border-radius: 28px;
       border: 1px solid rgba(138, 184, 255, 0.22);
       background: rgba(20, 27, 41, 0.82);
@@ -376,70 +369,7 @@
       gap: 22px;
     }
 
-    .visual-band {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .large-image-card {
-      min-height: 460px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .large-image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .large-image-card .image-copy {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: rgba(9, 18, 31, 0.72);
-      border: 1px solid rgba(122, 164, 255, 0.18);
-      backdrop-filter: blur(14px);
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .image-grid .card {
-      padding: 0;
-      overflow: hidden;
-      min-height: 219px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .image-label {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(9, 18, 31, 0.72);
-      border: 1px solid rgba(122, 164, 255, 0.18);
-      font-weight: 600;
-      z-index: 2;
-    }
-
-    .image-tile {
-      position: relative;
-    }
+    
 
     .card {
       padding: 24px;
@@ -660,20 +590,13 @@
     .show { display: block; }
 
     @media (max-width: 1080px) {
-      .hero-grid, .inquiry-wrap, .split, .cards-3, .visual-band, .image-grid { grid-template-columns: 1fr; }
+      .hero-grid, .inquiry-wrap, .split, .cards-3 { grid-template-columns: 1fr; }
       .consultation-card { position: relative; top: auto; right: auto; width: calc(100% - 36px); margin: 18px; }
-      .hero-visual { min-height: 560px; }
+      .hero-visual { min-height: 640px; }
     }
 
     @media (max-width: 760px) {
-      .nav { padding: 10px 0 14px; align-items: flex-start; flex-direction: column; }
-      .nav-links { gap: 14px; }
-      .hero-copy { padding: 28px 22px; }
-      .stats, .grid-2 { grid-template-columns: 1fr; }
-      .section-heading { flex-direction: column; align-items: start; }
-      h1 { font-size: clamp(2.5rem, 15vw, 4.2rem); }
-      .consultation-card { width: calc(100% - 24px); margin: 12px; padding: 18px; }
-    }
+      .nav
   </style>
 </head>
 <body>
@@ -693,7 +616,18 @@
   <header>
     <div class="container nav">
       <a href="#home" class="brand brand-lockup">
-        <span class="brand-mark" aria-hidden="true">V</span>
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7ce3ff"/>
+              <stop offset="55%" stop-color="#4aa2ff"/>
+              <stop offset="100%" stop-color="#1e5fff"/>
+            </linearGradient>
+          </defs>
+          <path d="M10 12 L24 12 L32 42 L40 12 L54 12 L38 54 L26 54 Z" fill="none" stroke="url(#vGlow)" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M14 12 L26 12 L32 33" fill="none" stroke="#b8f3ff" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M50 12 L38 12 L32 33" fill="none" stroke="#7fd6ff" stroke-opacity="0.65" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
         <span class="brand-text-wrap">
           <strong>VertexOps</strong>
           <small>Business Operations • Recruitment • Support</small>
@@ -750,37 +684,6 @@
               <span>Digital systems, website, and business email support</span>
             </div>
             <a class="btn" href="#contact">Get Started</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container visual-band">
-        <div class="panel large-image-card">
-          <img src="team-operations.jpg" alt="Modern business team collaborating in an office setting">
-          <div class="image-copy">
-            <div class="eyebrow" style="margin-bottom:12px;">Built to look like a larger company</div>
-            <h2 style="margin:0 0 8px; font-size:2.2rem; letter-spacing:-0.05em;">A bigger visual presence for operations, recruitment, and client support.</h2>
-            <p style="margin:0; color:var(--muted); line-height:1.7;">Use your real brand images later, or swap in team, hiring, and support visuals without redesigning the layout.</p>
-          </div>
-        </div>
-        <div class="image-grid">
-          <div class="panel card image-tile">
-            <img src="recruitment-image.jpg" alt="Hiring and recruitment workspace">
-            <div class="image-label">Hiring support</div>
-          </div>
-          <div class="panel card image-tile">
-            <img src="client-support.jpg" alt="Client support and business workflow image">
-            <div class="image-label">Client operations</div>
-          </div>
-          <div class="panel card image-tile">
-            <img src="digital-systems.jpg" alt="Digital systems and website management image">
-            <div class="image-label">Digital systems</div>
-          </div>
-          <div class="panel card image-tile">
-            <img src="executive-support.jpg" alt="Executive admin and back office support image">
-            <div class="image-label">Executive support</div>
           </div>
         </div>
       </div>
