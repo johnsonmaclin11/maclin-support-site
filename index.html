@@ -19,16 +19,18 @@
     :root {
       --bg: #07101d;
       --bg-2: #0a1628;
-      --panel: rgba(11, 20, 35, 0.82);
-      --panel-2: rgba(13, 24, 41, 0.92);
+      --panel: rgba(11, 20, 35, 0.84);
+      --panel-2: rgba(12, 22, 39, 0.94);
       --line: rgba(255,255,255,0.08);
       --text: #ffffff;
-      --muted: #afbdd1;
-      --muted-2: #7f8ea8;
+      --muted: #aebdd1;
+      --muted-2: #7d8da8;
       --blue: #2f82ff;
-      --blue-2: #60d8ff;
-      --blue-3: #89aaff;
-      --glow: 0 18px 50px rgba(47, 130, 255, 0.22);
+      --blue-2: #62dcff;
+      --blue-3: #8cb1ff;
+      --success: #3ee3aa;
+      --warning: #ffcf5a;
+      --glow: 0 18px 50px rgba(47, 130, 255, 0.25);
       --shadow: 0 22px 60px rgba(0,0,0,0.30);
       --radius: 24px;
       --max: 1240px;
@@ -48,12 +50,13 @@
       font-family: "Inter", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 20%, rgba(47,130,255,0.14), transparent 24%),
-        radial-gradient(circle at 85% 15%, rgba(96,216,255,0.10), transparent 24%),
-        radial-gradient(circle at 50% 90%, rgba(137,170,255,0.08), transparent 28%),
+        radial-gradient(circle at 10% 18%, rgba(47,130,255,0.14), transparent 24%),
+        radial-gradient(circle at 85% 15%, rgba(98,220,255,0.10), transparent 24%),
+        radial-gradient(circle at 50% 88%, rgba(140,177,255,0.08), transparent 28%),
         linear-gradient(180deg, #06101c 0%, #091524 46%, #06101c 100%);
       overflow-x: hidden;
       line-height: 1.65;
+      min-height: 100vh;
     }
 
     body::before {
@@ -61,65 +64,13 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: -2;
-      opacity: 0.13;
+      z-index: -3;
+      opacity: 0.14;
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent 85%);
-    }
-
-    .orb,
-    .orb::before,
-    .orb::after {
-      content: "";
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(75px);
-      z-index: -3;
-    }
-
-    .orb {
-      width: 280px;
-      height: 280px;
-      top: 80px;
-      left: -50px;
-      background: rgba(47,130,255,0.13);
-      animation: floatA 18s ease-in-out infinite;
-    }
-
-    .orb::before {
-      width: 320px;
-      height: 320px;
-      right: -1100px;
-      top: 140px;
-      background: rgba(96,216,255,0.10);
-      animation: floatB 20s ease-in-out infinite;
-    }
-
-    .orb::after {
-      width: 250px;
-      height: 250px;
-      left: 420px;
-      top: 580px;
-      background: rgba(137,170,255,0.08);
-      animation: floatC 16s ease-in-out infinite;
-    }
-
-    @keyframes floatA {
-      0%,100% { transform: translate(0,0); }
-      50% { transform: translate(90px,50px); }
-    }
-
-    @keyframes floatB {
-      0%,100% { transform: translate(0,0); }
-      50% { transform: translate(-120px,70px); }
-    }
-
-    @keyframes floatC {
-      0%,100% { transform: translate(0,0); }
-      50% { transform: translate(-70px,-90px); }
+      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent 85%);
     }
 
     a {
@@ -138,7 +89,7 @@
     }
 
     .glass {
-      background: linear-gradient(180deg, rgba(15,25,42,0.90), rgba(10,18,31,0.94));
+      background: linear-gradient(180deg, rgba(15,25,42,0.90), rgba(10,18,31,0.95));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
@@ -146,6 +97,7 @@
 
     .section {
       padding: 105px 0;
+      position: relative;
     }
 
     .pill {
@@ -173,7 +125,8 @@
     .story-copy h2,
     .cta-copy h2,
     .contact-copy h2,
-    .results-copy h2 {
+    .results-copy h2,
+    .hiring-copy h2 {
       font-family: "Manrope", sans-serif;
       letter-spacing: -0.05em;
       line-height: 1.05;
@@ -225,6 +178,88 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .moving-lines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -4;
+      overflow: hidden;
+    }
+
+    .moving-lines span {
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 220px;
+      background: linear-gradient(to bottom, rgba(98,220,255,0), rgba(98,220,255,0.22), rgba(98,220,255,0));
+      animation: drift 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    .moving-lines span:nth-child(1) { left: 12%; animation-delay: 0s; }
+    .moving-lines span:nth-child(2) { left: 28%; animation-delay: 2s; }
+    .moving-lines span:nth-child(3) { left: 44%; animation-delay: 4s; }
+    .moving-lines span:nth-child(4) { left: 63%; animation-delay: 1s; }
+    .moving-lines span:nth-child(5) { left: 81%; animation-delay: 3s; }
+
+    @keyframes drift {
+      0% { transform: translateY(-260px); opacity: 0; }
+      20% { opacity: 0.7; }
+      100% { transform: translateY(120vh); opacity: 0; }
+    }
+
+    .orb,
+    .orb::before,
+    .orb::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(75px);
+      z-index: -5;
+    }
+
+    .orb {
+      width: 280px;
+      height: 280px;
+      top: 80px;
+      left: -50px;
+      background: rgba(47,130,255,0.13);
+      animation: floatA 18s ease-in-out infinite;
+    }
+
+    .orb::before {
+      width: 320px;
+      height: 320px;
+      right: -1100px;
+      top: 140px;
+      background: rgba(98,220,255,0.10);
+      animation: floatB 20s ease-in-out infinite;
+    }
+
+    .orb::after {
+      width: 250px;
+      height: 250px;
+      left: 420px;
+      top: 580px;
+      background: rgba(140,177,255,0.08);
+      animation: floatC 16s ease-in-out infinite;
+    }
+
+    @keyframes floatA {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(90px,50px); }
+    }
+
+    @keyframes floatB {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-120px,70px); }
+    }
+
+    @keyframes floatC {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-70px,-90px); }
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -261,15 +296,15 @@
       border-radius: 50%;
       margin-right: 10px;
       background: var(--blue-2);
-      box-shadow: 0 0 0 rgba(96,216,255,0.7);
+      box-shadow: 0 0 0 rgba(98,220,255,0.7);
       animation: pulseDot 2s infinite;
       vertical-align: middle;
     }
 
     @keyframes pulseDot {
-      0% { box-shadow: 0 0 0 0 rgba(96,216,255,0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(96,216,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(96,216,255,0); }
+      0% { box-shadow: 0 0 0 0 rgba(98,220,255,0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(98,220,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(98,220,255,0); }
     }
 
     @keyframes marquee {
@@ -291,33 +326,44 @@
       gap: 14px;
     }
 
-    .brand-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, rgba(47,130,255,0.22), rgba(96,216,255,0.10));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 18px rgba(255,255,255,0.03), 0 10px 24px rgba(47,130,255,0.18);
-      overflow: hidden;
-    }
-
-    .brand-icon img {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
-    }
-
-    .brand-text h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: 23px;
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       line-height: 1;
-      letter-spacing: -0.04em;
     }
 
-    .brand-text p {
-      margin-top: 5px;
+    .logo-main {
+      font-family: "Manrope", sans-serif;
+      font-size: 31px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      position: relative;
+      text-shadow: 0 0 18px rgba(47,130,255,0.18);
+    }
+
+    .logo-main .vmark {
+      color: var(--blue-2);
+      margin-right: 1px;
+      position: relative;
+      animation: logoGlow 2.6s ease-in-out infinite alternate;
+      text-shadow:
+        0 0 8px rgba(98,220,255,0.55),
+        0 0 18px rgba(47,130,255,0.4),
+        0 0 34px rgba(47,130,255,0.22);
+    }
+
+    @keyframes logoGlow {
+      from { filter: brightness(0.95); transform: translateY(0); }
+      to { filter: brightness(1.12); transform: translateY(-1px); }
+    }
+
+    .logo-tagline {
+      margin-top: 6px;
       color: var(--muted-2);
       font-size: 11px;
       text-transform: uppercase;
@@ -358,6 +404,20 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy-wrap::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(47,130,255,0.18), transparent 70%);
+      pointer-events: none;
     }
 
     .hero-copy h1 {
@@ -517,7 +577,8 @@
     .services-grid,
     .results-grid,
     .testimonials-grid,
-    .footer-grid {
+    .footer-grid,
+    .hiring-grid {
       display: grid;
       gap: 22px;
     }
@@ -529,16 +590,18 @@
     .service-card {
       padding: 30px;
       border-radius: 26px;
-      transition: 0.3s ease;
+      transition: 0.35s ease;
       position: relative;
       overflow: hidden;
     }
 
     .service-card:hover,
     .result-card:hover,
-    .testimonial:hover {
+    .testimonial:hover,
+    .hiring-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 26px 62px rgba(47,130,255,0.16);
+      border-color: rgba(255,255,255,0.12);
     }
 
     .service-card::after {
@@ -561,8 +624,14 @@
       place-items: center;
       font-size: 28px;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, rgba(47,130,255,0.24), rgba(96,216,255,0.10));
+      background: linear-gradient(135deg, rgba(47,130,255,0.24), rgba(98,220,255,0.10));
       border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.35s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.05);
+      box-shadow: 0 0 24px rgba(47,130,255,0.18);
     }
 
     .service-card h3 {
@@ -612,21 +681,24 @@
 
     .story-copy,
     .results-copy,
-    .contact-copy {
+    .contact-copy,
+    .hiring-copy {
       padding: 36px;
       border-radius: 28px;
     }
 
     .story-copy h2,
     .results-copy h2,
-    .contact-copy h2 {
+    .contact-copy h2,
+    .hiring-copy h2 {
       font-size: clamp(32px, 4vw, 48px);
       margin: 16px 0 14px;
     }
 
     .story-copy p,
     .results-copy p,
-    .contact-copy p {
+    .contact-copy p,
+    .hiring-copy p {
       color: var(--muted);
       margin-bottom: 14px;
     }
@@ -649,7 +721,7 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(96,216,255,0.12);
+      background: rgba(98,220,255,0.12);
       color: var(--blue-2);
       font-weight: 800;
       flex-shrink: 0;
@@ -732,7 +804,7 @@
     .result-card {
       padding: 28px;
       border-radius: 24px;
-      transition: 0.3s ease;
+      transition: 0.35s ease;
     }
 
     .result-number {
@@ -753,6 +825,39 @@
       font-size: 14px;
     }
 
+    .hiring-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hiring-card {
+      padding: 28px;
+      border-radius: 24px;
+      transition: 0.35s ease;
+    }
+
+    .hiring-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .hiring-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #dceaff;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 14px;
+    }
+
     .testimonials-grid {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -760,7 +865,7 @@
     .testimonial {
       padding: 28px;
       border-radius: 24px;
-      transition: 0.3s ease;
+      transition: 0.35s ease;
     }
 
     .testimonial p {
@@ -786,7 +891,7 @@
       text-align: center;
       background:
         radial-gradient(circle at top left, rgba(47,130,255,0.25), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(96,216,255,0.16), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(98,220,255,0.16), transparent 24%),
         linear-gradient(135deg, #0f1d34 0%, #10203a 42%, #0b1627 100%);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
@@ -835,6 +940,41 @@
       color: var(--muted);
       font-size: 14px;
       margin-top: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-grid input,
+    .form-grid select,
+    .form-grid textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .form-grid input::placeholder,
+    .form-grid textarea::placeholder {
+      color: #8ea0ba;
+    }
+
+    .form-note {
+      color: var(--muted-2);
+      font-size: 12px;
+      margin-top: 12px;
     }
 
     footer {
@@ -889,7 +1029,8 @@
       .services-grid,
       .results-grid,
       .testimonials-grid,
-      .trust-grid {
+      .trust-grid,
+      .hiring-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -919,7 +1060,9 @@
       .results-grid,
       .testimonials-grid,
       .trust-grid,
-      .hero-points {
+      .hero-points,
+      .hiring-grid,
+      .form-grid {
         grid-template-columns: 1fr;
       }
 
@@ -934,10 +1077,17 @@
       .section {
         padding: 82px 0;
       }
+
+      .form-grid .full {
+        grid-column: auto;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="moving-lines">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
   <div class="orb"></div>
 
   <header>
@@ -954,20 +1104,17 @@
 
     <div class="container nav">
       <div class="brand">
-        <div class="brand-icon">
-          <img src="logo-v.png" alt="VertexOps V logo" />
-        </div>
-        <div class="brand-text">
-          <h2>VertexOps</h2>
-          <p>Business Operations • Recruitment • Support</p>
+        <div class="logo-wrap">
+          <div class="logo-main"><span class="vmark">V</span>ertexOps</div>
+          <div class="logo-tagline">Business Operations • Recruitment • Support</div>
         </div>
       </div>
 
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#recruitment">Recruitment</a>
+        <a href="#hiring">Hiring</a>
         <a href="#about">About</a>
-        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="btn btn-secondary">Book Consultation</a>
       </nav>
@@ -1271,6 +1418,48 @@
       </div>
     </section>
 
+    <section id="hiring" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Hiring Page Preview</span>
+          <h2>Recruitment support can also be presented as a dedicated hiring solution.</h2>
+          <p>
+            This section makes your site feel bigger and gives you room to later turn recruitment
+            into its own full page.
+          </p>
+        </div>
+
+        <div class="hiring-grid">
+          <div class="hiring-card glass reveal">
+            <div class="tag">Candidate Sourcing</div>
+            <h3>Find better-fit candidates faster.</h3>
+            <p>
+              Structured sourcing support for teams that want cleaner pipelines and stronger role alignment.
+            </p>
+            <a href="#contact" class="btn btn-secondary">Discuss Hiring Needs</a>
+          </div>
+
+          <div class="hiring-card glass reveal">
+            <div class="tag">Interview Coordination</div>
+            <h3>Reduce delays in the hiring process.</h3>
+            <p>
+              Organized interview scheduling, communication follow-up, and candidate coordination.
+            </p>
+            <a href="#contact" class="btn btn-secondary">Request Support</a>
+          </div>
+
+          <div class="hiring-card glass reveal">
+            <div class="tag">Recruitment Operations</div>
+            <h3>Create a more professional candidate experience.</h3>
+            <p>
+              Support that helps your hiring workflow feel more polished, responsive, and efficient.
+            </p>
+            <a href="#contact" class="btn btn-secondary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
@@ -1338,8 +1527,29 @@
             Reach out through the appropriate channel below to start the conversation with VertexOps.
           </p>
           <p>
-            This section can later be upgraded into a real form connected to email or a CRM.
+            This form is ready for the website design now. To make it actually send email later, connect it
+            to Formspree, Netlify Forms, Zoho Forms, or Hostinger Forms.
           </p>
+
+          <form class="form-grid">
+            <input type="text" placeholder="Full name" />
+            <input type="email" placeholder="Business email" />
+            <input type="text" placeholder="Company name" />
+            <select>
+              <option>Select service</option>
+              <option>Administrative Support</option>
+              <option>Recruitment Support</option>
+              <option>Customer Operations</option>
+              <option>Executive Assistance</option>
+            </select>
+            <textarea class="full" rows="5" placeholder="Tell us what support you need"></textarea>
+            <button type="button" class="btn btn-primary full">Send Inquiry</button>
+          </form>
+
+          <div class="form-note">
+            Email setup suggestion: keep contact@vertexops.net as the main inbox and forward
+            sales@, support@, and careers@ to it until volume grows.
+          </div>
         </div>
 
         <div class="contact-cards">
@@ -1375,12 +1585,9 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand">
-          <div class="brand-icon">
-            <img src="logo-v.png" alt="VertexOps V logo" />
-          </div>
-          <div class="brand-text">
-            <h2>VertexOps</h2>
-            <p>Business Operations • Recruitment • Support</p>
+          <div class="logo-wrap">
+            <div class="logo-main"><span class="vmark">V</span>ertexOps</div>
+            <div class="logo-tagline">Business Operations • Recruitment • Support</div>
           </div>
         </div>
         <p>
@@ -1393,8 +1600,8 @@
         <h4>Navigation</h4>
         <a href="#services">Services</a>
         <a href="#recruitment">Recruitment</a>
+        <a href="#hiring">Hiring</a>
         <a href="#about">About</a>
-        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
       </div>
 
