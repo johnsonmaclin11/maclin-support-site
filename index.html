@@ -1441,41 +1441,10 @@
     fields.forEach(field => field.addEventListener('input', saveDraft));
     loadDraft();
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      saveDraft();
-      successBanner.classList.add('show');
-
-      const email = document.getElementById('emailAddress').value.trim();
-      const subject = document.getElementById('subjectLine').value.trim() || 'New VertexOps Inquiry';
-      const name = document.getElementById('fullName').value.trim();
-      const company = document.getElementById('companyName').value.trim();
-      const service = document.getElementById('serviceType').value.trim();
-      const budget = document.getElementById('budgetRange').value.trim();
-      const phone = document.getElementById('phoneNumber').value.trim();
-      const timeline = document.getElementById('timeline').value.trim();
-      const referral = document.getElementById('referralSource').value.trim();
-      const message = document.getElementById('messageBody').value.trim();
-
-      const body = encodeURIComponent(
-        `Name: ${name}
-Company: ${company}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
-Budget: ${budget}
-Timeline: ${timeline}
-Referral: ${referral}
-
-Message:
-${message}`
-      );
-
-      setTimeout(() => {
-        window.location.href = `mailto:contact@vertexops.net?subject=${encodeURIComponent(subject)}&body=${body}`;
-      }, 450);
-    });
-
+    form.addEventListener('submit', function () {
+  saveDraft();
+  successBanner.classList.add('show');
+});
     const overlays = document.querySelectorAll('.service-overlay');
     const links = document.querySelectorAll('.service-link');
     const closeButtons = document.querySelectorAll('[data-close]');
