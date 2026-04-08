@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VertexOps Global | Operations, Recruitment & Digital Systems</title>
-  <meta name="description" content="VertexOps helps growing companies improve operations, recruitment coordination, digital systems, and client execution with structured support built for growth." />
+  <title>VertexOps Global | Operations, Recruitment, Systems & Client Support</title>
+  <meta name="description" content="VertexOps helps growth-focused businesses improve operational structure, hiring coordination, digital systems, planning, and client execution through professional support services built for scale." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#04101f;
+      --bg:#04111e;
       --bg2:#07182e;
-      --panel:rgba(10,23,43,.84);
-      --panel-2:rgba(15,29,52,.92);
+      --panel:rgba(10,23,43,.86);
+      --panel-2:rgba(14,28,50,.94);
       --line:rgba(125,176,255,.15);
       --text:#eef4ff;
-      --muted:#a8bbd9;
+      --muted:#a8bbd7;
       --blue:#4fa1ff;
-      --cyan:#77e4ff;
-      --glow:0 0 20px rgba(87,194,255,.32);
+      --cyan:#78e4ff;
+      --green:#88f0c7;
       --shadow:0 24px 70px rgba(0,0,0,.34);
       --radius:28px;
-      --max:1440px;
+      --max:1480px;
     }
 
     *{box-sizing:border-box}
@@ -32,9 +32,9 @@
       font-family:'Inter',system-ui,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(79,161,255,.15), transparent 18%),
-        radial-gradient(circle at 88% 12%, rgba(119,228,255,.12), transparent 18%),
-        linear-gradient(180deg, #030a15 0%, #071427 45%, #04101f 100%);
+        radial-gradient(circle at 10% 8%, rgba(79,161,255,.15), transparent 20%),
+        radial-gradient(circle at 90% 10%, rgba(120,228,255,.10), transparent 18%),
+        linear-gradient(180deg,#03101c 0%,#071427 45%,#04111e 100%);
       overflow-x:hidden;
     }
 
@@ -42,28 +42,26 @@
     body::after{
       content:"";
       position:fixed;
+      width:28vw;
+      height:28vw;
       border-radius:50%;
-      filter:blur(80px);
       pointer-events:none;
       z-index:-1;
-      opacity:.35;
+      filter:blur(80px);
+      opacity:.28;
       animation:floatGlow 14s ease-in-out infinite alternate;
     }
 
     body::before{
-      width:28vw;
-      height:28vw;
       left:-8vw;
-      top:-6vw;
-      background:rgba(50,133,255,.22);
+      top:-7vw;
+      background:rgba(49,135,255,.22);
     }
 
     body::after{
-      width:26vw;
-      height:26vw;
-      right:-8vw;
-      top:20vh;
-      background:rgba(89,232,255,.14);
+      right:-9vw;
+      top:22vh;
+      background:rgba(92,230,255,.14);
       animation-duration:18s;
     }
 
@@ -94,7 +92,7 @@
       min-width:max-content;
       padding:12px 0;
       white-space:nowrap;
-      color:#d9e7fb;
+      color:#dbe8fb;
       animation:marquee 28s linear infinite;
     }
 
@@ -119,7 +117,7 @@
     }
 
     .nav{
-      min-height:88px;
+      min-height:90px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -130,21 +128,38 @@
       display:flex;
       align-items:center;
       gap:14px;
+      min-width:0;
+    }
+
+    .brand-logo-wrap{
+      width:60px;
+      height:60px;
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
     }
 
     .brand-logo{
+      width:58px;
       height:58px;
-      width:auto;
       object-fit:contain;
-      filter:drop-shadow(0 0 12px rgba(87,194,255,.40)) drop-shadow(0 0 24px rgba(37,115,255,.22));
+      filter:drop-shadow(0 0 12px rgba(87,194,255,.42)) drop-shadow(0 0 24px rgba(37,115,255,.24));
+    }
+
+    .brand-fallback{
+      width:58px;
+      height:58px;
+      filter:drop-shadow(0 0 12px rgba(87,194,255,.42)) drop-shadow(0 0 24px rgba(37,115,255,.24));
+      display:none;
     }
 
     .brand-text strong{
       display:block;
       font-size:1.9rem;
-      letter-spacing:-.06em;
       line-height:1;
-      background:linear-gradient(90deg,#70dbff 0%, #ffffff 45%, #5da9ff 100%);
+      letter-spacing:-.06em;
+      background:linear-gradient(90deg,#73ddff 0%, #ffffff 42%, #62a8ff 100%);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
@@ -153,10 +168,10 @@
     .brand-text small{
       display:block;
       margin-top:6px;
-      font-size:.72rem;
-      color:#9ab2d3;
-      letter-spacing:.18em;
+      color:#9db2ce;
+      letter-spacing:.16em;
       text-transform:uppercase;
+      font-size:.72rem;
     }
 
     .nav-links{
@@ -190,7 +205,8 @@
       font-weight:800;
       letter-spacing:-.02em;
       box-shadow:0 12px 28px rgba(63,138,255,.25);
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
+      cursor:pointer;
     }
 
     .btn:hover{
@@ -210,12 +226,12 @@
     }
 
     .hero{
-      padding:28px 0 28px;
+      padding:28px 0;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.07fr .93fr;
       gap:20px;
       align-items:stretch;
     }
@@ -230,9 +246,9 @@
     }
 
     .hero-copy{
-      padding:54px 48px 40px;
+      padding:56px 48px 42px;
       background:
-        radial-gradient(circle at top right, rgba(67,145,255,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(67,145,255,.16), transparent 30%),
         linear-gradient(180deg, rgba(6,14,29,.98), rgba(4,10,21,.98));
     }
 
@@ -254,14 +270,14 @@
       font-size:clamp(3.1rem, 6vw, 6.2rem);
       line-height:.95;
       letter-spacing:-.08em;
-      max-width:780px;
+      max-width:800px;
     }
 
     .lead{
       margin:22px 0 28px;
-      max-width:720px;
+      max-width:760px;
       font-size:1.12rem;
-      line-height:1.8;
+      line-height:1.82;
       color:var(--muted);
     }
 
@@ -269,7 +285,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-bottom:26px;
+      margin-bottom:28px;
     }
 
     .stats{
@@ -304,7 +320,7 @@
     }
 
     .hero-visual{
-      min-height:720px;
+      min-height:730px;
       background:
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)),
         url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -339,7 +355,7 @@
     .consult-card p{
       margin:0 0 16px;
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.72;
     }
 
     .check-list{
@@ -388,7 +404,7 @@
 
     .section-head p{
       margin:0;
-      max-width:660px;
+      max-width:680px;
       color:var(--muted);
       line-height:1.75;
     }
@@ -510,6 +526,30 @@
       margin:0;
       color:var(--muted);
       line-height:1.72;
+    }
+
+    .bundle-band{
+      padding:24px;
+      border-radius:26px;
+      border:1px solid rgba(122,164,255,.14);
+      background:linear-gradient(135deg, rgba(31,66,117,.36), rgba(10,24,44,.78));
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .bundle-band h3{
+      margin:0 0 10px;
+      font-size:2rem;
+      letter-spacing:-.05em;
+    }
+
+    .bundle-band p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.78;
     }
 
     .split{
@@ -674,8 +714,8 @@
 
     .reveal{
       opacity:0;
-      transform:translateY(26px);
-      transition:opacity .7s ease, transform .7s ease;
+      transform:translateY(24px);
+      transition:opacity .75s ease, transform .75s ease;
     }
 
     .reveal.show{
@@ -710,12 +750,12 @@
 
     .service-copy p{
       color:var(--muted);
-      line-height:1.82;
+      line-height:1.84;
       font-size:1.08rem;
     }
 
     .service-image{
-      min-height:620px;
+      min-height:640px;
       background-size:cover;
       background-position:center;
     }
@@ -783,7 +823,7 @@
     }
 
     @media (max-width:1180px){
-      .hero-grid, .showcase, .split, .inquiry, .cards-3, .service-hero-grid, .service-grid{
+      .hero-grid, .showcase, .split, .inquiry, .cards-3, .service-hero-grid, .service-grid, .bundle-band{
         grid-template-columns:1fr;
       }
       .mini-grid{
@@ -820,8 +860,14 @@
       .brand-text strong{
         font-size:1.6rem;
       }
-      .brand-logo{
+      .brand-logo,
+      .brand-fallback{
+        width:50px;
         height:50px;
+      }
+      .brand-logo-wrap{
+        width:52px;
+        height:52px;
       }
     }
 
@@ -849,134 +895,191 @@
     const services = {
       operations: {
         title: "Operational Support",
-        short: "Business support that looks sharper, feels stronger, and scales with you.",
+        short: "Operational structure that reduces friction, improves follow-through, and gives growing businesses a stronger execution layer.",
         eyebrow: "Operational support",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
-        intro: "VertexOps helps growing businesses build stronger execution across the operational work that supports revenue, delivery, communication, and internal consistency. This service is designed for founders and leadership teams who need dependable structure without adding unnecessary complexity.",
-        growth: "When operations become clearer, teams move faster, handoffs improve, leadership spends less time resolving avoidable friction, and the business becomes better positioned for sustainable growth. We help create the kind of support layer that makes a company feel more established, more responsive, and easier to scale.",
-        bullets: [
-          "Recurring workflow coordination and task follow-through",
-          "Inbox, admin, document, and communication support",
-          "Cross-functional coordination between leadership and delivery teams",
-          "Cleaner internal processes that reduce bottlenecks and rework"
+        heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+        tabImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
+        homepageText: "We help businesses strengthen the daily operational layer that supports leadership, communication, admin execution, and consistent internal follow-through.",
+        intro: "Operational support is often the difference between a business that feels stretched and one that feels controlled. VertexOps helps leadership teams create more dependable execution across recurring tasks, internal coordination, communication flow, reporting support, and business administration.",
+        growth: "This service is designed to improve speed without sacrificing structure. By reducing avoidable delays and clarifying ownership across teams, we help businesses operate with more consistency, stronger visibility, and better readiness for growth.",
+        includes: [
+          "Recurring workflow support for operational, administrative, and coordination-heavy tasks",
+          "Internal follow-up structure that improves consistency across priorities and deadlines",
+          "Communication support that reduces gaps between departments and decision-makers",
+          "Documentation, process reinforcement, and day-to-day operational execution support"
         ],
         outcomes: [
-          "Stronger operational consistency across departments",
-          "Reduced delays in approvals, follow-ups, and recurring tasks",
-          "More professional execution for clients and internal stakeholders",
-          "Better leadership visibility into day-to-day support flow"
+          "More reliable follow-through across core internal processes",
+          "Less dependency on leadership for avoidable coordination work",
+          "Cleaner execution across operational tasks that affect service quality and speed",
+          "A stronger operational base for sustainable growth"
         ],
         departments: [
           "Leadership and operations alignment",
-          "Administrative support and process management",
-          "Coordination between service teams and internal stakeholders"
-        ]
+          "Administrative support and internal coordination",
+          "Execution support across cross-functional business activity"
+        ],
+        c1: 91,
+        c2: 83,
+        c3: 88
       },
       recruitment: {
         title: "Recruitment Support",
-        short: "A more polished hiring process that improves speed, candidate experience, and internal coordination.",
+        short: "Recruitment support that improves hiring speed, candidate experience, and coordination between internal stakeholders.",
         eyebrow: "Recruitment support",
-        image: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=1600&q=80",
-        intro: "VertexOps supports the operational side of hiring so companies can manage candidate flow with greater speed, structure, and professionalism. This is ideal for businesses that are growing, hiring across multiple roles, or trying to improve the quality of the candidate journey.",
-        growth: "A stronger recruitment process supports growth by helping teams move faster on talent acquisition, communicate more clearly with candidates, reduce interview friction, and protect the company’s brand during hiring. Well-run recruitment operations create momentum instead of delay.",
-        bullets: [
-          "Candidate pipeline coordination and communication support",
-          "Interview scheduling, confirmations, and follow-up workflows",
-          "Hiring process structure across multiple stakeholders",
-          "Professional candidate experience from outreach to next steps"
+        heroImage: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=1600&q=80",
+        tabImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+        homepageText: "We help companies keep recruitment organized, responsive, and professional across sourcing, scheduling, communication, and hiring coordination.",
+        intro: "Recruitment support should not feel improvised, especially when a business is trying to grow. VertexOps helps companies create a more structured hiring process by improving candidate flow, interview coordination, communication standards, and process discipline across the recruitment cycle.",
+        growth: "This support becomes especially valuable when multiple hiring stakeholders are involved or when leadership needs better visibility into hiring progress without being pulled into every small step. The result is a hiring process that feels more polished, responsive, and easier to scale.",
+        includes: [
+          "Candidate coordination and communication support throughout active hiring cycles",
+          "Interview scheduling, status tracking, and follow-up workflow management",
+          "Process support that improves internal alignment between recruiters, managers, and leadership",
+          "Professional structure that helps protect candidate experience and employer brand"
         ],
         outcomes: [
           "Faster movement through interview stages",
-          "Less scheduling friction and fewer missed steps",
-          "Stronger candidate experience and employer presentation",
-          "Better coordination between hiring managers and support teams"
+          "Reduced scheduling friction and missed communication",
+          "A more professional hiring experience for candidates and hiring teams",
+          "Better recruitment process discipline during growth periods"
         ],
         departments: [
-          "Talent coordination and recruitment operations",
-          "Leadership and hiring manager scheduling support",
-          "Candidate communication and interview logistics"
-        ]
+          "Recruitment operations and coordination",
+          "Hiring manager communication support",
+          "Leadership visibility into talent pipeline movement"
+        ],
+        c1: 89,
+        c2: 81,
+        c3: 86
       },
       digital: {
         title: "Digital Systems",
-        short: "Sharper digital infrastructure that makes your business look more established and easier to work with.",
+        short: "Digital systems support that improves credibility, responsiveness, and the professionalism of your front-end business presence.",
         eyebrow: "Digital systems",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
-        intro: "VertexOps helps companies strengthen the digital systems that support trust, responsiveness, and day-to-day execution. This includes website refinement, contact flow setup, business email structure, and practical digital improvements that support growth.",
-        growth: "Digital systems influence how quickly prospects can reach you, how professionally your company is perceived, and how easily internal teams can manage inquiries, updates, and routing. Better systems reduce confusion and support a more scalable operating model.",
-        bullets: [
-          "Website support and content update coordination",
-          "Business email, domain, and inquiry flow setup",
-          "Cleaner routing for contact forms and internal follow-up",
-          "Professional digital presentation aligned with business growth"
+        heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
+        tabImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+        homepageText: "We help businesses improve website presentation, inquiry flow, digital setup, and the systems that support a more polished client-facing experience.",
+        intro: "A business can lose momentum quickly when digital systems are unclear, fragmented, or difficult to manage. VertexOps helps companies strengthen the systems that support trust and responsiveness, including website updates, inquiry routing, business email structure, and practical digital coordination.",
+        growth: "This service supports growth by making the business easier to discover, easier to contact, and easier to work with. It also creates stronger digital foundations for future automation, cleaner inbound handling, and a more established market presence.",
+        includes: [
+          "Website support and front-end refinement for a more professional presentation",
+          "Business email and contact-flow setup that supports reliable communication",
+          "Digital coordination for inquiries, routing, and customer-facing systems",
+          "Practical setup work that improves usability without unnecessary technical complexity"
         ],
         outcomes: [
-          "A more credible and polished online presence",
-          "Cleaner handoff between front-end inquiries and back-end response",
-          "Improved contact flow and lower risk of missed opportunities",
-          "Digital structure that supports future automation"
+          "A more credible and polished online business presence",
+          "Cleaner flow from inquiry to internal response",
+          "Reduced missed opportunities caused by weak routing or inconsistent digital structure",
+          "Stronger readiness for future automation and scale"
         ],
         departments: [
-          "Website and front-end presentation support",
-          "Sales and inquiry routing structure",
-          "Business email and digital operations coordination"
-        ]
+          "Website and digital presentation",
+          "Sales and inquiry routing support",
+          "Operational coordination behind client-facing systems"
+        ],
+        c1: 87,
+        c2: 79,
+        c3: 90
       },
       planning: {
         title: "Operations Planning",
-        short: "Better planning systems that give teams more clarity, accountability, and room to scale.",
+        short: "Operations planning support that helps teams execute with clearer priorities, smoother handoffs, and stronger accountability.",
         eyebrow: "Operations planning",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
-        intro: "VertexOps supports businesses that need stronger planning rhythm across projects, priorities, and team coordination. This service helps translate strategy into practical execution by improving structure, visibility, and communication across active work.",
-        growth: "Growth becomes more manageable when teams are working from clear priorities, shared timelines, and more disciplined follow-through. Strong planning reduces confusion between departments, improves capacity awareness, and helps leadership scale operations with less operational drag.",
-        bullets: [
-          "Planning support for recurring priorities and business initiatives",
-          "Improved visibility into timelines, owners, and next steps",
-          "More consistent coordination across departments and contributors",
-          "Practical structure that supports faster execution"
+        heroImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
+        tabImage: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80",
+        homepageText: "We help teams bring more clarity to priorities, responsibilities, timelines, and the planning rhythm required for disciplined growth.",
+        intro: "Planning is where many businesses lose control as growth accelerates. VertexOps helps companies convert broad goals into practical execution structure by supporting planning routines, ownership clarity, progress visibility, and communication around active priorities.",
+        growth: "This service is valuable for businesses that want fewer surprises, stronger cross-team accountability, and more disciplined progress across initiatives. Better planning helps teams move with confidence because responsibilities are clearer and execution becomes easier to manage.",
+        includes: [
+          "Planning support for business priorities, initiatives, and cross-functional workstreams",
+          "Clearer visibility into owners, deadlines, and next-step accountability",
+          "Structured support for recurring coordination around active priorities",
+          "Process discipline that strengthens execution and reduces project drift"
         ],
         outcomes: [
-          "Better accountability across active initiatives",
-          "Clearer ownership and fewer delayed handoffs",
-          "Improved communication between teams and leadership",
-          "Planning systems that support controlled scaling"
+          "Improved visibility across priorities and progress",
+          "Fewer missed handoffs between departments",
+          "Stronger accountability around timelines and deliverables",
+          "Better operational control as the business grows"
         ],
         departments: [
-          "Cross-department coordination",
-          "Project and initiative planning support",
-          "Leadership visibility and execution structure"
-        ]
+          "Leadership planning and visibility",
+          "Cross-functional initiative support",
+          "Execution alignment across teams and departments"
+        ],
+        c1: 90,
+        c2: 84,
+        c3: 87
       },
       client: {
         title: "Client Execution",
-        short: "A smoother client-facing process that improves service consistency and business credibility.",
+        short: "Client execution support that strengthens responsiveness, service consistency, and the overall professionalism of delivery operations.",
         eyebrow: "Client execution",
-        image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1600&q=80",
-        intro: "VertexOps helps service-oriented businesses improve the operational side of client delivery through better follow-up, back-office structure, communication flow, and support coordination. The goal is to help the business feel more organized and more professional at every client touchpoint.",
-        growth: "When client execution is stronger, retention improves, communication becomes more consistent, delivery feels more dependable, and the business is better positioned to grow without service quality slipping. We help create an easier process for both internal teams and external clients.",
-        bullets: [
-          "Client workflow support and communication coordination",
-          "Back-office structure for delivery, follow-up, and support",
-          "Support routing that improves consistency and responsiveness",
-          "Operational reinforcement for service businesses in growth mode"
+        heroImage: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1600&q=80",
+        tabImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80",
+        homepageText: "We help businesses improve the operational side of delivery, follow-up, service consistency, and client-facing coordination.",
+        intro: "Client execution is where process quality becomes visible. VertexOps helps service-oriented businesses strengthen the systems behind delivery, communication, follow-up, and back-office coordination so the client experience feels more consistent and more professional.",
+        growth: "This service supports growth because strong client execution protects reputation, improves retention, and reduces the risk that growth will weaken service quality. It helps businesses scale with greater confidence because delivery becomes more structured and more dependable.",
+        includes: [
+          "Support for client communication flow, follow-up, and service coordination",
+          "Back-office reinforcement that improves consistency across delivery steps",
+          "Operational cleanup for recurring client-facing tasks and responsibilities",
+          "Practical support that helps service teams maintain standards as volume grows"
         ],
         outcomes: [
-          "A better client experience across the service journey",
-          "More consistent internal follow-up and delivery execution",
-          "Lower risk of missed communication or fragmented support",
-          "Stronger service quality as the business grows"
+          "A smoother and more reliable client-facing experience",
+          "Better consistency across delivery and support workflows",
+          "Reduced risk of missed follow-up or fragmented service communication",
+          "Stronger retention and professionalism as the business expands"
         ],
         departments: [
-          "Client success and service coordination",
-          "Back-office workflow support",
-          "Internal execution between service and admin teams"
-        ]
+          "Client success and delivery coordination",
+          "Back-office support for service operations",
+          "Internal handoffs between service, support, and admin teams"
+        ],
+        c1: 92,
+        c2: 82,
+        c3: 89
       }
     };
 
     function getQueryParam(name){
       const url = new URL(window.location.href);
       return url.searchParams.get(name);
+    }
+
+    function logoMarkup(){
+      return `
+        <span class="brand-logo-wrap">
+          <img
+            src="vertexops-header-logo.png"
+            alt="VertexOps"
+            class="brand-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <svg class="brand-fallback" viewBox="0 0 90 90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="crystalV1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#9af7ff"/>
+                <stop offset="55%" stop-color="#49d8ff"/>
+                <stop offset="100%" stop-color="#1d7dff"/>
+              </linearGradient>
+              <linearGradient id="crystalV2" x1="0" y1="0" x2="0.8" y2="1">
+                <stop offset="0%" stop-color="#7ceeff"/>
+                <stop offset="100%" stop-color="#1572ff"/>
+              </linearGradient>
+            </defs>
+            <path d="M14 18 L38 18 L45 29 L52 18 L76 18 L45 74 Z" fill="url(#crystalV1)" opacity="0.96"/>
+            <path d="M38 18 L45 29 L45 74 L28 34 Z" fill="#70f0ff" opacity="0.78"/>
+            <path d="M52 18 L45 29 L45 74 L62 34 Z" fill="#1686ff" opacity="0.55"/>
+            <path d="M22 22 L36 22 L43 31" fill="none" stroke="#d9ffff" stroke-opacity="0.72" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M68 22 L54 22 L47 31" fill="none" stroke="#d9ffff" stroke-opacity="0.42" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M14 18 L38 18 L45 29 L52 18 L76 18 L45 74 Z" fill="none" stroke="url(#crystalV2)" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      `;
     }
 
     function counterBlock(num, label){
@@ -993,16 +1096,16 @@
         <div class="topbar">
           <div class="container">
             <div class="ticker">
-              <span>Operational support for growing companies</span>
-              <span>Recruitment coordination for scaling teams</span>
-              <span>Digital systems that support credibility and speed</span>
-              <span>Client execution built for consistency</span>
-              <span>Professional support across departments</span>
-              <span>Operational support for growing companies</span>
-              <span>Recruitment coordination for scaling teams</span>
-              <span>Digital systems that support credibility and speed</span>
-              <span>Client execution built for consistency</span>
-              <span>Professional support across departments</span>
+              <span>Operational support for growth-focused companies</span>
+              <span>Recruitment coordination with stronger process discipline</span>
+              <span>Digital systems that improve credibility and responsiveness</span>
+              <span>Planning support that reduces friction between departments</span>
+              <span>Client execution built for scale and consistency</span>
+              <span>Operational support for growth-focused companies</span>
+              <span>Recruitment coordination with stronger process discipline</span>
+              <span>Digital systems that improve credibility and responsiveness</span>
+              <span>Planning support that reduces friction between departments</span>
+              <span>Client execution built for scale and consistency</span>
             </div>
           </div>
         </div>
@@ -1010,7 +1113,7 @@
         <header>
           <div class="container nav">
             <a href="./" class="brand">
-              <img src="vertexops-header-logo.png" alt="VertexOps" class="brand-logo">
+              ${logoMarkup()}
               <span class="brand-text">
                 <strong>VertexOps</strong>
                 <small>Business Operations • Recruitment • Support</small>
@@ -1019,7 +1122,7 @@
 
             <nav class="nav-links">
               <a href="#services">Services</a>
-              <a href="#growth">Growth Model</a>
+              <a href="#bundle">Bundle Model</a>
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
               <a href="#contact" class="btn secondary">Book Consultation</a>
@@ -1031,38 +1134,38 @@
           <section class="hero">
             <div class="container hero-grid">
               <div class="panel hero-copy reveal">
-                <div class="eyebrow">Premium support for teams building toward higher growth</div>
-                <h1>Operate with sharper systems, stronger execution, and easier cross-team processes.</h1>
-                <p class="lead">VertexOps helps growing businesses strengthen the operational layer behind growth. We support leadership, recruitment, digital systems, planning, and client execution so teams can move faster, work more clearly across departments, and present a more professional business to the market.</p>
+                <div class="eyebrow">Professional support for structured growth</div>
+                <h1>Sharper execution, smoother internal process, and stronger coordination across departments.</h1>
+                <p class="lead">VertexOps helps businesses strengthen the operating layer behind growth. We support operations, recruitment, digital systems, planning, and client execution so companies can scale with better structure, clearer ownership, and a more professional experience across every stage of work.</p>
                 <div class="hero-actions">
                   <a class="btn" href="#contact">Request Consultation</a>
                   <a class="btn secondary" href="#services">Explore Services</a>
                 </div>
                 <div class="stats">
                   <div class="stat">
-                    <strong>Growth support</strong>
-                    <span>We help remove process friction so teams can focus more energy on delivery, hiring, and expansion.</span>
+                    <strong>Better process</strong>
+                    <span>We help reduce confusion, improve handoffs, and create clearer operating rhythm across teams.</span>
                   </div>
                   <div class="stat">
-                    <strong>Better coordination</strong>
-                    <span>We support cleaner handoffs between departments so execution becomes easier and more reliable.</span>
+                    <strong>Higher growth readiness</strong>
+                    <span>We strengthen the systems and coordination that growing companies need before scale creates pressure.</span>
                   </div>
                   <div class="stat">
-                    <strong>Professional systems</strong>
-                    <span>We strengthen the business layer that clients, candidates, and stakeholders experience every day.</span>
+                    <strong>Professional execution</strong>
+                    <span>We improve how the business is experienced by leadership, employees, candidates, and clients.</span>
                   </div>
                 </div>
               </div>
 
               <div class="panel hero-visual reveal">
                 <div class="consult-card">
-                  <h2>Structured support for modern teams</h2>
-                  <p>Choose the support area your business needs most and open a dedicated page in a new tab for a deeper explanation of how VertexOps helps drive higher growth and easier internal processes.</p>
+                  <h2>Support designed around real business pressure points</h2>
+                  <p>Each service area below addresses a different part of business performance. Click any card to open a dedicated page in a new tab with a more detailed explanation of how that specific support area drives growth and operational ease.</p>
                   <div class="check-list">
                     <span>Operational support</span>
                     <span>Recruitment support</span>
                     <span>Digital systems support</span>
-                    <span>Operations planning</span>
+                    <span>Operations planning support</span>
                     <span>Client execution support</span>
                   </div>
                   <a class="btn" href="#services">View support areas</a>
@@ -1075,39 +1178,39 @@
             <div class="container">
               <div class="section-head reveal">
                 <div>
-                  <div class="eyebrow">Clickable service overview</div>
-                  <h2>Open any support area in a new tab to see a full professional service page.</h2>
+                  <div class="eyebrow">Service overview</div>
+                  <h2>Five distinct support areas, each built for a different part of business growth.</h2>
                 </div>
-                <p>Each section below is designed to explain how VertexOps supports higher growth, easier execution, and better coordination between departments. Click any image card to open the full page.</p>
+                <p>These are separate services with different goals, different operating value, and different impact across the business. They can also be combined into one coordinated support model when a company needs broader operational reinforcement.</p>
               </div>
 
               <div class="showcase">
                 <a class="panel big-image reveal" href="?service=operations" target="_blank" rel="noopener">
                   <div class="overlay-copy">
                     <div class="eyebrow" style="margin-bottom:12px;">Operational support</div>
-                    <h3>Business support that looks sharper, feels stronger, and scales with you.</h3>
-                    <p>We help improve execution, reduce friction between teams, and create cleaner day-to-day operating structure for growing businesses.</p>
+                    <h3>Improve execution discipline, internal structure, and day-to-day business consistency.</h3>
+                    <p>${services.operations.homepageText}</p>
                   </div>
                 </a>
 
                 <div class="mini-grid">
                   <a class="image-tile reveal" href="?service=recruitment" target="_blank" rel="noopener">
-                    <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=1200&q=80" alt="Recruitment support">
+                    <img src="${services.recruitment.heroImage}" alt="Recruitment support">
                     <div class="image-label">Recruitment support</div>
                   </a>
 
                   <a class="image-tile reveal" href="?service=digital" target="_blank" rel="noopener">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Digital systems">
+                    <img src="${services.digital.heroImage}" alt="Digital systems">
                     <div class="image-label">Digital systems</div>
                   </a>
 
                   <a class="image-tile reveal" href="?service=planning" target="_blank" rel="noopener">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Operations planning">
+                    <img src="${services.planning.heroImage}" alt="Operations planning">
                     <div class="image-label">Operations planning</div>
                   </a>
 
                   <a class="image-tile reveal" href="?service=client" target="_blank" rel="noopener">
-                    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80" alt="Client execution">
+                    <img src="${services.client.heroImage}" alt="Client execution">
                     <div class="image-label">Client execution</div>
                   </a>
                 </div>
@@ -1115,28 +1218,52 @@
             </div>
           </section>
 
-          <section class="section" id="growth">
+          <section class="section" id="bundle">
+            <div class="container">
+              <div class="bundle-band reveal">
+                <div>
+                  <div class="eyebrow">Bundle option</div>
+                  <h3>These services can be delivered individually or as one coordinated support bundle.</h3>
+                  <p>Some companies only need help in one area. Others need broader support across operations, recruitment, digital systems, planning, and client execution at the same time. VertexOps can position these services as separate service lines or combine them into a bundled model that supports smoother coordination across departments.</p>
+                </div>
+                <div>
+                  <div class="contact-boxes">
+                    <div class="contact-box">
+                      <strong>Single-service engagement</strong>
+                      Focused support in one area with clear outcomes and narrower scope.
+                    </div>
+                    <div class="contact-box">
+                      <strong>Bundled support model</strong>
+                      Coordinated support across multiple functions for stronger operational improvement.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
             <div class="container">
               <div class="section-head reveal">
                 <div>
                   <div class="eyebrow">Why this matters</div>
-                  <h2>How VertexOps helps companies achieve higher growth with easier processes.</h2>
+                  <h2>Growth becomes easier when departments stop working around process weakness.</h2>
                 </div>
-                <p>Growth usually becomes harder when departments are working in silos, handoffs are unclear, and routine execution depends too heavily on leadership attention. VertexOps helps create the support structure that makes growth easier to manage.</p>
+                <p>Many businesses do not struggle because of effort. They struggle because process, ownership, communication, and coordination are not strong enough to support the next stage of growth. VertexOps helps close that gap.</p>
               </div>
 
               <div class="cards-3">
                 <article class="card reveal">
-                  <h3>Less friction between departments</h3>
-                  <p>We help teams work more cleanly across operations, recruitment, delivery, and client support so responsibilities are clearer and follow-through is more consistent.</p>
+                  <h3>Clearer ownership</h3>
+                  <p>We help businesses reduce ambiguity around responsibilities, handoffs, and next steps so internal execution becomes easier to manage.</p>
                 </article>
                 <article class="card reveal">
-                  <h3>Better professional presentation</h3>
-                  <p>Stronger systems improve how the company is experienced by candidates, clients, partners, and internal stakeholders, which supports both credibility and growth readiness.</p>
+                  <h3>Fewer bottlenecks</h3>
+                  <p>By improving support structure and coordination, teams spend less time recovering from process friction and more time moving work forward.</p>
                 </article>
                 <article class="card reveal">
-                  <h3>More scalable execution</h3>
-                  <p>We help create the process foundation needed for expansion, so growth does not automatically create more confusion, delays, or operational strain.</p>
+                  <h3>Stronger professional presence</h3>
+                  <p>Better process improves how the company is experienced by candidates, clients, partners, and internal stakeholders alike.</p>
                 </article>
               </div>
             </div>
@@ -1146,28 +1273,28 @@
             <div class="container split">
               <div class="panel card reveal">
                 <div class="eyebrow">How support works</div>
-                <h2 style="margin:0 0 10px;font-size:2.4rem;letter-spacing:-.05em;">A clear path from inquiry to structured support.</h2>
-                <p class="form-note">VertexOps is designed to support businesses that need a more professional and more coordinated operational environment. We help simplify the process so leadership teams can move forward with clarity.</p>
+                <h2 style="margin:0 0 10px;font-size:2.35rem;letter-spacing:-.05em;">A structured path from business need to practical support.</h2>
+                <p class="form-note">VertexOps is designed for businesses that want more control, better internal coordination, and stronger execution discipline without turning straightforward support needs into unnecessary complexity.</p>
                 <div class="steps">
                   <div class="step">
                     <div class="step-num">1</div>
                     <div>
-                      <strong>Identify the pressure points</strong>
-                      <p>We start by understanding where execution slows down, where communication breaks, and which departments need more structure.</p>
+                      <strong>Assess the pressure points</strong>
+                      <p>We identify where friction, inconsistency, or weak coordination is slowing down progress.</p>
                     </div>
                   </div>
                   <div class="step">
                     <div class="step-num">2</div>
                     <div>
-                      <strong>Align support to the right function</strong>
-                      <p>From operations to recruitment to digital systems, support is matched to the part of the business that most directly affects growth and consistency.</p>
+                      <strong>Match support to the right function</strong>
+                      <p>Support is aligned to the area where stronger execution will have the most immediate business value.</p>
                     </div>
                   </div>
                   <div class="step">
                     <div class="step-num">3</div>
                     <div>
-                      <strong>Improve process and execution</strong>
-                      <p>We help create stronger routines, better coordination, and a more reliable support layer across the business.</p>
+                      <strong>Improve structure and flow</strong>
+                      <p>We help create a more dependable environment for communication, coordination, and follow-through.</p>
                     </div>
                   </div>
                 </div>
@@ -1175,9 +1302,9 @@
 
               <div class="panel card reveal">
                 <div class="eyebrow">About VertexOps</div>
-                <h2 style="margin:0 0 10px;font-size:2.4rem;letter-spacing:-.05em;">Built for businesses that want to grow with stronger internal support.</h2>
-                <p class="form-note">VertexOps Global helps businesses improve the work behind the work. That means better operations, smoother recruitment coordination, stronger digital systems, clearer planning, and more dependable client-facing execution.</p>
-                <p class="form-note">The result is a business that feels more organized internally and more professional externally. That combination supports better speed, clearer communication, and more sustainable growth across departments.</p>
+                <h2 style="margin:0 0 10px;font-size:2.35rem;letter-spacing:-.05em;">Support that makes businesses easier to run and easier to scale.</h2>
+                <p class="form-note">VertexOps helps companies strengthen the work behind the work. That includes business operations, recruitment coordination, digital systems, planning rhythm, and client-facing execution.</p>
+                <p class="form-note">The objective is straightforward: create a more professional, more organized, and more scalable operating environment so leadership can grow the business with less avoidable strain.</p>
                 <div class="contact-boxes">
                   <div class="contact-box">
                     <strong>Main business email</strong>
@@ -1201,7 +1328,7 @@
               <div class="panel card reveal">
                 <div class="eyebrow">Contact</div>
                 <h2 style="margin:0 0 10px;font-size:2.6rem;letter-spacing:-.06em;">Start the conversation with VertexOps.</h2>
-                <p class="form-note">Use the form to describe your business needs, current process challenges, and the type of support you want. The front-end is ready. You only need to connect your backend endpoint when you are ready to receive live submissions.</p>
+                <p class="form-note">Use the form to describe your business, the process issues you want to improve, and whether you are looking for one service or a bundled support model. The front-end is ready now. You can connect your backend endpoint later.</p>
                 <div class="contact-boxes">
                   <div class="contact-box">
                     <strong>General inquiries</strong>
@@ -1216,7 +1343,7 @@
                     <a href="mailto:sales@vertexops.net">sales@vertexops.net</a>
                   </div>
                 </div>
-                <div class="backup-box"><strong>Backend note:</strong> replace the form <code>action</code> with your real backend API route later, such as <code>/api/inquiry</code> or your hosted form endpoint.</div>
+                <div class="backup-box"><strong>Backend note:</strong> replace the form <code>action="/api/inquiry"</code> with your live backend route later.</div>
               </div>
 
               <div class="panel card reveal">
@@ -1237,7 +1364,7 @@
                       <option>Digital Systems</option>
                       <option>Operations Planning</option>
                       <option>Client Execution</option>
-                      <option>General Inquiry</option>
+                      <option>Bundled Support Model</option>
                     </select>
                     <select name="budget_range">
                       <option value="">Estimated budget</option>
@@ -1249,7 +1376,7 @@
                     </select>
                   </div>
                   <input type="text" name="subject" placeholder="Subject or project title">
-                  <textarea name="message" placeholder="Tell us what kind of support your business needs." required></textarea>
+                  <textarea name="message" placeholder="Tell us what support your business needs, which departments are involved, and whether you want one service or a bundled solution." required></textarea>
                   <div class="grid-2">
                     <input type="text" name="timeline" placeholder="Timeline or target start date">
                     <input type="text" name="referral_source" placeholder="How did you hear about VertexOps?">
@@ -1258,7 +1385,7 @@
                     <button class="btn" type="submit">Send Inquiry</button>
                     <a class="btn secondary" href="mailto:contact@vertexops.net?subject=VertexOps%20Inquiry">Email Instead</a>
                   </div>
-                  <div class="helper">Right now this form is front-end ready. Once your backend is connected, submissions will become live automatically.</div>
+                  <div class="helper">The form is ready for backend connection. Until then, the page still saves typed draft content in the browser.</div>
                 </form>
               </div>
             </div>
@@ -1269,27 +1396,27 @@
               <div class="section-head reveal">
                 <div>
                   <div class="eyebrow">FAQ</div>
-                  <h2>Questions businesses often ask before getting started.</h2>
+                  <h2>Questions businesses often ask before moving forward.</h2>
                 </div>
-                <p>These answers help explain how VertexOps supports companies that want stronger process, sharper execution, and more room to scale.</p>
+                <p>These answers help explain how VertexOps can be positioned both as a focused support provider and as a broader operational partner.</p>
               </div>
 
               <div class="faq">
                 <details class="reveal">
-                  <summary>Can VertexOps support multiple departments at the same time?</summary>
-                  <p>Yes. VertexOps is designed to support businesses that need stronger coordination across operations, recruitment, digital systems, planning, and client execution. Support can be aligned to one area first and later expanded across functions.</p>
+                  <summary>Are the five service areas different from one another?</summary>
+                  <p>Yes. Each support area addresses a different operational need. Operations support focuses on internal business execution, recruitment support focuses on hiring process, digital systems focuses on front-end credibility and infrastructure, operations planning focuses on priority alignment and accountability, and client execution focuses on service delivery consistency.</p>
+                </details>
+                <details class="reveal">
+                  <summary>Can these services be offered together?</summary>
+                  <p>Yes. They can be positioned individually or combined as a bundled support model for businesses that need broader operational reinforcement across multiple departments.</p>
                 </details>
                 <details class="reveal">
                   <summary>Will the service pages open in a new tab?</summary>
-                  <p>Yes. Each of the five service cards opens in a new tab and displays a dedicated page with a more detailed explanation of how that support area contributes to growth and easier internal processes.</p>
+                  <p>Yes. Each image card opens a dedicated service page in a new tab using a query-based route from the same HTML file.</p>
                 </details>
                 <details class="reveal">
-                  <summary>Can this site be connected to a real backend later?</summary>
-                  <p>Yes. The contact form is already structured for backend integration. You only need to replace the form action with your real API endpoint or hosted form service.</p>
-                </details>
-                <details class="reveal">
-                  <summary>Can the placeholder images be replaced later?</summary>
-                  <p>Yes. All images can be swapped for your own branded photography, team images, service visuals, or department-specific graphics at any time.</p>
+                  <summary>What happens if the logo image does not work?</summary>
+                  <p>The header automatically falls back to the previous SVG logo so the site still looks complete even if the PNG file is missing or named incorrectly.</p>
                 </details>
               </div>
             </div>
@@ -1299,7 +1426,7 @@
         <footer>
           <div class="container footer-wrap">
             <div>© 2026 VertexOps Global. Built for structured growth.</div>
-            <div>Operations • Recruitment • Digital Systems • Client Execution</div>
+            <div>Operations • Recruitment • Systems • Planning • Client Execution</div>
           </div>
         </footer>
       `;
@@ -1307,20 +1434,20 @@
 
     function buildServicePage(key){
       const s = services[key];
-      if(!s){ return buildHomePage(); }
+      if(!s) return buildHomePage();
 
       return `
         <div class="topbar">
           <div class="container">
             <div class="ticker">
               <span>${s.title}</span>
-              <span>Support for higher growth</span>
-              <span>Easier internal process</span>
-              <span>Professional coordination across departments</span>
+              <span>Professional support for higher growth</span>
+              <span>Clearer process across departments</span>
+              <span>Structured execution with stronger consistency</span>
               <span>${s.title}</span>
-              <span>Support for higher growth</span>
-              <span>Easier internal process</span>
-              <span>Professional coordination across departments</span>
+              <span>Professional support for higher growth</span>
+              <span>Clearer process across departments</span>
+              <span>Structured execution with stronger consistency</span>
             </div>
           </div>
         </div>
@@ -1328,7 +1455,7 @@
         <header>
           <div class="container nav">
             <a href="./" class="brand">
-              <img src="vertexops-header-logo.png" alt="VertexOps" class="brand-logo">
+              ${logoMarkup()}
               <span class="brand-text">
                 <strong>VertexOps</strong>
                 <small>Business Operations • Recruitment • Support</small>
@@ -1358,13 +1485,13 @@
                   <a class="btn secondary" href="./">Back to homepage</a>
                 </div>
                 <div class="metric-row">
-                  ${counterBlock(92, "of support structure focused on process clarity and execution discipline")}
-                  ${counterBlock(78, "of operational pressure reduced through better coordination and cleaner handoffs")}
-                  ${counterBlock(85, "of growth readiness strengthened by more professional systems and workflows")}
+                  ${counterBlock(s.c1, "of process value tied to stronger structure, coordination, and follow-through")}
+                  ${counterBlock(s.c2, "of operational improvement driven by reduced friction and clearer handoffs")}
+                  ${counterBlock(s.c3, "of growth readiness strengthened by more professional support systems")}
                 </div>
               </div>
 
-              <div class="panel service-image reveal" style="background-image:url('${s.image}')"></div>
+              <div class="panel service-image reveal" style="background-image:url('${s.tabImage}')"></div>
             </div>
           </section>
 
@@ -1372,21 +1499,21 @@
             <div class="container">
               <div class="section-head reveal">
                 <div>
-                  <div class="eyebrow">How we help</div>
-                  <h2>How ${s.title.toLowerCase()} supports higher growth and easier process.</h2>
+                  <div class="eyebrow">How this service helps</div>
+                  <h2>${s.title} as a growth-supporting function.</h2>
                 </div>
-                <p>VertexOps uses a practical, business-focused support model that helps teams operate more clearly, reduce avoidable friction, and strengthen the operational conditions required for sustainable growth.</p>
+                <p>This page explains the specific role this service plays inside a growing business. While every support area improves process, each one contributes in a different way depending on where the company is currently under pressure.</p>
               </div>
 
               <div class="service-grid">
                 <div class="panel card reveal">
                   <h3>What this service includes</h3>
                   <div class="steps">
-                    ${s.bullets.map((item, i) => `
+                    ${s.includes.map((item, i) => `
                       <div class="step">
                         <div class="step-num">${i + 1}</div>
                         <div>
-                          <strong>Structured support area</strong>
+                          <strong>Support component</strong>
                           <p>${item}</p>
                         </div>
                       </div>
@@ -1401,7 +1528,7 @@
                       <div class="step">
                         <div class="step-num">${i + 1}</div>
                         <div>
-                          <strong>Growth-supporting result</strong>
+                          <strong>Operational result</strong>
                           <p>${item}</p>
                         </div>
                       </div>
@@ -1416,29 +1543,29 @@
             <div class="container split">
               <div class="panel card reveal">
                 <div class="eyebrow">Department coordination</div>
-                <h2 style="margin:0 0 10px;font-size:2.4rem;letter-spacing:-.05em;">Teams working more effectively across departments.</h2>
-                <p class="form-note">VertexOps is built to support businesses where multiple departments need to work together more smoothly. Better support means fewer missed handoffs, clearer ownership, and easier movement between leadership, operations, hiring, digital systems, and client-facing teams.</p>
+                <h2 style="margin:0 0 10px;font-size:2.35rem;letter-spacing:-.05em;">How this support connects with other parts of the business.</h2>
+                <p class="form-note">This service is distinct, but it does not operate in isolation. Strong support usually requires coordination across multiple departments, especially when a business is trying to improve process while continuing to grow.</p>
                 <div class="pill-row">
                   ${s.departments.map(item => `<span class="pill">${item}</span>`).join("")}
                 </div>
               </div>
 
               <div class="panel card reveal">
-                <div class="eyebrow">Professional process</div>
-                <h2 style="margin:0 0 10px;font-size:2.4rem;letter-spacing:-.05em;">A more professional operating experience for everyone involved.</h2>
-                <p class="form-note">When execution improves, the entire business becomes easier to trust and easier to work with. Candidates experience a better hiring journey, clients experience stronger responsiveness, and internal teams spend less time fixing process gaps that should have already been solved.</p>
+                <div class="eyebrow">Bundle positioning</div>
+                <h2 style="margin:0 0 10px;font-size:2.35rem;letter-spacing:-.05em;">This service can stand alone or be combined into a broader support model.</h2>
+                <p class="form-note">Many companies begin with one area of support and later expand into a bundled arrangement. For example, recruitment support may later connect with operations planning, or digital systems may later connect with client execution. VertexOps can position this service independently or as part of a coordinated multi-function solution.</p>
                 <div class="contact-boxes">
                   <div class="contact-box">
-                    <strong>For leadership</strong>
-                    Better visibility, cleaner coordination, and less operational drag.
+                    <strong>Single-service use</strong>
+                    Ideal when one area is clearly creating the most immediate pressure.
                   </div>
                   <div class="contact-box">
-                    <strong>For departments</strong>
-                    Clearer process, smoother handoffs, and more dependable support.
+                    <strong>Bundled use</strong>
+                    Ideal when multiple departments need stronger coordination at the same time.
                   </div>
                   <div class="contact-box">
-                    <strong>For growth</strong>
-                    A stronger operational base that helps the business scale more confidently.
+                    <strong>Business benefit</strong>
+                    Better continuity between teams, fewer breakdowns in handoff, and stronger overall operating quality.
                   </div>
                 </div>
               </div>
@@ -1450,19 +1577,19 @@
               <div class="panel card reveal">
                 <div class="eyebrow">Contact</div>
                 <h2 style="margin:0 0 10px;font-size:2.6rem;letter-spacing:-.06em;">Discuss ${s.title.toLowerCase()} with VertexOps.</h2>
-                <p class="form-note">If this support area matches your current business priorities, use the form to explain what your team needs, where process is slowing down, and what outcome you want to improve.</p>
+                <p class="form-note">Use the form to explain your goals, the process issue you want to strengthen, and whether you are looking for this service alone or as part of a broader bundled support model.</p>
                 <div class="contact-boxes">
                   <div class="contact-box">
                     <strong>Email</strong>
                     <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
                   </div>
                   <div class="contact-box">
-                    <strong>Recommended topic</strong>
+                    <strong>Recommended inquiry type</strong>
                     ${s.title}
                   </div>
                   <div class="contact-box">
-                    <strong>Next step</strong>
-                    Share your goals, current bottlenecks, and the departments involved.
+                    <strong>Best next step</strong>
+                    Describe the current bottlenecks, teams involved, and target outcome.
                   </div>
                 </div>
                 <a class="back-link" href="./">← Return to homepage</a>
@@ -1480,12 +1607,12 @@
                     <input type="tel" name="phone" placeholder="Phone number">
                   </div>
                   <input type="text" name="subject" placeholder="Subject" value="${s.title} inquiry">
-                  <textarea name="message" placeholder="Describe your goals, the process issues you want to improve, and which departments are involved." required></textarea>
+                  <textarea name="message" placeholder="Describe your goals, the process issues you want to improve, the departments involved, and whether you want this service alone or bundled with others." required></textarea>
                   <div class="hero-actions">
                     <button class="btn" type="submit">Send Inquiry</button>
                     <a class="btn secondary" href="mailto:contact@vertexops.net?subject=${encodeURIComponent(s.title + ' Inquiry')}">Email Instead</a>
                   </div>
-                  <div class="helper">Replace the form <code>action</code> with your backend route when you are ready for live submissions.</div>
+                  <div class="helper">Replace <code>action="/api/inquiry"</code> with your real backend endpoint when ready.</div>
                 </form>
               </div>
             </div>
@@ -1494,8 +1621,8 @@
 
         <footer>
           <div class="container footer-wrap">
-            <div>© 2026 VertexOps Global. ${s.title} page.</div>
-            <div>Built for stronger process and scalable growth.</div>
+            <div>© 2026 VertexOps Global. ${s.title}.</div>
+            <div>Built for structured growth and stronger execution.</div>
           </div>
         </footer>
       `;
@@ -1505,7 +1632,6 @@
       const service = getQueryParam("service");
       const app = document.getElementById("app");
       app.innerHTML = service && services[service] ? buildServicePage(service) : buildHomePage();
-
       setupReveal();
       setupCounters();
       setupDraftSaver();
@@ -1536,7 +1662,6 @@
         const target = Number(el.dataset.target || 0);
         const duration = 1400;
         const start = performance.now();
-
         function step(now){
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
