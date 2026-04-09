@@ -343,7 +343,7 @@
 
     .service-card:nth-child(1) .service-image { background-image: url('professional.jpg'); }
     .service-card:nth-child(2) .service-image { background-image: url('efficiency.jpg'); }
-    .service-card:nth-child(3) .service-image { background-image: url('reliability.jpg'); }
+    .service-card:nth-child(3) .service-image { background-image: url('recruiter.jpg'); }
 
     .service-body {
       padding: 22px;
@@ -600,7 +600,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="VertexOps Home">
-        <img src="logo-v.png" alt="VertexOps logo" />
+        <img src="./logo-v.png" alt="VertexOps logo" />
         <div class="brand-text">
           <h1>VertexOps</h1>
           <p>Business Operations • Recruitment • Support</p>
@@ -751,6 +751,7 @@
           </p>
 
           <div class="contact-list">
+            <a href="mailto:contact@vertexops.net?subject=VertexOps%20Inquiry">Backup email contact</a>
             <a href="mailto:contact@vertexops.net">contact@vertexops.net</a>
             <a href="https://vertexops.net" target="_blank" rel="noopener">vertexops.net</a>
             <div>Business Operations • Recruitment • Support</div>
@@ -758,7 +759,7 @@
         </div>
 
         <div class="contact-card">
-          <form id="contactForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+          <form id="contactForm" action="https://formspree.io/f/mdapjklp" method="POST">
             <div class="grid-2">
               <label>
                 Full name
@@ -798,7 +799,7 @@
 
             <input type="hidden" name="_subject" value="New VertexOps Inquiry" />
             <button type="submit">Send inquiry</button>
-            <div class="note">This form uses Formspree, so no backend code is required.</div>
+            <div class="note">This form sends through Formspree. If submissions fail, use the backup email link on the left: contact@vertexops.net.</div>
             <div class="form-status" id="formStatus"></div>
           </form>
         </div>
@@ -810,7 +811,7 @@
     <div class="container">
       <div class="footer-card">
         <div class="footer-brand">
-          <img src="logo-v.png" alt="VertexOps logo" />
+          <img src="./logo-v.png" alt="VertexOps logo" />
           <span>VertexOps</span>
         </div>
         <div>© <span id="year"></span> VertexOps. All rights reserved.</div>
@@ -826,15 +827,6 @@
 
     form.addEventListener('submit', async function (event) {
       const action = form.getAttribute('action');
-
-      if (!action || action === 'YOUR_FORMSPREE_ENDPOINT') {
-        event.preventDefault();
-        statusBox.style.display = 'block';
-        statusBox.className = 'form-status error';
-        statusBox.textContent = 'Add your real Formspree endpoint in the HTML first. Example: https://formspree.io/f/yourFormId';
-        return;
-      }
-
       event.preventDefault();
 
       const formData = new FormData(form);
