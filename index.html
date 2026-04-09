@@ -1,21 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>VertexOps Global</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:#04111e;
-color:#fff;
+color:#ffffff;
 }
 
 .container{
@@ -28,8 +26,7 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-border-bottom:1px solid #1f2d44;
+border-bottom:1px solid #1e2b45;
 }
 
 .logo{
@@ -43,14 +40,15 @@ width:50px;
 }
 
 .hero{
-padding:80px 20px;
 text-align:center;
+padding:80px 20px;
 }
 
 .hero h1{
-font-size:48px;
-max-width:800px;
+font-size:44px;
+max-width:900px;
 margin:auto;
+line-height:1.2;
 }
 
 .services{
@@ -81,7 +79,7 @@ margin-bottom:10px;
 form{
 display:grid;
 gap:14px;
-margin-top:30px;
+margin-top:40px;
 }
 
 input,textarea,select{
@@ -97,6 +95,7 @@ padding:14px;
 border-radius:8px;
 font-weight:700;
 cursor:pointer;
+color:white;
 }
 
 footer{
@@ -104,8 +103,8 @@ margin-top:80px;
 text-align:center;
 opacity:0.7;
 }
-
 </style>
+
 </head>
 
 <body>
@@ -113,11 +112,8 @@ opacity:0.7;
 <header class="container">
 
 <div class="logo">
-
 <img src="vertexops-header-logo.png">
-
 <h2>VertexOps</h2>
-
 </div>
 
 <nav>
@@ -129,11 +125,10 @@ Services | Contact
 <section class="hero container">
 
 <h1>
-Operational support, recruitment coordination, and systems that help companies scale.
+Sharper operations, recruitment coordination, and digital systems for growing companies.
 </h1>
 
 </section>
-
 
 <section class="container">
 
@@ -142,73 +137,38 @@ Operational support, recruitment coordination, and systems that help companies s
 <div class="services">
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-
 <h3>Operational Support</h3>
-
-<p>
-Internal coordination, reporting, and workflow support.
-</p>
-
+<p>Internal coordination, workflow execution, and operational consistency.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984">
-
 <h3>Recruitment Support</h3>
-
-<p>
-Hiring coordination, interview scheduling, and candidate communication.
-</p>
-
+<p>Hiring coordination, candidate communication, and interview scheduling.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-
 <h3>Digital Systems</h3>
-
-<p>
-Website support, email setup, and inquiry routing.
-</p>
-
+<p>Website support, email setup, and inbound inquiry management.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-
 <h3>Operations Planning</h3>
-
-<p>
-Planning structure and accountability across initiatives.
-</p>
-
+<p>Clearer priorities, timelines, and cross-department coordination.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4">
-
 <h3>Client Execution</h3>
-
-<p>
-Delivery support and client communication structure.
-</p>
-
+<p>Client communication support and service delivery coordination.</p>
 </div>
 
 </div>
 
 </section>
-
 
 <section class="container">
 
@@ -217,16 +177,15 @@ Delivery support and client communication structure.
 <form id="contactForm">
 
 <input type="text" placeholder="Name" required>
-
 <input type="email" placeholder="Email" required>
 
 <select>
-
 <option>Select Service</option>
-<option>Operations</option>
-<option>Recruitment</option>
+<option>Operational Support</option>
+<option>Recruitment Support</option>
 <option>Digital Systems</option>
-
+<option>Operations Planning</option>
+<option>Client Execution</option>
 </select>
 
 <textarea placeholder="Tell us about your project"></textarea>
@@ -240,24 +199,15 @@ Send Inquiry
 </section>
 
 <footer class="container">
-
 © 2026 VertexOps Global
-
 </footer>
 
 <script>
-
 document.getElementById("contactForm").addEventListener("submit",function(e){
-
 e.preventDefault();
-
-alert("Thank you. Your message is ready to send.");
-
-window.location.href =
-"mailto:contact@vertexops.net?subject=VertexOps Inquiry";
-
+alert("Thank you! Your message is ready to send.");
+window.location.href="mailto:contact@vertexops.net?subject=VertexOps Inquiry";
 });
-
 </script>
 
 </body>
