@@ -1618,7 +1618,11 @@
               </div>
 
               <div class="panel card reveal">
-                <form class="inquiry-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+               <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/contact@vertexops.net" method="POST" novalidate>
+               <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New VertexOps Contact Message">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Thank you for contacting VertexOps. Our team will respond shortly.">
                   <input type="hidden" name="service_type" value="${s.title}">
                   <div class="grid-2">
                     <input type="text" name="full_name" placeholder="Your name" required>
