@@ -1838,5 +1838,28 @@
 
     renderPage();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function () {
+  emailjs.init("zkHRWs4pvbuyJIAXP");
+})();
+
+document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_yxq3x5d",
+    "template_y16tn4w",
+    this
+  ).then(function () {
+    alert("VertexOps message sent successfully!");
+    document.getElementById("inquiryForm").reset();
+  }, function (error) {
+    alert("Failed to send message.");
+    console.error("EmailJS error:", error);
+  });
+});
+</script>
 </body>
 </html>
