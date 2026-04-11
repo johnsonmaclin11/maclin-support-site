@@ -1824,14 +1824,12 @@
       Please try again in a moment or email contact@vertexops.net directly.
     `;
   }
+} finally {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Inquiry";
+  }
 }
-            
-          }finally{
-            if(submitButton){
-              submitButton.disabled = false;
-              submitButton.textContent = "Send Inquiry";
-            }
-          }
         });
       });
     }
