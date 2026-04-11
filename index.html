@@ -1800,7 +1800,7 @@
           }
 
           try{
-            const response = await  {
+            const response = await fetch(action, {
               method: "POST",
               body: formData,
               headers: { "Accept": "application/json" }
