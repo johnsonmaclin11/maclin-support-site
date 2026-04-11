@@ -1799,35 +1799,37 @@
             submitButton.textContent = "Sending...";
           }
 
-          try{
-            const response = await fetch(action, {
-              method: "POST",
-              body: formData,
-              headers: { "Accept": "application/json" }
-            });
+          try {
+  const response = await fetch(action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
 
-            if(!response.ok){
-              throw new Error("Submission failed");
-            }
+  if (!response.ok) {
+    throw new Error("Submission failed");
+  }
 
-            form.reset();
-            if(draftKey) localStorage.removeItem(draftKey);
+  form.reset();
+  if (draftKey) localStorage.removeItem(draftKey);
 
-            if(statusBox){
-              statusBox.classList.add("show");
-              statusBox.innerHTML = `
-                <strong>Inquiry sent successfully.</strong>
-                Thank you. Your message was submitted and we will get back to you soon.
-              `;
-            }
-          }catch(error){
-            if(statusBox){
-              statusBox.classList.add("show");
-              statusBox.innerHTML = `
-                <strong>Submission failed.</strong>
-                Please try again, or email <a href="mailto:contact@vertexops.net" style="color:#8fe9ff;text-decoration:underline;">contact@vertexops.net</a> directly.
-              `;
-            }
+  if (statusBox) {
+    statusBox.classList.add("show");
+    statusBox.innerHTML = `
+      <strong>Inquiry sent successfully.</strong>
+      Thank you. Your message was submitted and we will get back to you soon.
+    `;
+  }
+} catch (error) {
+  if (statusBox) {
+    statusBox.classList.add("show");
+    statusBox.innerHTML = `
+      <strong>Submission failed.</strong>
+      Please try again in a moment or email contact@vertexops.net directly.
+    `;
+  }
+}
+            
           }finally{
             if(submitButton){
               submitButton.disabled = false;
