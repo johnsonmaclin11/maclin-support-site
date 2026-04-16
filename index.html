@@ -173,6 +173,20 @@
         url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
       padding:92px 0 86px;
       border-bottom:1px solid var(--line);
+      overflow:hidden;
+    }
+
+    .hero-logo{
+      position:absolute;
+      right:5%;
+      top:50%;
+      transform:translateY(-50%);
+      width:420px;
+      height:420px;
+      background:url('vertexops-header-logo.png') center/contain no-repeat;
+      opacity:0.06;
+      filter:blur(8px);
+      pointer-events:none;
     }
 
     .hero-grid{
@@ -180,6 +194,8 @@
       grid-template-columns:1.1fr .9fr;
       gap:38px;
       align-items:center;
+      position:relative;
+      z-index:2;
     }
 
     .eyebrow{
@@ -586,6 +602,7 @@
       .hero,.section{padding-top:60px;padding-bottom:60px}
       .cta-band{flex-direction:column;align-items:flex-start}
       .service-card img{height:220px}
+      .hero-logo{width:260px;height:260px}
     }
   </style>
 </head>
@@ -598,7 +615,7 @@
   <header>
     <div class="container nav">
       <a href="#home" class="brand">
-        <img src="logo.png" alt="VertexOps Logo">
+        <img src="vertexops-header-logo.png" alt="VertexOps Logo">
         <span>VertexOps</span>
       </a>
 
@@ -612,12 +629,13 @@
   </header>
 
   <section class="hero" id="home">
+    <div class="hero-logo"></div>
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">Professional support for growing businesses</span>
         <h1>Business Operations, Recruitment & Support That Helps You Move Faster</h1>
         <p>
-          VertexOps provides structured support for businesses that need stronger operations, better communication, improved recruitment coordination, and a more polished digital presence. Our focus is simple: help your business operate more efficiently and present itself more professionally.
+          VertexOps provides structured support for businesses that need stronger operations, better communication, improved recruitment coordination, and a more polished digital presence. Our focus is to help your business operate more efficiently and present itself more professionally.
         </p>
 
         <div class="hero-actions">
@@ -669,10 +687,19 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">
-        Explore the core areas where VertexOps delivers dependable support. Each service card opens a dedicated page in a new tab with more detailed information and a stronger explanation of value.
+        Explore the core areas where VertexOps delivers dependable support. Each service opens in a new tab with more detailed information.
       </p>
 
       <div class="services-grid">
+        <a href="digital-support.html" target="_blank" class="service-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Website and Digital Support">
+          <div class="service-body">
+            <h3>Website & Digital Support</h3>
+            <p>Website updates, digital content improvements, presentation support, and online enhancements that build stronger credibility and trust.</p>
+            <span class="service-link">Open service page →</span>
+          </div>
+        </a>
+
         <a href="business-operations.html" target="_blank" class="service-card">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Business Operations">
           <div class="service-body">
@@ -696,15 +723,6 @@
           <div class="service-body">
             <h3>Customer Support</h3>
             <p>Professional communication support that helps businesses respond more consistently, improve client experience, and maintain stronger service quality.</p>
-            <span class="service-link">Open service page →</span>
-          </div>
-        </a>
-
-        <a href="digital-support.html" target="_blank" class="service-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Website and Digital Support">
-          <div class="service-body">
-            <h3>Website & Digital Support</h3>
-            <p>Website updates, digital content improvements, presentation support, and online enhancements that build stronger credibility and trust.</p>
             <span class="service-link">Open service page →</span>
           </div>
         </a>
@@ -805,10 +823,10 @@
             <input type="text" name="company_name" placeholder="Company Name">
             <select name="service_interest">
               <option value="">Select Service</option>
+              <option value="Website & Digital Support">Website & Digital Support</option>
               <option value="Business Operations">Business Operations</option>
               <option value="Recruitment Support">Recruitment Support</option>
               <option value="Customer Support">Customer Support</option>
-              <option value="Website & Digital Support">Website & Digital Support</option>
             </select>
           </div>
 
@@ -823,7 +841,7 @@
   <footer>
     <div class="container footer-wrap">
       <div class="footer-brand">
-        <img src="logo.png" alt="VertexOps Logo">
+        <img src="vertexops-header-logo.png" alt="VertexOps Logo">
         <span>VertexOps</span>
       </div>
       <div class="small">© 2026 VertexOps. All rights reserved.</div>
