@@ -6,607 +6,667 @@
   <title>VertexOps | Business Operations, Recruitment & Support</title>
   <meta name="description" content="VertexOps provides business operations, recruitment, support, and digital services for growing businesses." />
   <style>
-    :root {
-      --primary: #0a2540;
-      --primary-2: #163d6b;
-      --secondary: #2563eb;
-      --accent: #eff6ff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --light: #f4f7fb;
-      --white: #ffffff;
-      --border: #dbe4ee;
-      --shadow: 0 14px 40px rgba(10, 37, 64, 0.09);
-      --radius: 18px;
-      --max: 1160px;
+    :root{
+      --bg:#08111f;
+      --bg-2:#0b1730;
+      --panel:#0f1c36;
+      --panel-2:#132447;
+      --line:rgba(255,255,255,0.08);
+      --text:#eaf1ff;
+      --muted:#a8b4cf;
+      --blue:#4f8cff;
+      --blue-2:#6ca7ff;
+      --glow:0 18px 50px rgba(40,110,255,.18);
+      --shadow:0 18px 45px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1180px;
     }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      background: var(--light);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 37, 64, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: white;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .brand img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.92);
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover { color: #fff; }
-
-    .nav-btn {
-      background: #fff;
-      color: var(--primary);
-      padding: 11px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    .hero {
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:var(--text);
       background:
-        linear-gradient(135deg, rgba(10,37,64,0.90), rgba(37,99,235,0.78)),
+        radial-gradient(circle at top left, rgba(79,140,255,.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(108,167,255,.10), transparent 24%),
+        linear-gradient(180deg, #07101d 0%, #091327 35%, #0a1630 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    .container{
+      width:min(92%,var(--max));
+      margin:0 auto;
+    }
+
+    .orb{
+      position:fixed;
+      border-radius:50%;
+      filter:blur(60px);
+      opacity:.18;
+      pointer-events:none;
+      z-index:0;
+      animation:float 10s ease-in-out infinite;
+    }
+
+    .orb.one{
+      width:260px;height:260px;
+      background:#3d7dff;
+      top:120px;left:-60px;
+    }
+
+    .orb.two{
+      width:320px;height:320px;
+      background:#6ca7ff;
+      top:540px;right:-120px;
+      animation-delay:2s;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-18px)}
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,16,29,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      font-size:1.2rem;
+      color:#fff;
+    }
+
+    .brand img{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 12px rgba(90,150,255,.35));
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:#dce7ff;
+      font-size:.96rem;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{color:#fff}
+
+    .nav-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:138px;
+      padding:12px 18px;
+      border-radius:999px;
+      color:#fff;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--blue),var(--blue-2));
+      box-shadow:var(--glow);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .hero{
+      position:relative;
+      z-index:1;
+      background:
+        linear-gradient(135deg, rgba(8,17,31,.86), rgba(20,54,128,.62)),
         url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: white;
-      padding: 86px 0 72px;
-      position: relative;
-      overflow: hidden;
+      padding:92px 0 84px;
+      border-bottom:1px solid var(--line);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:38px;
+      align-items:center;
     }
 
-    .hero h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      max-width: 760px;
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      color:#dce7ff;
+      font-size:.88rem;
+      margin-bottom:18px;
+      box-shadow:var(--glow);
     }
 
-    .hero p {
-      margin: 0 0 26px;
-      max-width: 650px;
-      color: rgba(255,255,255,0.92);
-      font-size: 1.08rem;
+    .hero h1{
+      margin:0 0 18px;
+      font-size:clamp(2.3rem,5vw,4.5rem);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      max-width:760px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
+    .hero p{
+      margin:0 0 26px;
+      color:#d5e2ff;
+      font-size:1.06rem;
+      max-width:660px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 0.2s ease, background 0.2s ease;
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--blue-2));
+      box-shadow:var(--glow);
+      border:1px solid rgba(255,255,255,.08);
+    }
 
-    .btn-primary {
-      background: white;
-      color: var(--primary);
+    .btn-secondary{
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(8px);
     }
 
-    .btn-secondary {
-      color: white;
-      border: 1px solid rgba(255,255,255,0.32);
-      background: rgba(255,255,255,0.08);
+    .hero-points{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:#dce7ff;
+      font-size:.96rem;
     }
 
-    .hero-points {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: rgba(255,255,255,0.88);
-      font-size: 0.96rem;
+    .glass-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:26px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
-      backdrop-filter: blur(10px);
-      animation: floatCard 4s ease-in-out infinite;
+    .glass-card h3{
+      margin:0 0 14px;
+      font-size:1.45rem;
+      color:#fff;
     }
 
-    @keyframes floatCard {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+    .glass-card p{
+      margin:0 0 12px;
+      color:#dce7ff;
     }
 
-    .hero-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
+    .section{
+      position:relative;
+      z-index:1;
+      padding:84px 0;
     }
 
-    .hero-card p {
-      margin: 0 0 12px;
-      font-size: 0.98rem;
+    .section-title{
+      text-align:center;
+      margin:0 0 14px;
+      font-size:2.2rem;
+      color:#fff;
     }
 
-    .section {
-      padding: 76px 0;
+    .section-subtitle{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 42px;
+      color:var(--muted);
     }
 
-    .section-title {
-      text-align: center;
-      margin: 0 0 14px;
-      color: var(--primary);
-      font-size: 2.2rem;
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 42px;
-      color: var(--muted);
+    .stat{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:26px 20px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
     }
 
-    .stats {
-      margin-top: -34px;
-      position: relative;
-      z-index: 10;
+    .stat strong{
+      display:block;
+      font-size:2rem;
+      color:#fff;
+      margin-bottom:6px;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+    .stat span{
+      color:var(--muted);
+      font-size:.95rem;
     }
 
-    .stat-card {
-      background: white;
-      border-radius: 18px;
-      padding: 24px 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      text-align: center;
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
     }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 6px;
+    .service-card{
+      display:block;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+      min-height:100%;
     }
 
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .service-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 24px 55px rgba(22,90,255,.18);
+      border-color:rgba(108,167,255,.28);
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+    .service-card img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
     }
 
-    .service-card {
-      background: white;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .service-body{
+      padding:24px;
     }
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(10, 37, 64, 0.13);
+    .service-body h3{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:1.18rem;
     }
 
-    .service-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
+    .service-body p{
+      margin:0 0 18px;
+      color:var(--muted);
+      min-height:78px;
     }
 
-    .service-body {
-      padding: 22px;
+    .service-link{
+      color:#8fbbff;
+      font-weight:700;
     }
 
-    .service-body h3 {
-      margin: 0 0 10px;
-      color: var(--primary);
-      font-size: 1.15rem;
+    .detail-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:28px;
     }
 
-    .service-body p {
-      margin: 0 0 16px;
-      color: var(--muted);
+    .detail-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      scroll-margin-top:110px;
     }
 
-    .service-link {
-      color: var(--secondary);
-      font-weight: 700;
-      font-size: 0.95rem;
+    .detail-card h3{
+      margin:0 0 14px;
+      color:#fff;
+      font-size:1.45rem;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
+    .detail-card p{
+      color:var(--muted);
+      margin:0 0 14px;
     }
 
-    .content-box {
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      padding: 34px;
-      box-shadow: var(--shadow);
+    .detail-card ul{
+      margin:16px 0 0;
+      padding-left:18px;
+      color:#dce7ff;
     }
 
-    .content-box h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      color: var(--primary);
-      font-size: 1.6rem;
+    .detail-card li{
+      margin-bottom:10px;
     }
 
-    .content-box p {
-      color: var(--muted);
-      margin-bottom: 14px;
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
     }
 
-    .check-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
+    .content-box{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:32px;
+      box-shadow:var(--shadow);
     }
 
-    .check-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+    .content-box h3{
+      margin:0 0 14px;
+      color:#fff;
+      font-size:1.7rem;
     }
 
-    .check-item span:first-child {
-      color: var(--secondary);
-      font-weight: 700;
+    .content-box p{
+      color:var(--muted);
+      margin:0 0 14px;
     }
 
-    .image-box img {
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      min-height: 420px;
-      object-fit: cover;
-      width: 100%;
+    .check-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
     }
 
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+    .check-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#dce7ff;
     }
 
-    .step-card {
-      background: linear-gradient(180deg, #ffffff, #f8fbff);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 26px 22px;
-      box-shadow: var(--shadow);
+    .check-item span:first-child{
+      color:#7cb0ff;
+      font-weight:800;
     }
 
-    .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--secondary);
-      color: white;
-      font-weight: 800;
-      margin-bottom: 14px;
+    .image-box img{
+      width:100%;
+      min-height:450px;
+      object-fit:cover;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
     }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
     }
 
-    .faq-item {
-      background: white;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 24px;
-      box-shadow: var(--shadow);
+    .faq{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow);
     }
 
-    .faq-item h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: var(--primary);
-      font-size: 1.08rem;
+    .faq h3{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:1.08rem;
     }
 
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
+    .faq p{
+      margin:0;
+      color:var(--muted);
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: start;
+    .cta-band{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      padding:38px 32px;
+      border-radius:24px;
+      background:linear-gradient(135deg, rgba(79,140,255,.20), rgba(108,167,255,.10));
+      border:1px solid rgba(108,167,255,.18);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
     }
 
-    .contact-info {
-      background: linear-gradient(135deg, #0a2540, #1a4678);
-      color: white;
-      border-radius: 22px;
-      padding: 34px;
-      box-shadow: var(--shadow);
+    .cta-band h3{
+      margin:0 0 8px;
+      font-size:1.95rem;
+      color:#fff;
     }
 
-    .contact-info h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 1.6rem;
+    .cta-band p{
+      margin:0;
+      color:#d5e2ff;
+      max-width:700px;
     }
 
-    .contact-info p {
-      color: rgba(255,255,255,0.88);
-      margin-bottom: 18px;
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
     }
 
-    .contact-item {
-      margin-bottom: 14px;
-      color: rgba(255,255,255,0.96);
+    .contact-info,
+    .contact-form{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:32px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
     }
 
-    .contact-form {
-      background: white;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      padding: 34px;
-      box-shadow: var(--shadow);
+    .contact-info h3,
+    .contact-form h3{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:1.6rem;
     }
 
-    .contact-form h3 {
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.55rem;
-      margin-bottom: 10px;
+    .contact-info p,
+    .contact-form p{
+      color:var(--muted);
+      margin:0 0 18px;
     }
 
-    .contact-form p {
-      color: var(--muted);
-      margin-bottom: 20px;
+    .contact-item{
+      color:#dce7ff;
+      margin-bottom:14px;
     }
 
-    form {
-      display: grid;
-      gap: 16px;
+    form{
+      display:grid;
+      gap:16px;
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
     }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 14px 15px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 0.98rem;
-      background: #fff;
-      color: var(--text);
-      outline: none;
+    input,select,textarea{
+      width:100%;
+      padding:14px 15px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      font-size:.98rem;
+      outline:none;
     }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    input::placeholder, textarea::placeholder{
+      color:#9fb0d3;
     }
 
-    textarea {
-      min-height: 150px;
-      resize: vertical;
+    select{
+      color:#dce7ff;
     }
 
-    .submit-btn {
-      border: none;
-      background: var(--primary);
-      color: white;
-      padding: 15px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.2s ease;
+    option{
+      background:#10203d;
+      color:#fff;
     }
 
-    .submit-btn:hover {
-      background: #123a63;
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(108,167,255,.45);
+      box-shadow:0 0 0 3px rgba(79,140,255,.14);
     }
 
-    .cta-band {
-      background: linear-gradient(135deg, #0a2540, #2563eb);
-      color: white;
-      border-radius: 24px;
-      padding: 42px 34px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      box-shadow: var(--shadow);
+    textarea{
+      min-height:150px;
+      resize:vertical;
     }
 
-    .cta-band h3 {
-      margin: 0 0 8px;
-      font-size: 1.9rem;
+    .submit-btn{
+      border:none;
+      padding:15px 22px;
+      border-radius:12px;
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--blue),var(--blue-2));
+      box-shadow:var(--glow);
     }
 
-    .cta-band p {
-      margin: 0;
-      color: rgba(255,255,255,0.9);
-      max-width: 650px;
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      background:rgba(7,16,29,.58);
+      backdrop-filter:blur(8px);
     }
 
-    footer {
-      background: var(--primary);
-      color: rgba(255,255,255,0.88);
-      margin-top: 40px;
-      padding: 26px 0;
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
     }
 
-    .footer-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      font-weight:700;
     }
 
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      font-weight: 700;
+    .footer-brand img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
     }
 
-    .footer-brand img {
-      width: 30px;
-      height: 30px;
+    .small{
+      color:var(--muted);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width:1024px){
       .hero-grid,
       .split,
       .contact-grid,
       .services-grid,
-      .steps-grid,
+      .detail-grid,
       .stats-grid,
-      .faq-grid {
-        grid-template-columns: 1fr 1fr;
+      .faq-grid{
+        grid-template-columns:1fr 1fr;
       }
     }
 
-    @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width:768px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
       }
 
-      .nav-links {
-        width: 100%;
+      .nav-links{
+        width:100%;
+      }
+
+      .hero-grid,
+      .split,
+      .contact-grid,
+      .services-grid,
+      .detail-grid,
+      .stats-grid,
+      .faq-grid,
+      .form-row{
+        grid-template-columns:1fr;
       }
 
       .hero,
-      .section {
-        padding-top: 60px;
-        padding-bottom: 60px;
+      .section{
+        padding-top:60px;
+        padding-bottom:60px;
       }
 
-      .hero-grid,
-      .split,
-      .contact-grid,
-      .services-grid,
-      .steps-grid,
-      .stats-grid,
-      .faq-grid,
-      .form-row {
-        grid-template-columns: 1fr;
+      .cta-band{
+        flex-direction:column;
+        align-items:flex-start;
       }
 
-      .cta-band {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-card {
-        margin-top: 10px;
+      .service-card img{
+        height:220px;
       }
     }
   </style>
 </head>
 <body>
 
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
   <header>
     <div class="container nav">
-      <a href="index.html" class="brand">
+      <a href="#home" class="brand">
         <img src="Vertex-v (2).png" alt="VertexOps Logo">
         <span>VertexOps</span>
       </a>
 
       <nav class="nav-links">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="why-us.html">Why Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#contact" class="nav-btn">Get Quote</a>
+        <a href="#services">Services</a>
+        <a href="#service-details">Details</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav-btn">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -614,26 +674,27 @@
   <section class="hero" id="home">
     <div class="container hero-grid">
       <div>
+        <span class="eyebrow">Professional support for growing businesses</span>
         <h1>Business Operations, Recruitment & Support That Helps You Move Faster</h1>
         <p>
-          VertexOps helps businesses improve operations, streamline support, and strengthen their digital presence with dependable service and professional communication.
+          VertexOps helps businesses improve operations, strengthen communication, support recruitment activity, and maintain a more professional digital presence with dependable service and better structure.
         </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Request a Quote</a>
-          <a href="services.html" class="btn btn-secondary">View Services</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
         </div>
 
         <div class="hero-points">
           <span>✔ Professional Support</span>
-          <span>✔ Fast Response</span>
+          <span>✔ Faster Response Flow</span>
           <span>✔ Business-Focused Solutions</span>
         </div>
       </div>
 
-      <div class="hero-card">
+      <div class="glass-card">
         <h3>What We Help With</h3>
-        <p>We support businesses with operations, recruitment, support services, and digital execution.</p>
+        <p>We support businesses that need more structure, clearer communication, and practical help across operations, recruitment, customer support, and digital execution.</p>
         <p><strong>Email:</strong> contact@vertexops.net</p>
         <p><strong>Website:</strong> vertexops.net</p>
         <p><strong>Response Goal:</strong> As soon as possible</p>
@@ -641,24 +702,24 @@
     </div>
   </section>
 
-  <section class="stats">
+  <section class="section">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Reliable communication mindset</div>
+        <div class="stat">
+          <strong>4+</strong>
+          <span>Core service areas</span>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">4+</div>
-          <div class="stat-label">Core service areas</div>
+        <div class="stat">
+          <strong>Fast</strong>
+          <span>Inquiry response priority</span>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">Fast</div>
-          <div class="stat-label">Inquiry response priority</div>
+        <div class="stat">
+          <strong>Better</strong>
+          <span>Business communication flow</span>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Business-focused support</div>
+        <div class="stat">
+          <strong>Pro</strong>
+          <span>Support presentation</span>
         </div>
       </div>
     </div>
@@ -668,161 +729,187 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">
-        Explore the services VertexOps offers to help businesses stay organized, responsive, and ready to grow.
+        Large clickable service areas with clear explanations so visitors understand what VertexOps can support right away.
       </p>
 
       <div class="services-grid">
-        <a href="business-operations.html" class="service-card">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Business Operations">
+        <a href="#operations-detail" class="service-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Business Operations">
           <div class="service-body">
             <h3>Business Operations</h3>
-            <p>Support for coordination, workflow improvement, administrative operations, and daily execution.</p>
-            <span class="service-link">Learn more →</span>
+            <p>Support for workflow coordination, process organization, administrative structure, and day-to-day operational execution.</p>
+            <span class="service-link">View details ↓</span>
           </div>
         </a>
 
-        <a href="recruitment-support.html" class="service-card">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Recruitment Support">
+        <a href="#recruitment-detail" class="service-card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Recruitment Support">
           <div class="service-body">
             <h3>Recruitment Support</h3>
-            <p>Candidate outreach, hiring coordination, follow-up support, and recruitment-related assistance.</p>
-            <span class="service-link">Learn more →</span>
+            <p>Hiring coordination, candidate communication, sourcing support, and follow-up systems that improve recruitment flow.</p>
+            <span class="service-link">View details ↓</span>
           </div>
         </a>
 
-        <a href="customer-support.html" class="service-card">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Customer Support">
+        <a href="#support-detail" class="service-card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Customer Support">
           <div class="service-body">
             <h3>Customer Support</h3>
-            <p>Responsive communication systems that help your business stay organized and client-ready.</p>
-            <span class="service-link">Learn more →</span>
+            <p>Reliable support communication that helps businesses respond better, stay organized, and improve client experience.</p>
+            <span class="service-link">View details ↓</span>
           </div>
         </a>
 
-        <a href="digital-support.html" class="service-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Website and Digital Support">
+        <a href="#digital-detail" class="service-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Website and Digital Support">
           <div class="service-body">
             <h3>Website & Digital Support</h3>
-            <p>Website updates, online improvements, digital help, and support for your web presence.</p>
-            <span class="service-link">Learn more →</span>
+            <p>Website updates, digital presentation improvements, content support, and practical help for your online presence.</p>
+            <span class="service-link">View details ↓</span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
-      <div class="content-box">
-        <h3>Built for Businesses That Need Dependable Support</h3>
-        <p>
-          VertexOps is designed to help businesses that need more than just a website or a one-time service. We focus on consistent support, better communication, and practical help that keeps things moving.
-        </p>
-        <p>
-          Whether you need help with operations, digital support, recruitment coordination, or customer communication, VertexOps is here to make the process easier and more professional.
-        </p>
-
-        <div class="check-list">
-          <div class="check-item"><span>✔</span><span>Clear communication and organized follow-up</span></div>
-          <div class="check-item"><span>✔</span><span>Flexible service depending on your business needs</span></div>
-          <div class="check-item"><span>✔</span><span>Professional presentation and dependable support</span></div>
-          <div class="check-item"><span>✔</span><span>Simple process with practical business value</span></div>
-        </div>
-      </div>
-
-      <div class="image-box">
-        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80" alt="Team collaboration">
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section" id="service-details">
     <div class="container">
-      <h2 class="section-title">How It Works</h2>
+      <h2 class="section-title">Service Details</h2>
       <p class="section-subtitle">
-        A simple process that helps you move from inquiry to action quickly.
+        Each area below gives visitors a stronger understanding of your value without forcing them onto missing pages.
       </p>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Send Your Inquiry</h3>
-          <p>Tell us what support or service you need using the website form.</p>
+      <div class="detail-grid">
+        <div class="detail-card" id="operations-detail">
+          <h3>Business Operations</h3>
+          <p>
+            VertexOps helps businesses improve operational structure by supporting internal coordination, workflow consistency, administrative tasks, and communication processes that keep daily work moving.
+          </p>
+          <ul>
+            <li>Workflow organization and support</li>
+            <li>Administrative coordination</li>
+            <li>Internal communication assistance</li>
+            <li>Process-focused business support</li>
+          </ul>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>We Review Your Request</h3>
-          <p>We look over your details and identify the best next step for your business.</p>
+        <div class="detail-card" id="recruitment-detail">
+          <h3>Recruitment Support</h3>
+          <p>
+            We support businesses that need help managing recruitment flow, including candidate communication, follow-up, scheduling support, and process coordination that keeps hiring more organized.
+          </p>
+          <ul>
+            <li>Candidate outreach assistance</li>
+            <li>Scheduling and coordination support</li>
+            <li>Follow-up communication flow</li>
+            <li>Recruitment process organization</li>
+          </ul>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>We Follow Up</h3>
-          <p>You receive a response with clarification, direction, or a quote where appropriate.</p>
+        <div class="detail-card" id="support-detail">
+          <h3>Customer Support</h3>
+          <p>
+            Good support is part of good business. VertexOps helps improve response flow, communication quality, and support structure so businesses can serve clients more professionally.
+          </p>
+          <ul>
+            <li>Support message handling structure</li>
+            <li>Communication consistency improvement</li>
+            <li>Customer response workflow support</li>
+            <li>Professional service presentation</li>
+          </ul>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3>We Get to Work</h3>
-          <p>Once approved, we begin supporting your project or business need.</p>
+        <div class="detail-card" id="digital-detail">
+          <h3>Website & Digital Support</h3>
+          <p>
+            Digital presentation matters. We help businesses improve website messaging, structure, visual presentation, and practical online support needs that affect credibility and trust.
+          </p>
+          <ul>
+            <li>Website content improvement</li>
+            <li>Presentation and structure support</li>
+            <li>Digital visibility assistance</li>
+            <li>Practical website updates</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="why-us">
     <div class="container split">
-      <div class="image-box">
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Business support and communication">
-      </div>
-
       <div class="content-box">
         <h3>Why Businesses Choose VertexOps</h3>
         <p>
-          The difference is not just what we offer, but how we deliver it. We focus on responsiveness, presentation, and support that helps businesses feel better organized and more capable.
+          VertexOps is designed for businesses that want more than a basic service page. We focus on professional presentation, better communication, practical support, and business-facing systems that create a stronger impression.
+        </p>
+        <p>
+          Instead of making things overly technical, we help simplify what clients, leads, and partners experience when interacting with your business.
         </p>
 
         <div class="check-list">
-          <div class="check-item"><span>✔</span><span>Professional support experience</span></div>
-          <div class="check-item"><span>✔</span><span>Fast response mindset</span></div>
-          <div class="check-item"><span>✔</span><span>Better communication and structure</span></div>
-          <div class="check-item"><span>✔</span><span>Flexible service pages and scalable presentation</span></div>
+          <div class="check-item"><span>✔</span><span>More professional business presentation</span></div>
+          <div class="check-item"><span>✔</span><span>Clearer service communication</span></div>
+          <div class="check-item"><span>✔</span><span>Practical and scalable support structure</span></div>
+          <div class="check-item"><span>✔</span><span>Responsive, business-focused execution</span></div>
         </div>
+      </div>
 
-        <p style="margin-top:18px;">
-          <a href="why-us.html" class="btn btn-primary" style="background: var(--primary); color: white;">Read More</a>
-        </p>
+      <div class="image-box">
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80" alt="Professional business collaboration">
       </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="container split">
+      <div class="image-box">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80" alt="Business support communication">
+      </div>
+
+      <div class="content-box">
+        <h3>Professional Writing That Sounds More Credible</h3>
+        <p>
+          The wording on your website matters just as much as the layout. Stronger writing builds trust faster, explains services more clearly, and makes the business look more established.
+        </p>
+        <p>
+          This version uses more professional language so the site feels less basic and more like a serious service brand.
+        </p>
+
+        <div class="check-list">
+          <div class="check-item"><span>✔</span><span>Clearer service descriptions</span></div>
+          <div class="check-item"><span>✔</span><span>Better conversion-focused messaging</span></div>
+          <div class="check-item"><span>✔</span><span>More polished presentation overall</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
     <div class="container">
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-subtitle">
-        A few quick answers to common questions from new inquiries.
+        Quick answers that reduce hesitation and make the site feel more complete.
       </p>
 
       <div class="faq-grid">
-        <div class="faq-item">
-          <h3>What kind of businesses do you work with?</h3>
-          <p>We work with businesses that need dependable support in operations, recruitment, communication, and digital presence.</p>
+        <div class="faq">
+          <h3>What types of businesses can work with VertexOps?</h3>
+          <p>Any business that needs stronger communication, better structure, support improvement, or a more professional digital presence can benefit from VertexOps.</p>
         </div>
 
-        <div class="faq-item">
-          <h3>How quickly do you respond?</h3>
-          <p>We aim to review and respond to inquiries as quickly as possible based on the request.</p>
+        <div class="faq">
+          <h3>Can I request multiple services at once?</h3>
+          <p>Yes. You can explain multiple needs in the inquiry form and we can review the best support approach together.</p>
         </div>
 
-        <div class="faq-item">
-          <h3>Can I request more than one service?</h3>
-          <p>Yes. You can explain your needs in the contact form and we can review multiple support areas together.</p>
+        <div class="faq">
+          <h3>How quickly do you respond to inquiries?</h3>
+          <p>We aim to review and respond as quickly as possible depending on the request and level of detail provided.</p>
         </div>
 
-        <div class="faq-item">
+        <div class="faq">
           <h3>Do you provide custom support solutions?</h3>
-          <p>Yes. We can tailor support based on your workflow, business goals, and the type of help you need.</p>
+          <p>Yes. Support can be shaped around the workflow, communication needs, and operational goals of the business.</p>
         </div>
       </div>
     </div>
@@ -832,8 +919,8 @@
     <div class="container">
       <div class="cta-band">
         <div>
-          <h3>Need support for your business?</h3>
-          <p>Let VertexOps help you improve operations, communication, and digital support with a more professional setup.</p>
+          <h3>Need dependable support for your business?</h3>
+          <p>Let VertexOps help you improve operations, communication, recruitment flow, and digital presentation with a stronger professional setup.</p>
         </div>
         <a href="#contact" class="btn btn-primary">Start Your Inquiry</a>
       </div>
@@ -844,7 +931,8 @@
     <div class="container contact-grid">
       <div class="contact-info">
         <h3>Contact VertexOps</h3>
-        <p>Tell us what you need and we’ll review your inquiry as soon as possible.</p>
+        <p>Tell us what you need and we will review your message as soon as possible.</p>
+
         <div class="contact-item"><strong>Main Email:</strong> contact@vertexops.net</div>
         <div class="contact-item"><strong>Support:</strong> support@vertexops.net</div>
         <div class="contact-item"><strong>Admin:</strong> admin@vertexops.net</div>
@@ -853,7 +941,7 @@
 
       <div class="contact-form">
         <h3>Send Us a Message</h3>
-        <p>Complete the form below and we’ll follow up with you.</p>
+        <p>Complete the form below and we will follow up with you.</p>
 
         <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
           <div class="form-row">
@@ -888,7 +976,7 @@
         <img src="Vertex-v (2).png" alt="VertexOps Logo">
         <span>VertexOps</span>
       </div>
-      <div>© 2026 VertexOps. All rights reserved.</div>
+      <div class="small">© 2026 VertexOps. All rights reserved.</div>
     </div>
   </footer>
 
